@@ -1,0 +1,23 @@
+{
+    "name": "meeting-manager",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel serve src/*.{html,svg} --no-cache",
+        "build": "parcel build src/index.html"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@parcel/config-default": "^2.11.0",
+        "@parcel/transformer-raw": "^2.11.0",
+        "handlebars": "^4.7.8",
+        "localstoragedb": "^2.3.2",
+        "mustache": "^4.2.0"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.11.0",
+        "parcel": "^2.11.0"
+    }
+}

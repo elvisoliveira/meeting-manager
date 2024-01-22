@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="board.scss" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Fira+Sans|Open+Sans|Oranienbaum" rel="stylesheet" />
+    <style>
+        @page {
+            margin: 5mm;
+        }
+    </style>
+    <meta charset="utf8" />
+    <title>Reunião do meio de semana</title>
+</head>
+
+<body>
+    <table class="schedule">
+        <thead>
+            <tr>
+                <td>Den Haag-Portugees</td>
+                <td>Reunião do meio de semana</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+        </thead>
+        <tbody id="boot">
+            <tr>
+                <td>Loading...</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="x-tmpl-mustache" id="template">
+        {{#each meetings}}
+            <tr>
+                <td colspan="2">
+                    <table class="meeting">
+                        <tr class="head">
+                            <td class="label" colspan="4">{{this.data.label}} - {{this.data.theme}}</td>
+                            <td class="title">Presidente</td>
+                            <td class="assigned">{{this.data.chairman}}</td>
+                        </tr>
+                        <tr>
+                            <td class="time">19:15</td>
+                            <td colspan="5">Cântico: <strong>{{this.data.opening_song}}</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="time">19:20</td>
+                            <td colspan="5">Comentários iniciais</td>
+                        </tr>
+                        <tr class="treasures">
+                            <td><img src="treasures.svg" /></td>
+                            <td colspan="5"><span>TESOUROS DA PALAVRA DE DEUS</span></td>
+                        </tr>
+                        <tr>
+                            <td class="time">19:21</td>
+                            <td colspan="4">{{this.data.opening_talk.title}}</td>
+                            <td class="assigned">{{this.data.opening_talk.speaker}}</td>
+                        </tr>
+                        <tr>
+                            <td class="time">19:31</td>
+                            <td colspan="4">{{this.data.spiritual_gems.title}}</td>
+                            <td class="assigned">{{this.data.spiritual_gems.conductor}}</td>
+                        </tr>
+                        <tr>
+                            <td class="time">19:41</td>
+                            <td colspan="3">{{this.data.bible_reading.title}}</td>
+                            <td class="title">Estudante</td>
+                            <td class="assigned">{{this.data.bible_reading.reader}}</td>
+                        </tr>
+                        <tr class="apply">
+                            <td><img src="apply.svg" /></td>
+                            <td colspan="3"><span>FAÇA SEU MELHOR NO MINISTÉRIO</span></td>
+                        </tr>
+                        {{#each this.data.apply_yourself_to_the_field_ministry}}
+                        <tr>
+                            <td class="time">19:46</td>
+                            <td colspan="3">{{this.title}}</td>
+                            <td class="title">Estudante</td>
+                            <td class="assigned">{{this.assigned}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr class="living">
+                            <td><img src="living.svg" /></td>
+                            <td colspan="6"><span>NOSSA VIDA CRISTÃ</span></td>
+                        </tr>
+                        <tr>
+                            <td class="time">20:01</td>
+                            <td colspan="5">Cântico: <strong>116</strong></td>
+                        </tr>
+                        {{#each this.data.living_as_christians}}
+                        <tr>
+                            <td class="time">20:04</td>
+                            <td colspan="4">{{this.title}}</td>
+                            <td class="assigned">{{this.speaker}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td class="time">20:19</td>
+                            <td colspan="0">{{this.data.congregation_bible_study.title}}</td>
+                            <td class="title">Dirigente</td>
+                            <td class="assigned">{{this.data.congregation_bible_study.conductor}}</td>
+                            <td class="title">Leitor</td>
+                            <td class="assigned">{{this.data.congregation_bible_study.reader}}</td>
+                        </tr>
+                        <tr>
+                            <td class="time">20:49</td>
+                            <td colspan="5">Comentários finais</td>
+                        </tr>
+                        <tr>
+                            <td class="time">20:50</td>
+                            <td colspan="3">Cântico: <strong>{{this.data.closing_song}}</strong></td>
+                            <td class="title">Oração</td>
+                            <td class="assigned">{{this.data.closing_prayer}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <hr />
+                            </td>
+                        </tr>
+                    </table>
+                    <span class="page">Página</span>
+                </td>
+            </tr>
+        {{/each}}
+    </script>
+    <script type="module">
+        import * as Handlebars from 'handlebars';
+        import localStorageDB from 'localstoragedb';
+
+        const lib = new localStorageDB('library', localStorage);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URL(location.href).searchParams;
+            const meetings = lib.queryAll('meetings', {
+                query: function(r) {
+                    return Array.from(params.getAll('date')).includes(r.date);
+                }
+            });
+            document.getElementById('boot').innerHTML = Handlebars.compile(document.getElementById('template').innerHTML)({
+                meetings
+            });
+        });
+    </script>
+</body>
+
+</html>

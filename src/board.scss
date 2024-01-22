@@ -1,0 +1,146 @@
+$red: #bf2f13;
+$yellow: #9b6d17;
+$grey: #2a6b77;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", "Fira Sans", "Open Sans", sans-serif;
+    font-size: 12px;
+}
+
+table {
+    width: 100%;
+    &.meeting {
+        border-spacing: 9px;
+        > tbody {
+            > tr:not(.apply, .living, .treasures, .head) {
+                &:nth-child(even) {
+                    background-color: #DDD;
+                }
+            }
+        }
+    }
+    &.schedule {
+        > tbody {
+            counter-reset: page;
+            > tr {
+                span.page {
+                    display: none;
+                    text-align: right;
+                    padding: 0 8px;
+                }
+                &:nth-child(even) {
+                    page-break-after: always;
+                    span.page {
+                        display: block;
+                        &:after {
+                            counter-increment: page;
+                            content: " " counter(page);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    thead {
+        tr {
+            td {
+                // font-weight: bold;
+                &:nth-child(2) {
+                    font-family: "Oranienbaum";
+                    font-size: 25px;
+                    text-align: right;
+                }
+                &:nth-child(1) {
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+}
+
+tr.apply, tr.living, tr.treasures {
+    td {
+        &:nth-child(1) {
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            float: left;
+            max-height: 30px;
+        }
+        span {
+            font-weight: 600;
+            font-size: 16px;
+            width: 170px;
+            float: left;
+            line-height: 19px;
+            white-space: normal;
+        }
+    }
+}
+tr.treasures {
+    td {
+        &:nth-child(1) { background-color: $grey; }
+        span { color: $grey; }
+    }
+}
+
+tr.apply {
+    td {
+        &:nth-child(1) { background-color: $yellow; }
+        span { color: $yellow; }
+    }
+}
+
+tr.living {
+    td {
+        &:nth-child(1) { background-color: $red; }
+        span { color: $red; }
+    }
+}
+
+tr.head {
+    td.label {
+        font-size: 14px;
+    }
+}
+
+td.time {
+    width: 40px;
+}
+td.time, td.title {
+    // color: $grey;
+    font-weight: bold;
+    text-align: center;
+}
+
+td.title, td.assigned {
+    width: 0.1%;
+    white-space: nowrap;
+}
+td.title {
+    text-align: right;
+}
+td.label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+div.message {
+    background-color: #DDD;
+    font-size: 22px;
+    margin: 8px;
+    padding: 29px 0px;
+    text-align: center;
+    p {
+        font-size: 50px;
+    }
+    &, p {
+        font-family: "Oranienbaum";
+    }
+}
