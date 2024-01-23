@@ -38,48 +38,58 @@
                 <td colspan="2">
                     <table class="meeting">
                         <tr class="head">
-                            <td class="label" colspan="4">{{this.data.label}} - {{this.data.theme}}</td>
+                            <td class="label" colspan="4">{{this.label}} - {{this.theme}}</td>
                             <td class="title">Presidente</td>
-                            <td class="assigned">{{this.data.chairman}}</td>
+                            <td class="assigned">{{this.chairman}}</td>
                         </tr>
                         <tr>
-                            <td class="time">19:15</td>
-                            <td colspan="5">Cântico: <strong>{{this.data.opening_song}}</strong></td>
+                            <td class="time">{{time 5}}</td>
+                            <td colspan="5">Cântico: <strong>{{this.opening_song}}</strong></td>
                         </tr>
                         <tr>
-                            <td class="time">19:20</td>
+                            <td class="time">{{time 1}}</td>
                             <td colspan="5">Comentários iniciais</td>
                         </tr>
                         <tr class="treasures">
                             <td><img src="treasures.svg" /></td>
                             <td colspan="5"><span>TESOUROS DA PALAVRA DE DEUS</span></td>
                         </tr>
+                        {{#with this.opening_talk}}
                         <tr>
-                            <td class="time">19:21</td>
-                            <td colspan="4">{{this.data.opening_talk.title}}</td>
-                            <td class="assigned">{{this.data.opening_talk.speaker}}</td>
+                            <td class="time">{{time time}}</td>
+                            <td colspan="4">{{title}}</td>
+                            <td class="assigned">{{speaker}}</td>
                         </tr>
+                        {{/with}}
+                        {{#with this.spiritual_gems}}
                         <tr>
-                            <td class="time">19:31</td>
-                            <td colspan="4">{{this.data.spiritual_gems.title}}</td>
-                            <td class="assigned">{{this.data.spiritual_gems.conductor}}</td>
+                            <td class="time">{{time time}}</td>
+                            <td colspan="4">{{title}}</td>
+                            <td class="assigned">{{conductor}}</td>
                         </tr>
+                        {{/with}}
+                        {{#with this.bible_reading}}
                         <tr>
-                            <td class="time">19:41</td>
-                            <td colspan="3">{{this.data.bible_reading.title}}</td>
+                            <td class="time">{{time time}}</td>
+                            <td colspan="3">{{title}}</td>
                             <td class="title">Estudante</td>
-                            <td class="assigned">{{this.data.bible_reading.reader}}</td>
+                            <td class="assigned">{{reader}}</td>
                         </tr>
+                        {{/with}}
                         <tr class="apply">
                             <td><img src="apply.svg" /></td>
                             <td colspan="3"><span>FAÇA SEU MELHOR NO MINISTÉRIO</span></td>
                         </tr>
-                        {{#each this.data.apply_yourself_to_the_field_ministry}}
+                        {{#each this.apply_yourself_to_the_field_ministry}}
                         <tr>
-                            <td class="time">19:46</td>
-                            <td colspan="3">{{this.title}}</td>
+                            <td class="time">{{time this.time}}</td>
+                            <td colspan="{{#if this.assistant}}0{{else}}3{{/if}}">{{this.title}}</td>
                             <td class="title">Estudante</td>
                             <td class="assigned">{{this.assigned}}</td>
+                            {{#if this.assistant}}
+                            <td class="title">Ajudante</td>
+                            <td class="assigned">{{this.assistant}}</td>
+                            {{/if}}
                         </tr>
                         {{/each}}
                         <tr class="living">
@@ -87,37 +97,39 @@
                             <td colspan="6"><span>NOSSA VIDA CRISTÃ</span></td>
                         </tr>
                         <tr>
-                            <td class="time">20:01</td>
+                            <td class="time">{{time 5}}</td>
                             <td colspan="5">Cântico: <strong>116</strong></td>
                         </tr>
-                        {{#each this.data.living_as_christians}}
+                        {{#each this.living_as_christians}}
                         <tr>
-                            <td class="time">20:04</td>
+                            <td class="time">{{time this.time}}</td>
                             <td colspan="4">{{this.title}}</td>
                             <td class="assigned">{{this.speaker}}</td>
                         </tr>
                         {{/each}}
+                        {{#with this.congregation_bible_study}}
                         <tr>
-                            <td class="time">20:19</td>
-                            <td colspan="0">{{this.data.congregation_bible_study.title}}</td>
+                            <td class="time">{{time time}}</td>
+                            <td colspan="0">{{title}}</td>
                             <td class="title">Dirigente</td>
-                            <td class="assigned">{{this.data.congregation_bible_study.conductor}}</td>
+                            <td class="assigned">{{conductor}}</td>
                             <td class="title">Leitor</td>
-                            <td class="assigned">{{this.data.congregation_bible_study.reader}}</td>
+                            <td class="assigned">{{reader}}</td>
                         </tr>
+                        {{/with}}
                         <tr>
-                            <td class="time">20:49</td>
+                            <td class="time">{{time 3}}</td>
                             <td colspan="5">Comentários finais</td>
                         </tr>
                         <tr>
-                            <td class="time">20:50</td>
-                            <td colspan="3">Cântico: <strong>{{this.data.closing_song}}</strong></td>
+                            <td class="time">{{time 5}}</td>
+                            <td colspan="3">Cântico: <strong>{{this.closing_song}}</strong></td>
                             <td class="title">Oração</td>
-                            <td class="assigned">{{this.data.closing_prayer}}</td>
+                            <td class="assigned">{{this.closing_prayer}}</td>
                         </tr>
                         <tr>
                             <td colspan="6">
-                                <hr />
+                                <!-- {{time false}} --><hr />
                             </td>
                         </tr>
                     </table>
@@ -128,19 +140,39 @@
     </script>
     <script type="module">
         import * as Handlebars from 'handlebars';
+        import dayjs from 'dayjs';
+        import custom from 'dayjs/plugin/customParseFormat';
         import localStorageDB from 'localstoragedb';
 
-        const lib = new localStorageDB('library', localStorage);
+        dayjs.extend(custom);
+
+        const TimeManager = {
+            currentTime: dayjs('19:15', 'HH:mm'),
+
+            updateTime(minutes) {
+                if (!minutes) {
+                    this.currentTime = dayjs('19:15', 'HH:mm'); // Reset
+                } else {
+                    const temp = this.currentTime;
+                    this.currentTime = this.currentTime.add(minutes, 'minutes');
+                    return temp.format('HH:mm');
+                }
+            }
+        };
+
+        Handlebars.registerHelper('time', function (minutes) {
+            return TimeManager.updateTime(minutes);
+        });
 
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URL(location.href).searchParams;
-            const meetings = lib.queryAll('meetings', {
+            const meetings = (new localStorageDB('library', localStorage)).queryAll('meetings', {
                 query: function(r) {
                     return Array.from(params.getAll('date')).includes(r.date);
                 }
             });
             document.getElementById('boot').innerHTML = Handlebars.compile(document.getElementById('template').innerHTML)({
-                meetings
+                meetings: meetings.map(a => a.data)
             });
         });
     </script>
