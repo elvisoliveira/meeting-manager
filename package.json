@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "dev": "parcel serve src/*.{html,svg} --no-cache",
-        "build": "parcel build src/*.{html,svg} --dist-dir docs"
+        "build": "parcel build src/*.{html,svg} --dist-dir docs --public-url meeting-manager"
     },
     "author": "",
     "license": "ISC",
