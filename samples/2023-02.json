@@ -1,0 +1,49 @@
+{
+    "congregation": "Congregation XYZ",
+    "time": "19:15",
+    "meetings": [{
+            "week": "2023-09",
+            "label": "28 February",
+            "theme": "1 CRÔNICAS 20-22",
+            "chairman": "Tom Hanks",
+            "opening_song": 133,
+            "middle_song": 134,
+            "closing_song": 5,
+            "closing_prayer": "Brad Pitt",
+            "spiritual_gems": "Leonardo DiCaprio",
+            "opening_talk": {
+                "speaker": "Denzel Washington",
+                "theme": "Ajude os jovens a ser bem-sucedidos"
+            },
+            "bible_reading": {
+                "reader": "Johnny Depp",
+                "assignment": "1 Crônicas 20: 1-8"
+            },
+            "initial_call": {
+                "student": "Keira Knightley",
+                "assistant": "Margot Robbie"
+            },
+            "return_visit": {
+                "student": "Michelle Pfeiffer",
+                "assistant": "Jessica Alba"
+            },
+            "talk": {
+                "student": "Robert Downey Jr.",
+                "theme": "Jovens -- Vocês estão prontos para se batizar?"
+            },
+            "congregation_bible_study": {
+                "conductor": "Will Smith"
+            },
+            "living_as_christians": [{
+                    "time": 10,
+                    "speaker": "Matt Damon",
+                    "theme": "Use os princípios bíblicos para ajudar seus filhos a ser bem-sucedidos"
+                }, {
+                    "time": 5,
+                    "speaker": "Tom Hanks",
+                    "theme": "Necessidades locais"
+                }
+            ]
+        }
+    ]
+}

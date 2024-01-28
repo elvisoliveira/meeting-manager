@@ -1,0 +1,188 @@
+{
+    "congregation": "Congregation XYZ",
+    "time": "19:15",
+    "meetings": [{
+            "week": "2023-35",
+            "label": "5 September",
+            "theme": "ESTER 1-2",
+            "chairman": "Tom Hanks",
+            "spiritual_gems": "Leonardo DiCaprio",
+            "opening_song": 137,
+            "opening_talk": {
+                "speaker": "Will Smith",
+                "theme": "“Seja modesto assim como Ester”"
+            },
+            "bible_reading": {
+                "reader": "Tom Cruise",
+                "assignment": "Ester 1:13-22"
+            },
+            "initial_call": {
+                "label": "Vídeo da primeira conversa"
+            },
+            "return_visit": {
+                "label": "Primeira conversa",
+                "advice": "th 1",
+                "student": "Jessica Alba",
+                "assistant": "Saoirse Ronan"
+            },
+            "middle_song": 106,
+            "living_as_christians": [{
+                    "theme": "O Que Outros Jovens Dizem — Aparência",
+                    "time": 5,
+                    "speaker": "Dwayne Johnson"
+                }, {
+                    "theme": "Realizações da organização",
+                    "time": 10,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "service_talk": {
+                "speaker": "Morgan Freeman",
+                "theme": "Discurso de serviço: Esteja pronto para falar das “boas novas de paz”"
+            },
+            "closing_song": 101,
+            "closing_prayer": "Morgan Freeman",
+            "talk": {
+                "theme": "Ajuda de Jesus e dos anjos.",
+                "student": "Johnny Depp"
+            }
+        }, {
+            "week": "2023-36",
+            "label": "12 September",
+            "theme": "ESTER 3-5",
+            "chairman": "Will Smith",
+            "spiritual_gems": "Dwayne Johnson",
+            "opening_song": 85,
+            "opening_talk": {
+                "speaker": "Tom Hanks",
+                "theme": "“Ajude outros a atingir o seu potencial”"
+            },
+            "bible_reading": {
+                "reader": "Hugh Jackman",
+                "assignment": "Ester 3:1-12"
+            },
+            "initial_call": {
+                "label": "Vídeo da revisita"
+            },
+            "return_visit": {
+                "label": "Revisita",
+                "advice": "th 16",
+                "student": "Emma Stone",
+                "assistant": "Keira Knightley"
+            },
+            "middle_song": 65,
+            "living_as_christians": [{
+                    "theme": "Torne-se Amigo de Jeová — Ester Foi Corajosa",
+                    "time": 5,
+                    "speaker": "Will Smith"
+                }, {
+                    "theme": "Necessidades locais",
+                    "time": 10,
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "conductor": "Matt Damon",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 125,
+            "closing_prayer": "Leonardo DiCaprio",
+            "bible_study": {
+                "label": "Estudo bíblico",
+                "advice": "th 15",
+                "student": "Meryl Streep",
+                "assistant": "Julianne Moore"
+            }
+        }, {
+            "week": "2023-37",
+            "label": "19 September",
+            "theme": "ESTER 6-8",
+            "chairman": "Matt Damon",
+            "spiritual_gems": "Tom Hanks",
+            "opening_song": 115,
+            "opening_talk": {
+                "speaker": "Denzel Washington",
+                "theme": "“Uma lição de boa comunicação”"
+            },
+            "bible_reading": {
+                "reader": "Al Pacino",
+                "assignment": "Ester 8:9-17"
+            },
+            "initial_call": {
+                "label": "Primeira conversa",
+                "advice": "th 3",
+                "student": "Margot Robbie",
+                "assistant": "Halle Berry"
+            },
+            "return_visit": {
+                "label": "Revisita",
+                "advice": "th 12",
+                "student": "Jessica Chastain",
+                "assistant": "Michelle Pfeiffer"
+            },
+            "middle_song": 148,
+            "living_as_christians": [{
+                    "theme": "“Confie em Jeová ao enfrentar bullying”",
+                    "time": 15,
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "conductor": "Will Smith",
+                "reader": "Brad Pitt"
+            },
+            "closing_song": 124,
+            "closing_prayer": "Dwayne Johnson",
+            "talk": {
+                "theme": "Seja um bom instrutor como Tiago: ensine de modo simples.",
+                "student": "Tom Cruise"
+            }
+        }, {
+            "week": "2023-38",
+            "label": "26 September",
+            "theme": "ESTER 9-10",
+            "chairman": "Tom Hanks",
+            "spiritual_gems": "Denzel Washington",
+            "opening_song": 102,
+            "opening_talk": {
+                "speaker": "Will Smith",
+                "theme": "“Ele usou sua autoridade para ajudar o povo de Deus”"
+            },
+            "bible_reading": {
+                "reader": "George Clooney",
+                "assignment": "Ester 9:1-14"
+            },
+            "initial_call": {
+                "label": "Primeira conversa",
+                "advice": "th 6",
+                "student": "Jennifer Aniston",
+                "assistant": "Amy Adams"
+            },
+            "return_visit": {
+                "label": "Revisita",
+                "advice": "th 13",
+                "student": "Scarlett Johansson",
+                "assistant": "Emma Watson"
+            },
+            "middle_song": 117,
+            "living_as_christians": [{
+                    "theme": "“Pastores que trabalham para o bem do povo de Jeová”",
+                    "time": 15,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "conductor": "Matt Damon",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 55,
+            "closing_prayer": "Tom Cruise",
+            "bible_study": {
+                "label": "Estudo bíblico",
+                "advice": "th 19",
+                "student": "Viola Davis",
+                "assistant": "Julia Roberts"
+            }
+        }
+    ]
+}

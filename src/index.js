@@ -1,5 +1,6 @@
 import localStorageDB from 'localstoragedb';
 import * as Handlebars from 'handlebars';
+import * as samples from '../samples/*.json';
 
 Handlebars.registerHelper('lowercase', function (str) {
     return (str && typeof str === 'string' && str.toLowerCase()) || '';
@@ -122,7 +123,11 @@ document.addEventListener('drop', (e) => {
             return;
 
         const r = new FileReader();
-        r.onload = parseBoard;
+        r.onload = function(e) {
+            const file = e.target.result;
+            const json = new TextDecoder().decode(file);
+            parseBoard(JSON.parse(json).meetings);
+        };
         r.readAsArrayBuffer(file);
     });
 });
@@ -154,6 +159,20 @@ document.addEventListener('DOMContentLoaded', () => {
             sort: [['date', 'ASC']]
         })
     });
+
+    if(data.length === 0) {
+        document.getElementById('sample').addEventListener('click', function() {
+            for (const [key, value] of Object.entries(samples)) {
+                parseBoard(value.meetings);
+            }
+            window.document.dispatchEvent(new Event("DOMContentLoaded", {
+                bubbles: true,
+                cancelable: true
+            }));
+        });
+        return;
+    }
+
     boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
 
     document.querySelector('div.modal-body').insertAdjacentHTML("afterbegin", Handlebars.compile(document.getElementById('filter').innerHTML)({
@@ -211,9 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
             filter();
         });
     }
-    filter();
 
-    // 
+    filter();
 
     // draggable
     let ignore = false;
@@ -263,12 +281,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // printing
+    document.querySelectorAll('thead input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const selected = Array.from(document.querySelectorAll('thead input[type="checkbox"]:checked')).map(element => element.value);
+            document.querySelector('i.fa-print').style.display = selected.length > 0 ? 'inline' : 'none';
+        });
+    });
 });
 
-const parseBoard = function(e) {
-    const file = e.target.result;
-    const json = new TextDecoder().decode(file);
-    JSON.parse(json).meetings.forEach((m) => { // meeting
+const parseBoard = function(meetings) {
+    meetings.forEach((m) => { // meeting
         if (m.message)
             return
 
