@@ -11,17 +11,16 @@ $grey: #2a6b77;
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
     td {
         padding: 3px;
-        height: 20px;
         &.hr {
             height: auto;
             background-color: #FFF;
         }
     }
     &.meeting {
-        border-spacing: 9px;
+        border-spacing: 0 4px;
         > tbody {
             &.apply, &.living, &.treasures {
                 > tr:not(:first-child) {
@@ -77,6 +76,9 @@ tbody.apply, tbody.living, tbody.treasures {
     tr {
         &:nth-child(1) {
             td {
+                font-weight: bold;
+                height: 20px;
+                padding: 0 10px;
                 &:nth-child(1) {
                     padding: 5px;
                     display: flex;
@@ -86,7 +88,6 @@ tbody.apply, tbody.living, tbody.treasures {
                     float: left;
                     max-height: 20px;
                 }
-                font-weight: bold;
             }
         }
     }

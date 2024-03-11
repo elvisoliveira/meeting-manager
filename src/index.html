@@ -28,8 +28,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="none"><i class="fa fa-ban" aria-hidden="true"></i> None</button>
-                    <button type="button" class="btn btn-primary" id="all"><i class="fa fa-check-square-o" aria-hidden="true"></i> All</button>
+                    <button type="button" class="btn btn-secondary" id="none">
+                        <span><i aria-hidden="true" class="fa fa-ban"></i> None</span>
+                    </button>
+                    <button type="button" class="btn btn-primary" id="all">
+                        <span><i aria-hidden="true" class="fa fa-check-square-o"></i> All</span>
+                    </button>
+                    <button type="button" class="btn btn-danger" id="clear">
+                        <span><i aria-hidden="true" class="fa fa-trash"></i> Clear</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -99,7 +106,7 @@
                 <span class="header">Drag & Drop</span>
                 <span class="header"><span class="button">browse</span> or <span class="button" id="sample">load sample data</span></span>
                 <span class="support">Supports: JSON</span>
-                <input type="file" hidden accept=".json" />
+                <input type="file" multiple hidden accept=".json" />
             </div>
         {{/if}}
     </script>

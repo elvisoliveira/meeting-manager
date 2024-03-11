@@ -1,6 +1,5 @@
 import localStorageDB from 'localstoragedb';
 import * as Handlebars from 'handlebars';
-import * as samples from '../samples/*.json';
 
 Handlebars.registerHelper('lowercase', function (str) {
     return (str && typeof str === 'string' && str.toLowerCase()) || '';
@@ -107,18 +106,8 @@ Object.keys(database).forEach(function(key) {
         lib.createTable(key, database[key]);
 });
 
-document.addEventListener('dragstart', () => {
-    console.log('dragstart');
-});
-
-document.addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-document.addEventListener('drop', (e) => {
-    e.preventDefault();
-
-    Array.from(e.dataTransfer.files).forEach((file) => {
+const loadFiles = (files) => {
+    Array.from(files).forEach((file) => {
         if(!['application/json'].includes(file.type))
             return;
 
@@ -130,10 +119,27 @@ document.addEventListener('drop', (e) => {
         };
         r.readAsArrayBuffer(file);
     });
+
+    location.reload();
+}
+
+document.addEventListener('dragstart', () => {
+    console.log('dragstart');
+});
+
+document.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('drop', (e) => {
+    e.preventDefault();
+
+    loadFiles(e.dataTransfer.files);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     const data = [];
+
     lib.queryAll('publishers', {
         sort: [['name', 'ASC']]
     }).forEach((publisher) => {
@@ -152,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const boot = document.getElementById('boot');
+
     boot.innerHTML = Handlebars.compile(document.getElementById('template').innerHTML)({
         data,
         subtitles,
@@ -161,8 +168,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if(data.length === 0) {
-        document.getElementById('sample').addEventListener('click', function() {
-            for (const [key, value] of Object.entries(samples)) {
+
+        const dropArea = document.querySelector('.drag-area');
+        const dragText = document.querySelector('.header');
+        const input = dropArea.querySelector('input');
+
+        dropArea.querySelector('.button').onclick = () => {
+            input.click();
+        };
+
+        input.addEventListener('change', function() {
+            dropArea.classList.add('active');
+
+            loadFiles(this.files);
+        });
+
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('active');
+            dragText.textContent = 'Release to Upload';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.classList.remove('active');
+            dragText.textContent = 'Drag & Drop';
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+
+            loadFiles(e.dataTransfer.files);
+        });
+
+        dropArea.querySelector('span#sample').addEventListener('click', function() {
+            for (const [key, value] of Object.entries(require('../samples/*.json'))) {
                 parseBoard(value.meetings);
             }
             window.document.dispatchEvent(new Event("DOMContentLoaded", {
@@ -170,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cancelable: true
             }));
         });
+
         return;
     }
 
@@ -212,6 +252,14 @@ document.addEventListener('DOMContentLoaded', () => {
         row.querySelector('i').addEventListener('click', function() {
             row.style.display = 'none';
         });
+    });
+
+    // clear data
+    document.querySelector('button#clear').addEventListener('click', function() {
+        if(confirm('Are you sure?')) {
+            localStorage.clear();
+            location.reload();
+        }
     });
 
     // filter
@@ -293,15 +341,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const parseBoard = function(meetings) {
     meetings.forEach((m) => { // meeting
-        if (m.message)
-            return
-
         const date = m.week.replace(/\D/g, '');
         const meeting = lib.insertOrUpdate('meetings', { date }, {
             date,
             data: m,
             label: m.label,
         });
+
+        if (m.message)
+            return
+
         const meetingId = meeting[meeting.length - 1] || meeting;
 
         lib.deleteRows('assignments', { meeting: meetingId });
