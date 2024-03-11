@@ -1,0 +1,227 @@
+{
+  "congregation": "Congregation XYZ",
+  "time": "19:15",
+  "meetings": [
+    {
+      "week": "2024/10",
+      "label": "4 March",
+      "theme": "SALMOS 16-17",
+      "chairman": "Tom Hanks",
+      "opening_song": 111,
+      "opening_talk": {
+        "time": 10,
+        "title": "“Jeová, minha Fonte de coisas boas”",
+        "number": 1,
+        "speaker": "Christian Bale"
+      },
+      "spiritual_gems": {
+        "time": 10,
+        "title": "Joias espirituais",
+        "number": 2,
+        "conductor": "Leonardo DiCaprio"
+      },
+      "bible_reading": {
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "number": 3,
+        "lesson": "th lição 5",
+        "assignment": "Sal. 17:1-15",
+        "reader": "Harrison Ford"
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "time": 1,
+          "title": "Iniciando conversas",
+          "number": 4,
+          "lesson": "th lição 11",
+          "assigned": "Amy Adams",
+          "assistant": "Viola Davis"
+        },
+        {
+          "time": 3,
+          "title": "Iniciando conversas",
+          "number": 5,
+          "lesson": "th lição 9",
+          "assigned": "Jennifer Aniston",
+          "assistant": "Jessica Alba"
+        },
+        {
+          "time": 2,
+          "title": "Iniciando conversas",
+          "number": 6,
+          "lesson": "th lição 2",
+          "assigned": "Jessica Chastain",
+          "assistant": "Margot Robbie"
+        },
+        {
+          "time": 5,
+          "title": "Fazendo discípulos",
+          "number": 7,
+          "lesson": "th lição 6",
+          "assigned": "Reese Witherspoon",
+          "assistant": "Anne Hathaway"
+        }
+      ],
+      "middle_song": 20,
+      "living_as_christians": [
+        {
+          "time": 15,
+          "title": "Como podemos nos preparar para a Celebração?",
+          "number": 8,
+          "speaker": "Tom Hanks"
+        }
+      ],
+      "congregation_bible_study": {
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "number": 9,
+        "conductor": "Will Smith",
+        "reader": "Tom Cruise"
+      },
+      "closing_song": 73,
+      "closing_prayer": "Dwayne Johnson"
+    },
+    {
+      "week": "2024/11",
+      "label": "12 March",
+      "theme": "SALMO 18",
+      "chairman": "Matt Damon",
+      "opening_song": 148,
+      "opening_talk": {
+        "time": 10,
+        "title": "‘Jeová é meu libertador’",
+        "number": 1,
+        "speaker": "Will Smith"
+      },
+      "spiritual_gems": {
+        "time": 10,
+        "title": "Joias espirituais",
+        "number": 2,
+        "conductor": "Denzel Washington"
+      },
+      "bible_reading": {
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "number": 3,
+        "lesson": "th lição 10",
+        "assignment": "Sal. 18:20-39",
+        "reader": "Hugh Jackman"
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "time": 7,
+          "title": "Bondade — O que Jesus fez",
+          "number": 4,
+          "assigned": "Dwayne Johnson"
+        },
+        {
+          "time": 8,
+          "title": "Bondade — Imite Jesus",
+          "number": 5,
+          "assigned": "Tom Hanks"
+        }
+      ],
+      "middle_song": 60,
+      "living_as_christians": [
+        {
+          "time": 5,
+          "title": "Necessidades locais",
+          "number": 6,
+          "speaker": "Leonardo DiCaprio"
+        },
+        {
+          "time": 10,
+          "title": "Realizações da Organização March",
+          "number": 7,
+          "speaker": "Matt Damon"
+        }
+      ],
+      "congregation_bible_study": {
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "number": 8,
+        "conductor": "Christian Bale",
+        "reader": "Dwayne Johnson"
+      },
+      "closing_song": 69,
+      "closing_prayer": "Denzel Washington"
+    },
+    {
+      "week": "2024/12",
+      "label": "19 March",
+      "theme": "SALMOS 19-21",
+      "message": "Não há reunião devido ao <p>Memorial da morte de Jesus</p> no domingo, 24 March"
+    },
+    {
+      "week": "2024/13",
+      "label": "26 March",
+      "theme": "SALMO 22",
+      "chairman": "Christian Bale",
+      "opening_song": 19,
+      "opening_talk": {
+        "time": 10,
+        "title": "A Bíblia predisse detalhes sobre a morte de Jesus",
+        "number": 1,
+        "speaker": "Leonardo DiCaprio"
+      },
+      "spiritual_gems": {
+        "time": 10,
+        "title": "Joias espirituais",
+        "number": 2,
+        "conductor": "Will Smith"
+      },
+      "bible_reading": {
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "number": 3,
+        "lesson": "th lição 2",
+        "assignment": "Sal. 22:1-19",
+        "reader": "Al Pacino"
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "time": 3,
+          "title": "Iniciando conversas",
+          "number": 4,
+          "lesson": "lmd lição 4 ponto 4",
+          "assigned": "Keira Knightley",
+          "assistant": "Jennifer Lawrence"
+        },
+        {
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "number": 5,
+          "lesson": "lmd lição 4 ponto 3",
+          "assigned": "Emma Stone",
+          "assistant": "Julianne Moore"
+        },
+        {
+          "time": 5,
+          "title": "Discurso",
+          "number": 6,
+          "lesson": "th lição 20",
+          "theme": "Como as profecias da Bíblia fortalecem a nossa fé?",
+          "assigned": "Robert Downey Jr."
+        }
+      ],
+      "middle_song": 95,
+      "living_as_christians": [
+        {
+          "time": 15,
+          "title": "Necessidades locais",
+          "number": 7,
+          "speaker": "Christian Bale"
+        }
+      ],
+      "congregation_bible_study": {
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "number": 8,
+        "conductor": "Tom Hanks",
+        "reader": "Robert Downey Jr."
+      },
+      "closing_song": 53,
+      "closing_prayer": "Tom Cruise"
+    }
+  ]
+}
