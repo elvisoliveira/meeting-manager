@@ -1,86 +1,53 @@
-import localStorageDB from 'localstoragedb';
+import { subtitles } from './refs.subtitles';
+import { fingerprints } from './refs.fingerprints';
 import * as Handlebars from 'handlebars';
+import * as pdfjsLib from 'pdfjs-dist';
+import TableSort from './table.sort';
+import Engine from './engine.js';
+import S89 from './S89.js';
 
-Handlebars.registerHelper('lowercase', function (str) {
-    return (str && typeof str === 'string' && str.toLowerCase()) || '';
-});
+const engine = new Engine();
 
-//
-const subtitles = {
-    S: {
-        label: "Substituted by",
-        color: "IndianRed"
-    },
-    CH: {
-        label: "Chairman",
-        color: "Pink"
-    },
-    SG: {
-        label: "Spiritual Gems",
-        color: "Violet"
-    },
-    CP: {
-        label: "Closing Prayer",
-        color: "Salmon"
-    },
-    OT: {
-        label: "Opening Talk",
-        color: "Aquamarine"
-    },
-    BR: {
-        label: "Bible Reading",
-        color: "Tomato"
-    },
-    CSC: {
-        label: "Congregation Bible Study Conductor",
-        color: "Orange"
-    },
-    CSR: {
-        label: "Congregation Bible Study Reader",
-        color: "Gold"
-    },
-    SA: {
-        label: "Student Assignment",
-        color: "SkyBlue"
-    },
-    AA: {
-        label: "Assistant Assignment",
-        color: "LightGreen"
-    },
-    TA: {
-        label: "Talk",
-        color: "CadetBlue"
-    },
-    DIS: {
-        label: "Discussion",
-        color: "RosyBrown"
-    },
-    LAC: {
-        label: "Living as Christians",
-        color: "RosyBrown"
+Handlebars.registerHelper('lowercase', (str) => (str && typeof str === 'string' && str.toLowerCase()) || '');
+Handlebars.registerHelper('publisher', (id) => engine.getPublisher(id).name);
+
+document.getS89 = function(id) {
+    if(!document.S89) {
+        bootstrap.showToast({
+            body: 'S89 form not loaded',
+            toastClass: "text-bg-danger"
+        });
+        return;
     }
-};
 
-// json fields
-const IC = 'initial_call';
-const RV = 'return_visit';
-const BS = 'bible_study';
-const TA = 'talk';
-const CH = 'chairman';
-const BR = 'bible_reading';
-const CP = 'closing_prayer';
-const OT = 'opening_talk';
-const SG = 'spiritual_gems';
-const LAC = 'living_as_christians';
-const CBS = 'congregation_bible_study';
-const AYF = 'apply_yourself_to_the_field_ministry';
+    const assingment = engine.getAssignment(id);
 
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+    if(!subtitles[assingment.assignment].S89) {
+        bootstrap.showToast({
+            body: 'S89 form not nedded',
+            toastClass: "text-bg-danger"
+        });
+        return;
+    }
 
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+    document.S89.name = assingment.assigned.name;
+    document.S89.assistant = assingment.partner?.name;
+    document.S89.date = assingment.meeting.label;
+    document.S89.part_number = assingment.number && String(assingment.number);
+    document.S89.main_hall = true;
+
+    switch(document.querySelector('select#output').value) {
+        case 'pdf':
+            document.S89.savePDF();
+            break;
+        case 'png':
+            document.S89.saveImage();
+            break;
+    }
+}
 
 const filter = function() {
-    const selected = Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map(element => element.value);
+    const selected = Array.from(document.querySelectorAll('input[type=\'checkbox\']:checked')).map(element => element.value);
     document.querySelectorAll('tbody tr').forEach((row) => {
         const columns = Array.from(row.querySelectorAll('td')).reverse();
         const unnasignedWeeks = columns[0].innerText;
@@ -90,21 +57,8 @@ const filter = function() {
         });
         row.style.display = +unnasignedWeeks <= +threshold && show ? 'table-row' : 'none';
     });
-    document.querySelector('tfoot tr').style.display = document.querySelectorAll('tr[style*="display: table-row"]').length ? 'none' : 'table-row';
+    document.querySelector('tfoot tr').style.display = document.querySelectorAll('tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
 }
-
-const database = {
-    meetings: ['label', 'date', 'data'],
-    publishers: ['name'],
-    assignments: ['meeting', 'assignment', 'type', 'assigned', 'substituted']
-}
-
-const lib = new localStorageDB('library', localStorage);
-
-Object.keys(database).forEach(function(key) {
-    if(!lib.tableExists(key))
-        lib.createTable(key, database[key]);
-});
 
 const loadFiles = (files) => {
     Array.from(files).forEach((file) => {
@@ -115,7 +69,7 @@ const loadFiles = (files) => {
         r.onload = function(e) {
             const file = e.target.result;
             const json = new TextDecoder().decode(file);
-            parseBoard(JSON.parse(json).meetings);
+            engine.parseBoard(JSON.parse(json).meetings);
         };
         r.readAsArrayBuffer(file);
     });
@@ -140,29 +94,43 @@ document.addEventListener('drop', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const data = [];
 
-    lib.queryAll('publishers', {
+    engine.lib.queryAll('publishers', {
         sort: [['name', 'ASC']]
     }).forEach((publisher) => {
-        publisher.meetings = lib.queryAll('meetings', {
+        publisher.meetings = engine.lib.queryAll('meetings', {
             sort: [['date', 'ASC']]
         });
+        const partners = [];
         publisher.meetings.forEach((meeting, i) => {
-            publisher.meetings[i].assignment = lib.queryAll('assignments', {
+            const assignments = engine.lib.queryAll('assignments', {
                 query: {
                     meeting: meeting.ID,
                     assigned: publisher.ID
                 }
             });
+            if(assignments.length) {
+                assignments.forEach((assingment) => {
+                    if(assingment.partner) {
+                        partners.push({
+                            publisher: engine.getPublisher(assingment.partner).name,
+                            meeting: engine.getMeeting(assingment.meeting)
+                        });
+                    }
+                });
+                partners.sort(function (a, b) {
+                    return b.meeting.ID - a.meeting.ID;
+                });
+            }
+            publisher.meetings[i].assignments = assignments;
         });
+        publisher.partners = partners.flatMap(i => `<tr><td>${i.publisher}</td><td>${i.meeting.data.week.replace('-', '/')}</td></tr>`).join('');
         data.push(publisher);
     });
-
-    const boot = document.getElementById('boot');
 
     boot.innerHTML = Handlebars.compile(document.getElementById('template').innerHTML)({
         data,
         subtitles,
-        meetings: lib.queryAll('meetings', {
+        meetings: engine.lib.queryAll('meetings', {
             sort: [['date', 'ASC']]
         })
     });
@@ -202,9 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dropArea.querySelector('span#sample').addEventListener('click', function() {
             for (const [key, value] of Object.entries(require('../samples/*.json'))) {
-                parseBoard(value.meetings);
+                engine.parseBoard(value.meetings);
             }
-            window.document.dispatchEvent(new Event("DOMContentLoaded", {
+            window.document.dispatchEvent(new Event('DOMContentLoaded', {
                 bubbles: true,
                 cancelable: true
             }));
@@ -215,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
 
-    document.querySelector('div.modal-body').insertAdjacentHTML("afterbegin", Handlebars.compile(document.getElementById('filter').innerHTML)({
+    document.querySelector('div.modal-body').insertAdjacentHTML('afterbegin', Handlebars.compile(document.getElementById('filter').innerHTML)({
         subtitles
     }));
 
@@ -234,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tbody = table.querySelector('tbody');
         const columnHeader = label.parentNode;
         const columnIndex = Array.from(label.closest('tr').children).indexOf(columnHeader);
-        Array.from(tbody.querySelectorAll('tr')).sort(comparer(columnIndex, columnHeader.asc = !columnHeader.asc)).forEach(tr => tbody.appendChild(tr));
+        Array.from(tbody.querySelectorAll('tr')).sort(TableSort(columnIndex, columnHeader.asc = !columnHeader.asc)).forEach(tr => tbody.appendChild(tr));
     })));
 
     document.querySelectorAll('tbody tr').forEach((row) => {
@@ -263,12 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // filter
-    const checkboxes = document.querySelectorAll('#filters input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#filters input[type=\'checkbox\']');
     checkboxes.forEach(checkboxInput => {
         checkboxInput.addEventListener('change', filter);
     });
 
-    document.querySelector('input[type="number"]').addEventListener('input', filter);
+    document.querySelector('input[type=\'number\']').addEventListener('input', filter);
 
     for (const button of document.querySelectorAll('button#none, button#all')) {
         button.addEventListener('click', function() {
@@ -310,10 +278,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // tooltip
-    ([].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))).map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+    ([].slice.call(document.querySelectorAll('[data-bs-toggle=\'tooltip\']'))).map(function (tooltipTriggerEl) {
+        bootstrap.Tooltip.Default.allowList.table = [];
+        bootstrap.Tooltip.Default.allowList.thead = [];
+        bootstrap.Tooltip.Default.allowList.tbody = [];
+        bootstrap.Tooltip.Default.allowList.tr = [];
+        bootstrap.Tooltip.Default.allowList.td = [];
+        return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
+    // hover
     document.querySelectorAll('span[helper]').forEach((data) => {
         data.addEventListener('mouseover', function() {
             const helper = data.getAttribute('helper');
@@ -331,110 +305,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // printing
-    document.querySelectorAll('thead input[type="checkbox"]').forEach(checkbox => {
+    document.querySelectorAll('thead input[type=\'checkbox\']').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            const selected = Array.from(document.querySelectorAll('thead input[type="checkbox"]:checked')).map(element => element.value);
+            const selected = Array.from(document.querySelectorAll('thead input[type=\'checkbox\']:checked')).map(element => element.value);
             document.querySelector('i.fa-print').style.display = selected.length > 0 ? 'inline' : 'none';
         });
     });
-});
 
-const parseBoard = function(meetings) {
-    meetings.forEach((m) => { // meeting
-        const date = m.week.replace(/\D/g, '');
-        const meeting = lib.insertOrUpdate('meetings', { date }, {
-            date,
-            data: m,
-            label: m.label,
-        });
-
-        if (m.message)
-            return
-
-        const meetingId = meeting[meeting.length - 1] || meeting;
-
-        lib.deleteRows('assignments', { meeting: meetingId });
-
-        const data = {
-            SA: [],
-            AA: [],
-            DIS: [],
-            CH: { name: m[CH] },
-            CP: { name: m[CP] },
-            BR: { name: m[BR].reader },
-            OT: { name: m[OT].speaker },
-            SG: { name: m[SG].hasOwnProperty('conductor') ? m[SG].conductor : m[SG] },
-            LAC: m[LAC].map(p => ({ name: p.speaker }))
-        };
-
-        if(m.hasOwnProperty(CBS)) {
-            data.CSC = { name: m[CBS].conductor };
-            if(m[CBS].hasOwnProperty('reader'))
-                data.CSR = { name: m[CBS].reader };
-        }
-
-        if(m.hasOwnProperty(TA))
-            data.TA = { name: m[TA].student };
-
-        [IC, RV, BS].forEach((t) => {
-            if (m.hasOwnProperty(t) && m[t].hasOwnProperty('student'))
-                data.SA.push({
-                    name: m[t].student,
-                    type: t
-                });
-            if (m.hasOwnProperty(t) && m[t].hasOwnProperty('assistant'))
-                data.AA.push({
-                    name: m[t].assistant,
-                    type: t
-                });
-        });
-
-        if(m[AYF])
-            m[AYF].forEach((v) => {
-                if(v.hasOwnProperty('theme')) {
-                    data.TA = {
-                        name: v.assigned
-                    };
-                } else if(v.hasOwnProperty('assistant')) {
-                    data.SA.push({
-                        name: v.assigned,
-                        type: v.title
+    document.querySelector('input[type=file]').addEventListener('change', function() {
+        const self = this;
+        const reader = new FileReader();
+        reader.onload = function() {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+            pdfjsLib.getDocument({
+                data: new Uint8Array(this.result)
+            }).promise.then(doc => {
+                if(!fingerprints.some(r => r.every((value, index) => doc.fingerprints[index] == value))) {
+                    bootstrap.showToast({
+                        body: 'You need to get the .pdf file from the official sources',
+                        toastClass: 'text-bg-danger'
                     });
-                    data.AA.push({
-                        name: v.assistant,
-                        type: v.title
-                    });
-                } else {
-                    data.DIS.push({
-                        name: v.assigned
-                    });
+                    self.value = '';
+                    return;
                 }
+                document.S89 = new S89(doc);
             });
-
-        Object.keys(data).forEach((key) =>  {
-            if(Array.isArray(data[key]))
-                data[key].forEach((info) => {
-                    assign(key, meetingId, info);
-                });
-            else
-                assign(key, meetingId, data[key]);
-        });
-    });
-
-    lib.commit();
-}
-
-const assign = function(assignment, meetingId, info) {
-    const publishers = [];
-    String(info.name || '@TODO').split('|').forEach((name) => {
-        const publisher = lib.insertOrUpdate('publishers', { name }, { name });
-        publishers.push(publisher[publisher.length - 1] || publisher)
-    });
-    lib.insert('assignments', {
-        meeting: meetingId,
-        assignment,
-        type: info.type,
-        assigned: publishers[0],
-        substituted: publishers[1]
-    });
-}
+        }
+        reader.readAsArrayBuffer(this.files[0]);
+    }, false);
+});

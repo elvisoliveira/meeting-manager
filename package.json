@@ -12,7 +12,9 @@
         "@parcel/config-default": "^2.11.0",
         "@parcel/transformer-raw": "^2.11.0",
         "dayjs": "^1.11.10",
+        "downloadjs": "^1.4.7",
         "handlebars": "^4.7.8",
+        "idb-keyval": "^6.2.1",
         "localstoragedb": "^2.3.2",
         "mustache": "^4.2.0"
     },
@@ -21,6 +23,10 @@
         "@parcel/compressor-gzip": "^2.11.0",
         "@parcel/resolver-glob": "^2.11.0",
         "@parcel/transformer-sass": "^2.11.0",
-        "parcel": "^2.11.0"
+        "buffer": "^6.0.3",
+        "parcel": "^2.11.0",
+        "pdf-lib": "^1.14.0",
+        "pdfjs-dist": "^3.11.174",
+        "process": "^0.11.10"
     }
 }
