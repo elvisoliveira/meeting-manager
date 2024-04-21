@@ -107,7 +107,13 @@
                                 <tr>
                                     <td class="time">{{time this.time}}</td>
                                     <td colspan="{{#if this.assistant}}0{{else}}3{{/if}}">{{this.title}}</td>
-                                    <td class="title">Estudante</td>
+                                    <td class="title">
+                                        {{#if this.lesson}}
+                                        Estudante
+                                        {{else}}
+                                        Dirigente
+                                        {{/if}}
+                                    </td>
                                     <td class="assigned">{{this.assigned}}</td>
                                     {{#if this.assistant}}
                                     <td class="title">Ajudante</td>
@@ -136,6 +142,13 @@
                                     <td class="assigned">{{this.speaker}}</td>
                                 </tr>
                                 {{/each}}
+                                {{#with this.service_talk}}
+                                <tr>
+                                    <td class="time">{{time time}}</td>
+                                    <td colspan="4">Discurso de serviço: {{theme}}</td>
+                                    <td class="assigned">{{speaker}}</td>
+                                </tr>
+                                {{/with}}
                                 {{#with this.congregation_bible_study}}
                                 <tr>
                                     <td class="time">{{time time}}</td>

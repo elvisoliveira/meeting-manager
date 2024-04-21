@@ -22,7 +22,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <hr />
                     <div class="form-outline">
                         <label class="form-label">Assignment threshold</label>
                         <input type="number" class="form-control" value="10" id="threshold" />
@@ -30,7 +29,7 @@
                     <div class="row form-outline mt-3">
                         <div class="col-7">
                             <label class="form-label">S-89 form</label>
-                            <input class="form-control" type="file" accept="application/pdf" />
+                            <input class="form-control" type="file" id="S89" accept="application/pdf" />
                         </div>
                         <div class="col">
                             <label class="form-label">Download format</label>
@@ -56,12 +55,28 @@
         </div>
     </div>
     <script type="x-handlebars-template" id="filter">
-        {{#each subtitles}}
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="{{@key}}" value="{{@key}}" checked />
-                <label class="form-check-label" for="{{@key}}">{{ this.label }} ({{@key}})</label>
-            </div>
-        {{/each}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Assignment</th>
+                    <th>Acronym</th>
+                    <th>S89</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each subtitles}}
+                <tr>
+                    <th style="text-align: center;">
+                        <input class="form-check-input" type="checkbox" id="{{@key}}" value="{{@key}}" checked />
+                    </th>
+                    <td>{{ this.label }}</td>
+                    <td>{{ @key }}</td>
+                    <td>{{#if this.S89 }}<i class="fa fa-check"></i>{{/if}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </script>
     <script type="x-handlebars-template" id="template">
         {{#if meetings.length}}
@@ -70,7 +85,7 @@
                     span.{{lowercase @key}} { background-color: {{ this.color }}; }
                 {{/each}}
             </style>
-            <table class="table table-striped-columns table-hover m-0">
+            <table id="main" class="table table-striped-columns table-hover m-0">
                 <thead>
                     <tr>
                         <th scope="col">
@@ -98,7 +113,11 @@
                             {{#if this.partners}}
                             title="<table class='tooltip-table'>{{this.partners}}</table>"
                             {{/if}}
-                            scope="row"><i class="fa fa-minus-square" aria-hidden="true"></i>{{this.name}}</th>
+                            scope="row">
+                            <i class="fa fa-minus-square" aria-hidden="true"></i>
+                            <i class="fa fa-copy" aria-hidden="true"></i>
+                            {{this.name}}
+                        </th>
                         {{#each this.meetings}}
                             <td>
                             {{#each this.assignments}}
@@ -126,6 +145,7 @@
             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#filters" id="draggable">
                 <i class="fa fa-arrows" aria-hidden="true"></i> Filters
             </button>
+            <button type="button" class="btn btn-primary btn-sm" id="permissions">Grant Permissions</button>
         {{else}}
             <div class="drag-area">
                 <div class="icon">

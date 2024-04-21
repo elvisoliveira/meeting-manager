@@ -7,6 +7,7 @@ div#boot {
     width: 100%;
     height: 100%;
     overflow: auto;
+    scrollbar-width: thin;
 }
 
 button#draggable {
@@ -16,13 +17,24 @@ button#draggable {
     bottom: 10px;
 }
 
+button#permissions {
+    position: fixed;
+    right: 10px;
+    z-index: 30;
+    bottom: 50px;
+    display: none;
+}
+
 span.badge {
     color: #000;
     cursor: pointer;
 }
 
-i.fa-print {
-    display: none;
+i {
+    cursor: pointer;
+    &.fa-print {
+        display: none;
+    }
 }
 
 table {
@@ -38,10 +50,12 @@ table {
                 left: 0;
                 z-index: 30;
                 background-color: black;
+                color: #FFF;
             }
             span {
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
                 text-indent: 2px;
             }
         }
@@ -57,7 +71,8 @@ table {
     tbody, tfoot {
         th {
             left: 0;
-            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1) !important;
+            // box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1) !important;
+            background-color: #CCC !important;
         }
     }
     tbody, thead, tfoot {

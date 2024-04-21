@@ -1,3 +1,4 @@
+import { get, set } from 'idb-keyval';
 import { subtitles } from './refs.subtitles';
 import { fingerprints } from './refs.fingerprints';
 import * as Handlebars from 'handlebars';
@@ -48,7 +49,10 @@ document.getS89 = function(id) {
 
 const filter = function() {
     const selected = Array.from(document.querySelectorAll('input[type=\'checkbox\']:checked')).map(element => element.value);
-    document.querySelectorAll('tbody tr').forEach((row) => {
+    const url = new URL(window.location);
+    url.searchParams.set('filters', selected);
+    window.history.pushState(null, '', url.toString());
+    document.querySelectorAll('#main tbody tr').forEach((row) => {
         const columns = Array.from(row.querySelectorAll('td')).reverse();
         const unnasignedWeeks = columns[0].innerText;
         const threshold = document.getElementById('threshold').value;
@@ -57,7 +61,7 @@ const filter = function() {
         });
         row.style.display = +unnasignedWeeks <= +threshold && show ? 'table-row' : 'none';
     });
-    document.querySelector('tfoot tr').style.display = document.querySelectorAll('tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
+    document.querySelector('#main tfoot tr').style.display = document.querySelectorAll('tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
 }
 
 const loadFiles = (files) => {
@@ -118,12 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 partners.sort(function (a, b) {
-                    return b.meeting.ID - a.meeting.ID;
+                    return a.date - b.date;
                 });
             }
             publisher.meetings[i].assignments = assignments;
         });
-        publisher.partners = partners.flatMap(i => `<tr><td>${i.publisher}</td><td>${i.meeting.data.week.replace('-', '/')}</td></tr>`).join('');
+        publisher.partners = partners.reverse().flatMap(i => `<tr><td>${i.publisher}</td><td>${i.meeting.data.week.replace('-', '/')}</td></tr>`).join('');
         data.push(publisher);
     });
 
@@ -141,7 +145,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const dragText = document.querySelector('.header');
         const input = dropArea.querySelector('input');
 
-        dropArea.querySelector('.button').onclick = () => {
+        dropArea.querySelector('.button').onclick = async () => {
+            if ('showDirectoryPicker' in window) {
+                window.showDirectoryPicker().then(async (dirHandle) => {
+                    for await (const entry of dirHandle.values()) {
+                        entry.getFile().then(async (file) => {
+                            if (!['application/json'].includes(file.type))
+                                return;
+                            file.text().then((json) => engine.parseBoard(JSON.parse(json).meetings));
+                        })
+                    }
+                    set('dir', dirHandle).then(() => location.reload());
+                });
+                return;
+            }
             input.click();
         };
 
@@ -169,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         dropArea.querySelector('span#sample').addEventListener('click', function() {
-            for (const [key, value] of Object.entries(require('../samples/*.json'))) {
+            for (const [key, value] of Object.entries(require('../../samples/*.json'))) {
                 engine.parseBoard(value.meetings);
             }
             window.document.dispatchEvent(new Event('DOMContentLoaded', {
@@ -205,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(tbody.querySelectorAll('tr')).sort(TableSort(columnIndex, columnHeader.asc = !columnHeader.asc)).forEach(tr => tbody.appendChild(tr));
     })));
 
-    document.querySelectorAll('tbody tr').forEach((row) => {
+    document.querySelectorAll('#main tbody tr').forEach((row) => {
         let columns = Array.from(row.querySelectorAll('td')).reverse();
         let count = 0;
         columns.every((column) => {
@@ -217,8 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         });
         columns[0].innerText = count - 1;
-        row.querySelector('i').addEventListener('click', function() {
+        row.querySelector('i.fa-minus-square').addEventListener('click', function() {
             row.style.display = 'none';
+        });
+        row.querySelector('i.fa-copy').addEventListener('click', function() {
+            navigator.clipboard.writeText(this.parentElement.textContent.trim());
         });
     });
 
@@ -231,8 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // filter
+    const filters = (new URL(window.location)).searchParams.get('filters');
     const checkboxes = document.querySelectorAll('#filters input[type=\'checkbox\']');
     checkboxes.forEach(checkboxInput => {
+        if(typeof filters === 'string') {
+            checkboxInput.checked = filters.split(',').includes(checkboxInput.value);
+        }
         checkboxInput.addEventListener('change', filter);
     });
 
@@ -305,14 +329,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // printing
-    document.querySelectorAll('thead input[type=\'checkbox\']').forEach(checkbox => {
+    document.querySelectorAll('#main thead input[type=\'checkbox\']').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            const selected = Array.from(document.querySelectorAll('thead input[type=\'checkbox\']:checked')).map(element => element.value);
+            const selected = Array.from(document.querySelectorAll('#main thead input[type=\'checkbox\']:checked')).map(element => element.value);
             document.querySelector('i.fa-print').style.display = selected.length > 0 ? 'inline' : 'none';
         });
     });
 
-    document.querySelector('input[type=file]').addEventListener('change', function() {
+    document.querySelector('input#S89[type=file]').addEventListener('change', function() {
         const self = this;
         const reader = new FileReader();
         reader.onload = function() {
@@ -333,4 +357,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         reader.readAsArrayBuffer(this.files[0]);
     }, false);
+
+    document.getElementById('permissions').addEventListener('click', () => {
+        get('dir').then(async (handle) => {
+            if ((await handle.requestPermission({ mode: 'read' })) === 'granted') // Prompt user for permission
+                location.reload();
+        });
+    });
+
+    get('dir').then((dirHandle) => {
+        if(!dirHandle)
+            return;
+
+        // https://github.com/whatwg/fs/blob/main/proposals/FileSystemObserver.md
+        hasPermission(dirHandle).then((hasPermission) => {
+            if(!hasPermission) {
+                document.getElementById('permissions').setAttribute('style', 'display: block;'); return;
+            }
+            const observer = new FileSystemObserver((records) => {
+                for (const record of records) {
+                    if (record.type !== 'modified')
+                        return;
+
+                    record.changedHandle.getFile().then(async (file) => {
+                        if (!['application/json'].includes(file.type))
+                            return;
+
+                        file.text()
+                            .then((json) => engine.parseBoard(JSON.parse(json).meetings))
+                            .then(() => set('dir', dirHandle)
+                            .then(() => location.reload()));
+                    });
+                }
+            });
+            observer.observe(dirHandle, {
+                recursive: false
+            });
+            console.log(observer);
+        });
+    });
 });
+
+async function hasPermission(handle) {
+    if ((await handle.queryPermission()) === 'granted')  return true; // Permission already granted
+    return false; // Permission denied
+}

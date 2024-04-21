@@ -63,10 +63,5 @@ exports.subtitles = {
         label: 'Living as Christians',
         color: 'MistyRose',
         S89: false
-    },
-    A: {
-        label: 'Attendant',
-        color: 'DarkSlateGray',
-        S89: false
     }
 }
