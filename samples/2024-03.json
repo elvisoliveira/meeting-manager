@@ -150,7 +150,72 @@
       "week": "2024/12",
       "label": "19 March",
       "theme": "SALMOS 19-21",
-      "message": "Não há reunião devido ao <p>Memorial da morte de Jesus</p> no domingo, 24 March"
+      "chairman": "Will Smith",
+      "opening_song": 6,
+      "opening_talk": {
+        "time": 10,
+        "title": "“Os céus declaram a glória de Deus”",
+        "number": 1,
+        "speaker": "Denzel Washington"
+      },
+      "spiritual_gems": {
+        "time": 10,
+        "title": "Joias espirituais",
+        "number": 2,
+        "conductor": "Dwayne Johnson"
+      },
+      "bible_reading": {
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "number": 3,
+        "lesson": "th lição 11",
+        "assignment": "Sal. 19:1-14",
+        "reader": "Harrison Ford"
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "time": 3,
+          "title": "Iniciando conversas",
+          "number": 4,
+          "lesson": "lmd lição 2 ponto 3",
+          "assigned": "Meryl Streep",
+          "assistant": "Michelle Pfeiffer"
+        },
+        {
+          "time": 4,
+          "title": "Iniciando conversas",
+          "number": 5,
+          "lesson": "lmd lição 3 ponto 4",
+          "assigned": "Johnny Depp",
+          "assistant": "Chris Hemsworth"
+        },
+        {
+          "time": 5,
+          "title": "Explicando suas crenças",
+          "number": 6,
+          "lesson": "th lição 6",
+          "theme": "A Ceia do Senhor — Por que as Testemunhas de Jeová celebram de modo diferente?",
+          "assigned": "Brad Pitt"
+        }
+      ],
+      "middle_song": 141,
+      "living_as_christians": [
+        {
+          "time": 15,
+          "title": "A Criação Aumenta Nossa Fé",
+          "number": 7,
+          "speaker": "Will Smith"
+        }
+      ],
+      "congregation_bible_study": {
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "number": 8,
+        "conductor": "Matt Damon",
+        "reader": "Christian Bale"
+      },
+      "closing_song": 127,
+      "closing_prayer": "Leonardo DiCaprio"
     },
     {
       "week": "2024/13",

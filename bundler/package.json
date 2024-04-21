@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "dev": "parcel serve src/*.{html,svg} --no-cache --no-hmr",
-        "build": "parcel build src/*.{html,svg} --dist-dir docs --public-url /meeting-manager"
+        "dev": "parcel serve ./src/*.{html,svg} --no-cache --no-hmr",
+        "build": "parcel build ./src/*.{html,svg} --dist-dir ../docs --public-url /meeting-manager"
     },
     "author": "",
     "license": "ISC",
