@@ -1,0 +1,78 @@
+{{#if meetings.length}}
+    <style type="text/css">
+        {{#each subtitles}}
+            span.{{lowercase @key}} { background-color: {{ this.color }}; }
+        {{/each}}
+    </style>
+    <table id="main" class="table table-striped-columns table-hover m-0">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <i class="fa fa-sort" aria-hidden="true" style="color: white;"></i>
+                    <i class="fa fa-print" aria-hidden="true" style="color: white;"></i>
+                </th>
+                {{#each meetings}}
+                    <th scope="col">
+                        <span>
+                            <input type="checkbox" id="{{@key}}" value="{{this.date}}" />
+                            <label for="{{@key}}" class="sort">{{this.label}}</label>
+                        </span>
+                    </th>
+                {{/each}}
+                <th scope="col" data-bs-toggle="tooltip" title="Total of meetings without assingment"><i class="fa fa-sort" aria-hidden="true"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th
+                    data-bs-toggle="tooltip"
+                    data-bs-html="true"
+                    data-bs-placement="right"
+                    {{#if this.partners}}
+                    title="<table class='tooltip-table'>{{this.partners}}</table>"
+                    {{/if}}
+                    scope="row">
+                    <i class="fa fa-minus-square" aria-hidden="true"></i>
+                    <i class="fa fa-copy" aria-hidden="true"></i>
+                    {{this.name}}
+                </th>
+                {{#each this.meetings}}
+                    <td>
+                    {{#each this.assignments}}
+                    <span
+                        data-bs-toggle="tooltip"
+                        data-bs-html="true"
+                        onclick="getS89({{this.ID}})"
+                        title="{{lookup (lookup ../../../subtitles this.assignment) 'label'}}{{#if this.partner}}<br />with {{publisher this.partner}}{{/if}}"
+                        class="badge {{lowercase this.assignment}}">{{this.assignment}}</span>
+                    {{/each}}
+                    </td>
+                {{/each}}
+                <td><i class="fa fa-hashtag" aria-hidden="true"></i></td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th><i class="fa fa-asterisk" aria-hidden="true"></i></th>
+                <td colspan="{{meetings.length}}" style="text-align: center">No data</td>
+                <td><i class="fa fa-hashtag" aria-hidden="true"></i></td>
+            </tr>
+        </tfoot>
+    </table>
+    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#filters" id="draggable">
+        <i class="fa fa-arrows" aria-hidden="true"></i> Filters
+    </button>
+    <button type="button" class="btn btn-primary btn-sm" id="permissions">Grant Permissions</button>
+{{else}}
+    <div class="drag-area">
+        <div class="icon">
+            <i class="fas fa-images"></i>
+        </div>
+        <span class="header">Drag & Drop</span>
+        <span class="header"><span class="button">browse</span> or <span class="button" id="sample">load sample data</span></span>
+        <span class="support">Supports: JSON</span>
+        <input type="file" multiple hidden accept=".json" />
+    </div>
+{{/if}}
