@@ -9,11 +9,15 @@ $grey: #2a6b77;
     font-size: 12px;
 }
 
+@page {
+    margin: 5mm;
+}
+
 table {
     width: 100%;
     border-collapse: separate;
     td {
-        padding: 3px;
+        padding: 2px;
         &.hr {
             height: auto;
             background-color: #FFF;
@@ -35,18 +39,22 @@ table {
         > tbody {
             counter-reset: page;
             > tr {
-                span.page {
+                tfoot {
                     display: none;
                     text-align: right;
-                    padding: 0 8px;
+                    span.page {
+                        padding: 0 8px;
+                    }
                 }
                 &:nth-child(even) {
                     page-break-after: always;
-                    span.page {
-                        display: block;
-                        &:after {
-                            counter-increment: page;
-                            content: " " counter(page);
+                    tfoot {
+                        display: table-row-group;
+                        span.page {
+                            &:after {
+                                counter-increment: page;
+                                content: " " counter(page);
+                            }
                         }
                     }
                 }

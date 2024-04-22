@@ -95,7 +95,7 @@ document.addEventListener('drop', (e) => {
     loadFiles(e.dataTransfer.files);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const data = [];
 
     engine.lib.queryAll('publishers', {
@@ -131,13 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
         data.push(publisher);
     });
 
-    boot.innerHTML = Handlebars.compile(document.getElementById('template').innerHTML)({
-        data,
-        subtitles,
-        meetings: engine.lib.queryAll('meetings', {
-            sort: [['date', 'ASC']]
-        })
-    });
+    await fetch('template.hbs').then((response) => response.text().then((html) => {
+        boot.innerHTML = Handlebars.compile(html)({
+            data,
+            subtitles,
+            meetings: engine.lib.queryAll('meetings', {
+                sort: [['date', 'ASC']]
+            })
+        });
+    }));
 
     if(data.length === 0) {
 
@@ -186,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         dropArea.querySelector('span#sample').addEventListener('click', function() {
-            for (const [key, value] of Object.entries(require('../../samples/*.json'))) {
+            for (const [key, value] of Object.entries(require('../samples/*.json'))) {
                 engine.parseBoard(value.meetings);
             }
             window.document.dispatchEvent(new Event('DOMContentLoaded', {
@@ -200,8 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
 
-    document.querySelector('div.modal-body').insertAdjacentHTML('afterbegin', Handlebars.compile(document.getElementById('filter').innerHTML)({
-        subtitles
+    await fetch('filter.hbs').then((response) => response.text().then((html) => {
+        document.querySelector('div.modal-body').insertAdjacentHTML('afterbegin', Handlebars.compile(html)({
+            subtitles
+        }));
     }));
 
     document.querySelector('i.fa-print').addEventListener('click', (() => {

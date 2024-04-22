@@ -2,10 +2,10 @@
     "extends": "@parcel/config-default",
     "resolvers": ["@parcel/resolver-glob", "..."],
     "transformers": {
-        "*.svg": ["@parcel/transformer-raw"]
+        "*.{handlebars,hbs}": ["@parcel/transformer-raw"]
     },
     "compressors": {
-        "*.{html,css,js}": [
+        "*.{html,css,js,hbs}": [
             "...",
             "@parcel/compressor-gzip",
             "@parcel/compressor-brotli"
