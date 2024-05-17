@@ -6,7 +6,7 @@
         "predev": "json-merger --default-array-merge-operation \"concat\" --output ./samples.json $(ls ./samples/*.json)",
         "dev": "parcel serve ./src/*.{hbs,pug} --no-cache --no-hmr",
         "prebuild": "npm run predev",
-        "build": "rm -rf ./docs && parcel build ./src/*.{html,hbs} --dist-dir ./docs --public-url /meeting-manager"
+        "build": "rm -rf ./docs && parcel build ./src/*.{hbs,pug} --dist-dir ./docs --public-url /meeting-manager"
     },
     "author": "",
     "license": "ISC",
