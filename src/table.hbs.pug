@@ -1,0 +1,81 @@
+include utils
+| {{#if meetings.length}}
+each type in Object.keys(subtitles)
+  style.
+      span.#{type} {
+        background-color: #{subtitles[type].color};
+      }
+table#main.table.table-striped-columns.table-hover.m-0
+  thead
+    tr
+      th(scope='col')
+        div
+          +icon('sort')(style='color: white;')
+          +icon('print')(style='color: white;')
+      | {{#each meetings}}
+      th(scope='col')
+        span
+          input(type='checkbox' id='{{@key}}' value='{{this.date}}')
+          label.sort(for='{{@key}}') {{this.label}}
+      | {{/each}}
+      th(
+        scope='col'
+        data-bs-toggle='tooltip'
+        title='{{ i18n \'NO_ASSIGNMENTS\' }}'
+      )
+        +icon('sort')
+  tbody
+    | {{#each data}}
+    tr
+      th(
+        data-bs-toggle="tooltip"
+        data-bs-html="true"
+        data-bs-placement="right"
+        scope="row"
+        title=`${partners}`
+      )
+        +icon('minus-square hide')
+        +icon('copy copy')
+        | {{this.name}}
+      | {{#each this.meetings}}
+      td
+        div
+          | {{#each this.assignments}}
+          span(
+            data-bs-toggle="tooltip"
+            data-bs-html="true"
+            onclick="getS89({{this.ID}})"
+            class="badge {{this.assignment}}"
+            title=`${tooltip}`
+          )
+            | {{this.assignment}}
+          | {{/each}}
+      | {{/each}}
+      td
+        +icon('hashtag')
+    | {{/each}}
+  tfoot
+    tr
+      th
+        +icon('asterisk')
+      td(colspan='{{meetings.length}}' style='text-align: center') {{ i18n 'NO_DATA' }}
+      td
+        +icon('hashtag')
+button#draggable.btn.btn-primary.btn-sm(
+  type='button'
+  data-bs-toggle='modal'
+  data-bs-target='#filters'
+)
+  +icon('arrows')
+  | &nbsp; {{ i18n 'SETTINGS' }}
+button#permissions.btn.btn-primary.btn-sm(type='button') {{ i18n 'GRANT_PERMISSIONS' }}
+| {{else}}
+.drag-area
+  span.header {{ i18n 'DRAG_AND_DROP' }}
+  span.header
+    span#browse.button {{ i18n 'BROWSE' }}
+    | &nbsp; {{ i18n 'OR' }} &nbsp;
+    span#sample.button {{ i18n 'SAMPLE' }}
+  span.support {{ i18n 'SUPPORTS' }}: JSON
+  input(type='file' multiple='' hidden='' accept='.json')
+| {{/if}}

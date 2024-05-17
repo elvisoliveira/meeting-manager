@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-14",
             "label": "11 April",
             "theme": "2 CRÔNICAS 8-9",
@@ -35,13 +34,15 @@
                 "speaker": "Morgan Freeman",
                 "theme": "Discurso de serviço: Permaneçam “bem estabelecidos na verdade”!"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Christian Bale",
                     "theme": "Boletim do Corpo Governante (2023) — n.º 2"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-15",
             "label": "18 April",
             "theme": "2 CRÔNICAS 10-12",
@@ -75,17 +76,20 @@
                 "conductor": "Will Smith",
                 "reader": "Johnny Depp"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 5,
                     "speaker": "Tom Hanks",
                     "theme": "Como usar os vídeos que falam sobre o estudo da Bíblia?"
-                }, {
+                },
+                {
                     "time": 10,
                     "speaker": "Matt Damon",
                     "theme": "Necessidades locais"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-16",
             "label": "25 April",
             "theme": "2 CRÔNICAS 13-16",
@@ -119,14 +123,17 @@
                 "conductor": "Matt Damon",
                 "reader": "Brad Pitt"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Tom Hanks",
                     "theme": "Decisões que mostram confiança em Jeová"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-17",
+            "label": "2 May",
             "message": "Não há reunião por causa da <p>Assembleia de Circuito</p> Amigos da Paz"
         }
     ]

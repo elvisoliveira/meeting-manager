@@ -1,0 +1,63 @@
+include utils
+#filters.modal.fade(tabindex='-1' aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title {{ i18n 'SETTINGS' }}
+        button.btn-close(type='button' data-bs-dismiss='modal')
+      .modal-body
+        table.table
+          thead
+            tr
+              th
+                span #
+              th
+                span {{ i18n 'ASSIGNMENT' }}
+              th
+                span {{ i18n 'ACRONYM' }}
+              th
+                span {{ i18n 'S_89_EN' }}
+          tbody
+            | {{#each subtitles}}
+            tr
+              th(style='text-align: center;')
+                input.form-check-input(type='checkbox' id='{{@key}}' value='{{@key}}' checked='')
+              td {{ i18n @key }}
+              td
+                span.badge(class='{{@key}}') {{@key}}
+              td
+                | {{#if this.S89 }}
+                +icon('check')
+                | {{/if}}
+            | {{/each}}
+        .form-outline.row.mt-3
+          .col-5
+            label.form-label {{ i18n 'THRESHOLD' }}
+            input#threshold.form-control(type='number' value='10')
+          .col
+            label.form-label {{ i18n 'LANGUAGE' }}
+            select#language.form-select
+              option(value='pt') {{ i18n 'LANGUAGE_PT' }}
+              option(value='en-US') {{ i18n 'LANGUAGE_EN' }}
+        .form-outline.row.mt-3
+          .col-7
+            label.form-label {{ i18n 'S_89_FORM' }}
+            input#S89.form-control(type='file' accept='application/pdf')
+          .col
+            label.form-label {{ i18n 'S_89_DOWN' }}
+            select#output.form-select
+              option(value='png') .png
+              option(value='pdf') .pdf
+      .modal-footer
+        button#none.btn.btn-secondary(type='button')
+          span
+            +icon('ban')
+            | &nbsp; {{ i18n 'NONE' }}
+        button#all.btn.btn-primary(type='button')
+          span
+            +icon('check-square-o')
+            | &nbsp; {{ i18n 'ALL' }}
+        button#clear.btn.btn-danger(type='button')
+          span
+            +icon('trash')
+            | &nbsp; {{ i18n 'CLEAR' }}

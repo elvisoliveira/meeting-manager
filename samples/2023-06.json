@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-22",
             "label": "6 June",
             "theme": "2 CRÔNICAS 30-31",
@@ -34,17 +33,20 @@
             "congregation_bible_study": {
                 "conductor": "Matt Damon"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 5,
                     "speaker": "Leonardo DiCaprio",
                     "theme": "Torne-se Amigo de Jeová — Prepare Seu Comentário"
-                }, {
+                },
+                {
                     "time": 10,
                     "speaker": "Will Smith",
                     "theme": "Realizações da organização"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-23",
             "label": "13 June",
             "theme": "2 CRÔNICAS 32-33",
@@ -78,17 +80,20 @@
                 "conductor": "Will Smith",
                 "reader": "Robert Downey Jr."
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 10,
                     "speaker": "Christian Bale",
                     "theme": "Boletim do Corpo Governante (2023) — n.º 4"
-                }, {
+                },
+                {
                     "time": 5,
                     "speaker": "Christian Bale",
                     "theme": "Necessidades locais"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-24",
             "label": "20 June",
             "theme": "2 CRÔNICAS 34-36",
@@ -121,13 +126,15 @@
             "congregation_bible_study": {
                 "conductor": "Tom Hanks"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Matt Damon",
                     "theme": "“Você está usando bem a Bíblia em áudio?”"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-25",
             "label": "27 June",
             "theme": "ESDRAS 1-3",
@@ -161,7 +168,8 @@
                 "conductor": "Christian Bale",
                 "reader": "Tom Cruise"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Will Smith",
                     "theme": "“Tenha alegria ao iniciar conversas”"

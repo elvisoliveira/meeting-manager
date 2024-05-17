@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-26",
             "label": "4 July",
             "theme": "ESDRAS 4-6",
@@ -35,13 +34,15 @@
             "congregation_bible_study": {
                 "conductor": "Matt Damon"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Tom Hanks",
                     "theme": "“Nós ‘defendemos e estabelecemos legalmente as boas novas’”"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-27",
             "label": "11 July",
             "theme": "ESDRAS 7-8",
@@ -76,13 +77,15 @@
                 "conductor": "Will Smith",
                 "reader": "Johnny Depp"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Christian Bale",
                     "theme": "Necessidades locais"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-28",
             "label": "18 July",
             "theme": "ESDRAS 9-10",
@@ -115,13 +118,15 @@
             "congregation_bible_study": {
                 "conductor": "Tom Hanks"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Leonardo DiCaprio",
                     "theme": "A Obediência nos Protege (2 Tes. 1:8)"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-29",
             "label": "25 July",
             "theme": "NEEMIAS 1-2",
@@ -155,14 +160,17 @@
                 "conductor": "Christian Bale|Matt Damon",
                 "reader": "Brad Pitt"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Will Smith",
                     "theme": "Torne-se Amigo de Jeová — Será Que Jeová Responde Nossas Orações?"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-30",
+            "label": "1 August",
             "message": "Não há reunião devido ao <p>Congresso regional de 2023</p> Seja Paciente"
         }
     ]

@@ -5,9 +5,8 @@ const comparer = (idx, asc) => (a, b) => {
     const valueB = getCellValue(asc ? b : a, idx);
 
     // Handle empty values or non-numeric values
-    if (valueA === '' || valueB === '' || isNaN(valueA) || isNaN(valueB)) {
+    if (valueA === '' || valueB === '' || isNaN(valueA) || isNaN(valueB))
         return valueA.toString().localeCompare(valueB);
-    }
 
     // Numeric comparison
     return valueA - valueB;

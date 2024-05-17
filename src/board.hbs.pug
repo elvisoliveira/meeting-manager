@@ -1,0 +1,124 @@
+include utils
+| {{#each meetings}}
+tr
+  td(colspan='2')
+    table.meeting
+      | {{#if this.message}}
+      tbody
+        tr.head
+          td.label {{this.label}} - {{this.theme}}
+      tbody
+        tr
+          td
+            .message {{{this.message}}}
+      | {{else}}
+      tbody
+        tr.head
+          td.label(colspan='4') {{this.label}} - {{this.theme}}
+          td.title {{i18n 'CH'}}
+          td.assigned {{d this.chairman}}
+        tr
+          td.time {{time 5}}
+          td(colspan='5')
+            | {{i18n 'SONG'}}: 
+            strong {{this.opening_song}}
+        tr
+          td.time {{time 1}}
+          td(colspan='5') {{i18n 'OPENING_COMMENTS'}}
+            tbody.treasures
+              tr
+                td
+                  +section('treasures')
+                td(colspan='5') {{i18n 'TREASURES'}}
+              | {{#with this.opening_talk}}
+              tr
+                td.time {{time time}}
+                td(colspan='4') {{title}}
+                td.assigned {{d speaker}}
+              | {{/with}}
+              | {{#with this.spiritual_gems}}
+              tr
+                td.time {{time time}}
+                td(colspan='4') {{title}}
+                td.assigned {{d conductor}}
+              | {{/with}}
+              | {{#with this.bible_reading}}
+              tr
+                td.time {{time time}}
+                td(colspan='3') {{title}}
+                td.title {{i18n 'STUDENT'}}
+                td.assigned {{d reader}}
+              | {{/with}}
+            tbody.apply
+              tr
+                td
+                  +section('apply')
+                td(colspan='3') {{i18n 'APPLY'}}
+              | {{#each this.apply_yourself_to_the_field_ministry}}
+              tr
+                td.time {{time this.time}}
+                td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}') {{this.title}}
+                td.title
+                  | {{#if this.lesson}}
+                  | {{i18n 'STUDENT'}}
+                  | {{else}}
+                  | {{i18n 'CONDUCTOR'}}
+                  | {{/if}}
+                td.assigned {{d this.assigned}}
+                | {{#if this.assistant}}
+                td.title {{i18n 'ASSISTANT'}}
+                td.assigned {{d this.assistant}}
+                | {{/if}}
+              | {{/each}}
+            tbody.living
+              tr
+                td
+                  +section('living')
+                td(colspan='6') {{i18n 'LIVING'}}
+              tr
+                td.time {{time 5}}
+                td(colspan='5')
+                  | {{i18n 'SONG'}}: 
+                  strong {{this.middle_song}}
+                | {{#each this.living_as_christians}}
+                tr
+                  td.time {{time this.time}}
+                  td(colspan='4') {{this.title}}
+                  td.assigned {{d this.speaker}}
+                | {{/each}}
+                | {{#with this.service_talk}}
+                tr
+                  td.time {{time time}}
+                  td(colspan='4') {{i18n 'SERVICE_TALK'}} {{theme}}
+                  td.assigned {{d speaker}}
+                | {{/with}}
+                | {{#with this.congregation_bible_study}}
+                tr
+                  td.time {{time time}}
+                  td(colspan='0') {{title}}
+                  td.title {{i18n 'CONDUCTOR'}}
+                  td.assigned {{d conductor}}
+                  td.title {{i18n 'READER'}}
+                  td.assigned {{d reader}}
+                | {{/with}}
+            tbody
+              tr
+                td.time {{time 3}}
+                td(colspan='5') {{i18n 'CONCLUDING_COMMENTS'}}
+              tr
+                td.time {{time 5}}
+                td(colspan='3')
+                  | {{i18n 'SONG'}}: 
+                  strong {{this.closing_song}}
+                td.title {{i18n 'PRAYER'}}
+                td.assigned {{this.closing_prayer}}
+              tr
+                td.hr(colspan='6')
+                  // {{time false}}
+                  hr
+            | {{/if}}
+            tfoot
+              tr
+                td(colspan='6')
+                  span.page {{i18n 'PAGE'}}
+| {{/each}}

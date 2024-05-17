@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-35",
             "label": "5 September",
             "theme": "ESTER 1-2",
@@ -26,11 +25,13 @@
                 "assistant": "Saoirse Ronan"
             },
             "middle_song": 106,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "O Que Outros Jovens Dizem — Aparência",
                     "time": 5,
                     "speaker": "Dwayne Johnson"
-                }, {
+                },
+                {
                     "theme": "Realizações da organização",
                     "time": 10,
                     "speaker": "Tom Hanks"
@@ -46,7 +47,8 @@
                 "theme": "Ajuda de Jesus e dos anjos.",
                 "student": "Johnny Depp"
             }
-        }, {
+        },
+        {
             "week": "2023-36",
             "label": "12 September",
             "theme": "ESTER 3-5",
@@ -71,11 +73,13 @@
                 "assistant": "Keira Knightley"
             },
             "middle_song": 65,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "Torne-se Amigo de Jeová — Ester Foi Corajosa",
                     "time": 5,
                     "speaker": "Will Smith"
-                }, {
+                },
+                {
                     "theme": "Necessidades locais",
                     "time": 10,
                     "speaker": "Will Smith"
@@ -93,7 +97,8 @@
                 "student": "Meryl Streep",
                 "assistant": "Julianne Moore"
             }
-        }, {
+        },
+        {
             "week": "2023-37",
             "label": "19 September",
             "theme": "ESTER 6-8",
@@ -121,7 +126,8 @@
                 "assistant": "Michelle Pfeiffer"
             },
             "middle_song": 148,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "“Confie em Jeová ao enfrentar bullying”",
                     "time": 15,
                     "speaker": "Matt Damon"
@@ -137,7 +143,8 @@
                 "theme": "Seja um bom instrutor como Tiago: ensine de modo simples.",
                 "student": "Tom Cruise"
             }
-        }, {
+        },
+        {
             "week": "2023-38",
             "label": "26 September",
             "theme": "ESTER 9-10",
@@ -165,7 +172,8 @@
                 "assistant": "Emma Watson"
             },
             "middle_song": 117,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "“Pastores que trabalham para o bem do povo de Jeová”",
                     "time": 15,
                     "speaker": "Tom Hanks"

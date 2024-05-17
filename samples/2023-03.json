@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-10",
             "label": "7 March",
             "theme": "1 CRÔNICAS 23-26",
@@ -35,17 +34,20 @@
                 "conductor": "Tom Hanks",
                 "reader": "Johnny Depp"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 10,
                     "speaker": "Christian Bale",
                     "theme": "Como ajudar quando acontece um desastre?"
-                }, {
+                },
+                {
                     "time": 5,
                     "speaker": "Leonardo DiCaprio",
                     "theme": "Campanha da Celebração -- Início no sábado  , 11 March"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-11",
             "label": "14 March",
             "theme": "1 CRÔNICAS 27-29",
@@ -80,17 +82,20 @@
                 "conductor": "Will Smith",
                 "reader": "Brad Pitt"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 5,
                     "speaker": "Christian Bale",
                     "theme": "Necessidades locais"
-                }, {
+                },
+                {
                     "time": 10,
                     "speaker": "Matt Damon",
                     "theme": "Realizações da Organização"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-12",
             "label": "21 March",
             "theme": "2 CRÔNICAS 1-4",
@@ -125,13 +130,15 @@
                 "conductor": "Matt Damon",
                 "reader": "Dwayne Johnson"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Tom Hanks",
                     "theme": "Você vai estar preparado para o dia mais importante do ano?"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-13",
             "label": "28 March",
             "theme": "2 CRÔNICAS 5-7",
@@ -165,11 +172,13 @@
             "congregation_bible_study": {
                 "conductor": "Christian Bale"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 10,
                     "speaker": "Will Smith",
                     "theme": "Proteja o seu coração"
-                }, {
+                },
+                {
                     "time": 5,
                     "speaker": "Matt Damon",
                     "theme": "Necessidades locais"

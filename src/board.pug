@@ -1,0 +1,29 @@
+include utils
+doctype html
+head
+  meta(charset='utf8')
+  link(href='board.scss' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Noto+Sans|Fira+Sans|Open+Sans|Oranienbaum' rel='stylesheet')
+table.schedule
+  thead
+    tr
+      td#name
+      td#label
+    tr
+      td.hr(colspan='2')
+        hr
+  tbody#boot
+    tr
+      td
+        +icon('spinner')
+.options
+  form
+    fieldset
+      legend#layout
+      dl(id='borderSpacing')
+        dt
+          label(for='borderSpacing')
+        dd
+          input(type='number' name='borderSpacing' value=3 min=0 max=10)
+    button(type='button' id='print')
+script(type='module' src='board.js')

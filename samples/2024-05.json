@@ -1,6 +1,4 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
     "meetings": [
         {
             "week": "2024/19",
@@ -32,7 +30,7 @@
                 "number": 3,
                 "lesson": "th lição 2",
                 "assignment": "Sal. 38:1-22",
-                "reader": "Harrison Ford"
+                "reader": "Harrison Ford|Johnny Depp"
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -54,7 +52,7 @@
                     "time": 15,
                     "title": "Necessidades locais",
                     "number": 6,
-                    "speaker": "Leonardo DiCaprio"
+                    "speaker": "Leonardo DiCaprio|Matt Damon"
                 }
             ],
             "congregation_bible_study": {
@@ -62,7 +60,7 @@
                 "title": "Estudo bíblico de congregação",
                 "number": 7,
                 "conductor": "Tom Hanks",
-                "reader": "Christian Bale"
+                "reader": "Christian Bale|Leonardo DiCaprio"
             },
             "closing_song": 84,
             "closing_prayer": "Johnny Depp"
@@ -107,7 +105,7 @@
                     "title": "Iniciando conversas",
                     "number": 5,
                     "lesson": "lmd lição 3 ponto 5",
-                    "assigned": "Julia Roberts",
+                    "assigned": "Michelle Pfeiffer|Julia Roberts",
                     "assistant": "Jennifer Lawrence"
                 },
                 {
@@ -178,7 +176,7 @@
                     "title": "Cultivando o interesse",
                     "number": 5,
                     "lesson": "lmd lição 7 ponto 5",
-                    "assigned": "Michelle Pfeiffer",
+                    "assigned": "Julia Roberts|Michelle Pfeiffer",
                     "assistant": "Amy Adams"
                 },
                 {

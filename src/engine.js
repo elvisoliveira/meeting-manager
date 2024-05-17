@@ -1,42 +1,38 @@
 import localStorageDB from 'localstoragedb';
-import { workbook as w } from './refs.workbook';
+import { workbook as w } from './refs/workbook';
 
 export default class Engine {
-    lib = new localStorageDB('library', localStorage);
     constructor() {
         const self = this;
         const database = {
+            info: ['label', 'value'],
             meetings: ['label', 'date', 'data'],
             publishers: ['name'],
             assignments: ['meeting', 'assignment', 'type', 'number', 'assigned', 'partner', '_assigned', '_partner']
         }
 
-        Object.keys(database).forEach(function(key) {
+        self.lib = new localStorageDB('library', localStorage);
+
+        Object.keys(database).forEach((key) => {
             if(!self.lib.tableExists(key))
                 self.lib.createTable(key, database[key]);
         });
     }
-    getPublisher(id) {
+    getPublisher(ID) {
         const publisher = this.lib.queryAll('publishers', {
-            query: {
-                ID: id
-            }
+            query: { ID }
         }).find(Boolean);
         return publisher;
     }
-    getMeeting(id) {
+    getMeeting(ID) {
         const meeting = this.lib.queryAll('meetings', {
-            query: {
-                ID: id
-            }
+            query: { ID }
         }).find(Boolean);
         return meeting;
     }
-    getAssignment(id) {
+    getAssignment(ID) {
         const assignment = this.lib.queryAll('assignments', {
-            query: {
-                ID: id
-            }
+            query: { ID }
         }).find(Boolean);
         assignment.assigned = this.getPublisher(assignment.assigned);
         assignment.partner = this.getPublisher(assignment.partner);
@@ -45,6 +41,7 @@ export default class Engine {
     }
     parseBoard(meetings) {
         const self = this;
+
         meetings.forEach((m) => { // meeting
             const date = m.week.replace(/\D/g, '');
             const meeting = self.lib.insertOrUpdate('meetings', { date }, {
@@ -68,42 +65,42 @@ export default class Engine {
                 CP: { name: m[w.CP] },
                 BR: { name: m[w.BR].reader },
                 OT: { name: m[w.OT].speaker },
-                SG: { name: m[w.SG].hasOwnProperty('conductor') ? m[w.SG].conductor : m[w.SG] },
+                SG: { name: Object.prototype.hasOwnProperty.call(m[w.SG], 'conductor') ? m[w.SG].conductor : m[w.SG] },
                 LAC: m[w.LAC].map(p => ({ name: p.speaker }))
             };
 
-            if(m.hasOwnProperty(w.CBS)) {
+            if(Object.prototype.hasOwnProperty.call(m, w.CBS)) {
                 data.CSC = { name: m[w.CBS].conductor };
-                if(m[w.CBS].hasOwnProperty('reader'))
+                if(Object.prototype.hasOwnProperty.call(m[w.CBS], 'reader'))
                     data.CSR = { name: m[w.CBS].reader };
             }
 
-            if(m.hasOwnProperty(w.TA))
+            if(Object.prototype.hasOwnProperty.call(m, w.TA))
                 data.TA = { name: m[w.TA].student };
 
             [w.IC, w.RV, w.BS].forEach((t) => {
-                if (m.hasOwnProperty(t) && m[t].hasOwnProperty('student'))
+                if (Object.prototype.hasOwnProperty.call(m, t) && Object.prototype.hasOwnProperty.call(m[t], 'student'))
                     data.SA.push({
                         name: m[t].student,
-                        partner: m[t].hasOwnProperty('assistant') && m[t].assistant,
+                        partner: Object.prototype.hasOwnProperty.call(m[t], 'assistant') && m[t].assistant,
                         type: t,
                     });
-                if (m.hasOwnProperty(t) && m[t].hasOwnProperty('assistant'))
+                if (Object.prototype.hasOwnProperty.call(m, t) && Object.prototype.hasOwnProperty.call(m[t], 'assistant'))
                     data.AA.push({
                         name: m[t].assistant,
-                        partner: m[t].hasOwnProperty('student') && m[t].student,
+                        partner: Object.prototype.hasOwnProperty.call(m[t], 'student') && m[t].student,
                         type: t
                     });
             });
 
             if(m[w.AYF])
                 m[w.AYF].forEach((v) => {
-                    if(v.hasOwnProperty('theme')) {
+                    if(Object.prototype.hasOwnProperty.call(v, 'theme'))
                         data.TA = {
                             name: v.assigned,
                             number: v.number
                         };
-                    } else if(v.hasOwnProperty('assistant')) {
+                    else if(Object.prototype.hasOwnProperty.call(v, 'assistant')) {
                         data.SA.push({
                             name: v.assigned,
                             partner: v.assistant,
@@ -115,11 +112,11 @@ export default class Engine {
                             partner: v.assigned,
                             type: v.title
                         });
-                    } else {
+                    }
+                    else
                         data.DIS.push({
                             name: v.assigned
                         });
-                    }
                 });
 
             Object.keys(data).forEach((key) =>  {
@@ -147,6 +144,13 @@ export default class Engine {
             partner: partner[0],
             _partner: partner[1],
         });
+    }
+    setInfo(label, value) {
+        this.lib.insert('info', {
+            label,
+            value
+        });
+        this.lib.commit();
     }
     setPublisher(name) {
         const self = this;

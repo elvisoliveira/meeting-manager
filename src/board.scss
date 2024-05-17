@@ -13,11 +13,80 @@ $grey: #2a6b77;
     margin: 5mm;
 }
 
+@media print {
+    div.options {
+        display: none;
+    }
+    .schedule {
+        width: 100% !important;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+div.options {
+    background-color: #f1f1f1;
+    width: calc(300px - 20px);
+    height: 100%;
+    position: fixed;
+    right: 0;
+    padding: 10px;
+    form {
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            legend {
+                font-weight: bold;
+                padding: 0 10px;
+                color: #333;
+            }
+            dl {
+                dt {
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    color: #333;
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                        color: #555;
+                    }
+                }
+                dd {
+                    margin-bottom: 10px;
+                    input[type="number"] {
+                        width: 100%;
+                        padding: 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+        > button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+}
+
 table {
     width: 100%;
     border-collapse: separate;
     td {
-        padding: 2px;
+        padding: 3px;
         &.hr {
             height: auto;
             background-color: #FFF;
@@ -36,6 +105,8 @@ table {
         }
     }
     &.schedule {
+        float: left;
+        width: calc(100% - 300px);
         > tbody {
             counter-reset: page;
             > tr {
@@ -86,7 +157,8 @@ tbody.apply, tbody.living, tbody.treasures {
             td {
                 font-weight: bold;
                 height: 20px;
-                padding: 0 10px;
+                text-indent: 5px;
+                text-transform: uppercase;
                 &:nth-child(1) {
                     padding: 5px;
                     display: flex;

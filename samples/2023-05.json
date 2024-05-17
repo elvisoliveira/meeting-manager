@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-18",
             "label": "9 May",
             "theme": "2 CRÔNICAS 20-21",
@@ -34,13 +33,15 @@
                 "conductor": "Tom Hanks",
                 "reader": "Tom Cruise"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Matt Damon",
                     "theme": "Você está preparado para uma crise econômica?"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-19",
             "label": "16 May",
             "theme": "2 CRÔNICAS 22-24",
@@ -74,13 +75,15 @@
                 "conductor": "Will Smith",
                 "reader": "Robert Downey Jr."
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Christian Bale",
                     "theme": "Boletim do Corpo Governante (2023) — n.º 3"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-20",
             "label": "23 May",
             "theme": "2 CRÔNICAS 25-27",
@@ -114,13 +117,15 @@
                 "conductor": "Tom Hanks",
                 "reader": "Johnny Depp"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 15,
                     "speaker": "Will Smith",
                     "theme": "Faça Qualquer Sacrifício pela Vida Eterna (Mar. 10:29, 30)"
                 }
             ]
-        }, {
+        },
+        {
             "week": "2023-21",
             "label": "30 May",
             "theme": "2 CRÔNICAS 28-29",
@@ -154,11 +159,13 @@
                 "conductor": "Christian Bale",
                 "reader": "Brad Pitt"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 8,
                     "speaker": "Leonardo DiCaprio",
                     "theme": "“Jeová é o ‘pai dos órfãos’”"
-                }, {
+                },
+                {
                     "time": 7,
                     "speaker": "Will Smith",
                     "theme": "Necessidades locais"

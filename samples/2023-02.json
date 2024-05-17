@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-09",
             "label": "28 February",
             "theme": "1 CRÔNICAS 20-22",
@@ -34,11 +33,13 @@
             "congregation_bible_study": {
                 "conductor": "Will Smith"
             },
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "time": 10,
                     "speaker": "Matt Damon",
                     "theme": "Use os princípios bíblicos para ajudar seus filhos a ser bem-sucedidos"
-                }, {
+                },
+                {
                     "time": 5,
                     "speaker": "Tom Hanks",
                     "theme": "Necessidades locais"

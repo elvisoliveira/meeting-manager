@@ -1,0 +1,19 @@
+include utils
+doctype strict
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Meeting Manager
+  +cdn([
+    'bootstrap@5.3.0/dist/css/bootstrap.min.css',
+    'font-awesome@4.7.0/css/font-awesome.min.css'
+  ], false)
+  link(rel='stylesheet' href='index.scss')
+#boot
+  +icon('spinner')
++cdn([
+  'bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',
+  'bootstrap-show-toast@1.1.5/src/bootstrap-show-toast.min.js',
+  'pdf-lib@1.14.0/dist/pdf-lib.min.js'
+], true)
+script(src='index.js' type='module')

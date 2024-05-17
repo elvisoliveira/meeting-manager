@@ -1,36 +1,5 @@
-import { PDFLib } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
-
-const fields = {
-    name: {
-        id: 1,
-        type: "Text_SanSerif"
-    },
-    assistant: {
-        id: 2,
-        type: "Text_SanSerif"
-    },
-    date: {
-        id: 3,
-        type: "Text_SanSerif"
-    },
-    part_number: {
-        id: 4,
-        type: "Text_SanSerif"
-    },
-    main_hall: {
-        id: 5,
-        type: "CheckBox"
-    },
-    auxiliary_classroom_1: {
-        id: 6,
-        type: "CheckBox"
-    },
-    auxiliary_classroom_2: {
-        id: 7,
-        type: "CheckBox"
-    }
-};
+import { fields } from './refs/S89';
 
 export default class S89 {
     constructor(doc) {
@@ -71,7 +40,7 @@ export default class S89 {
         self.save().then(data => {
             pdfjsLib.getDocument({
                 data,
-                standardFontDataUrl: 'https://unpkg.com/pdfjs-dist@3.11.174/standard_fonts/'
+                standardFontDataUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/standard_fonts/'
             }).promise.then(doc => {
                 doc.getPage(1).then(page => {
                     const viewport = page.getViewport({

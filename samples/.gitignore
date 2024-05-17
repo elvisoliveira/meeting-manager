@@ -1,1 +1,2 @@
-shuffle.sh
+*
+!*.json

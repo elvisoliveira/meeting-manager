@@ -1,7 +1,6 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
-    "meetings": [{
+    "meetings": [
+        {
             "week": "2023-31",
             "label": "8 August",
             "theme": "NEEMIAS 5-7",
@@ -27,7 +26,8 @@
                 "assistant": "Meryl Streep"
             },
             "middle_song": 90,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "Boletim do Corpo Governante (2023) - n.º 5",
                     "time": 15,
                     "speaker": "Tom Hanks"
@@ -43,7 +43,8 @@
                 "theme": "Evangelizadores bem-sucedidos ajudam uns aos outros.",
                 "student": "Brad Pitt|Johnny Depp"
             }
-        }, {
+        },
+        {
             "week": "2023-32",
             "label": "15 August",
             "theme": "NEEMIAS 8-9",
@@ -69,7 +70,8 @@
                 "assistant": "Emma Stone"
             },
             "middle_song": 132,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "“Você pode ajudar sua família a ter mais alegria”",
                     "time": 15,
                     "speaker": "Christian Bale"
@@ -86,7 +88,8 @@
                 "student": "Julianne Moore",
                 "assistant": "Margot Robbie"
             }
-        }, {
+        },
+        {
             "week": "2023-33",
             "label": "22 August",
             "theme": "NEEMIAS 10-11",
@@ -112,11 +115,13 @@
                 "assistant": "Scarlett Johansson"
             },
             "middle_song": 81,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "“Quais são os seus alvos para o novo ano de serviço?”",
                     "time": 10,
                     "speaker": "Will Smith"
-                }, {
+                },
+                {
                     "theme": "“Campanha especial em setembro para divulgar o Reino de Deus!”",
                     "time": 5,
                     "speaker": "Tom Hanks"
@@ -159,11 +164,13 @@
                 "assistant": "Nicole Kidman"
             },
             "middle_song": 108,
-            "living_as_christians": [{
+            "living_as_christians": [
+                {
                     "theme": "Necessidades locais",
                     "time": 5,
                     "speaker": "Matt Damon"
-                }, {
+                },
+                {
                     "theme": "“Imite o amor leal de Jeová”",
                     "time": 10,
                     "speaker": "Denzel Washington"

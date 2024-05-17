@@ -1,6 +1,4 @@
 {
-    "congregation": "Congregation XYZ",
-    "time": "19:15",
     "meetings": [
         {
             "week": "2024/14",
@@ -290,7 +288,7 @@
             "week": "2024/18",
             "label": "30 April",
             "theme": "SALMOS 34-35",
-            "chairman": "Tom Hanks",
+            "chairman": "Tom Hanks|Christian Bale",
             "opening_song": 10,
             "opening_talk": {
                 "time": 10,
@@ -310,7 +308,7 @@
                 "number": 3,
                 "lesson": "th lição 5",
                 "assignment": "Sal. 34:1-22",
-                "reader": "Al Pacino"
+                "reader": "Al Pacino|Johnny Depp"
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -326,7 +324,7 @@
                     "title": "Cultivando o interesse",
                     "number": 5,
                     "lesson": "lmd lição 2 ponto 4",
-                    "assigned": "Reese Witherspoon",
+                    "assigned": "Reese Witherspoon|Jennifer Aniston",
                     "assistant": "Margot Robbie"
                 },
                 {
@@ -334,8 +332,8 @@
                     "title": "Explicando suas crenças",
                     "number": 6,
                     "lesson": "th lição 17",
-                    "assigned": "Brad Pitt",
-                    "assistant": "Chris Hemsworth"
+                    "assigned": "Brad Pitt|Amy Adams",
+                    "assistant": "Chris Hemsworth|Jessica Chastain"
                 }
             ],
             "middle_song": 59,
@@ -344,7 +342,7 @@
                     "time": 15,
                     "title": "Três formas de louvar a Jeová nas reuniões",
                     "number": 7,
-                    "speaker": "Tom Hanks"
+                    "speaker": "Tom Hanks|Matt Damon"
                 }
             ],
             "congregation_bible_study": {

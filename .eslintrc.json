@@ -1,0 +1,38 @@
+{
+    "env": {
+        "amd": true,
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "globals": {
+        "boot": true,
+        "bootstrap": true,
+        "PDFLib": true,
+        "FileSystemObserver": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "prefer-arrow-callback": "error",
+        "operator-linebreak": "off",
+        "comma-style": "off",
+        "no-debugger": "off",
+        "curly": [
+            "error",
+            "multi"
+        ]
+    }
+}
