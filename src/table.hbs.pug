@@ -26,7 +26,7 @@ table#main.table.table-striped-columns.table-hover.m-0
         span
           +icon('sort')
   tbody
-    | {{#each data}}
+    | {{#each data as |value key|}}
     tr
       th(
         data-bs-toggle="tooltip"
@@ -39,7 +39,7 @@ table#main.table.table-striped-columns.table-hover.m-0
         +icon('copy copy')
         | {{this.name}}
       | {{#each this.meetings}}
-      td(class="{{#if (includes this.date ../this.absences) }}absence{{/if}}")
+      td(class="{{includes this.date value.absences}}")
         div
           | {{#each this.assignments}}
           span(

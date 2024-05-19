@@ -21,7 +21,7 @@ i18next.use(detector).init(translation);
 const engine = new Engine();
 
 Handlebars.registerHelper('lowercase', (str) => (str && typeof str === 'string' && str.toLowerCase()) || '');
-Handlebars.registerHelper('includes', (elem, list) => list && list.includes(elem));
+Handlebars.registerHelper('includes', (elem, list) => list && list.includes(elem) ? 'absence' : '');
 Handlebars.registerHelper('publisher', (id) => engine.getPublisher(id).name);
 
 document.getS89 = (id) => {
