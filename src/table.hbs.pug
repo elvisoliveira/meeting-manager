@@ -23,7 +23,8 @@ table#main.table.table-striped-columns.table-hover.m-0
         data-bs-toggle='tooltip'
         title='{{ i18n \'NO_ASSIGNMENTS\' }}'
       )
-        +icon('sort')
+        span
+          +icon('sort')
   tbody
     | {{#each data}}
     tr
@@ -38,7 +39,7 @@ table#main.table.table-striped-columns.table-hover.m-0
         +icon('copy copy')
         | {{this.name}}
       | {{#each this.meetings}}
-      td
+      td(class="{{#if (includes this.date ../this.absences) }}absence{{/if}}")
         div
           | {{#each this.assignments}}
           span(

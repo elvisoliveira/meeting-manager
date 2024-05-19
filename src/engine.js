@@ -7,7 +7,7 @@ export default class Engine {
         const database = {
             info: ['label', 'value'],
             meetings: ['label', 'date', 'data'],
-            publishers: ['name'],
+            publishers: ['name', 'absences'],
             assignments: ['meeting', 'assignment', 'type', 'number', 'assigned', 'partner', '_assigned', '_partner']
         }
 
@@ -131,6 +131,13 @@ export default class Engine {
 
         self.lib.commit();
     }
+    parseExceptions(absences) {
+        Object.entries(absences).forEach(([key, value]) => this.lib.update('publishers', { name: key }, (r) => {
+            r.absences = value.map((e) => e.replace(/\D/g, ''));
+            return r;
+        }));
+        this.lib.commit();
+    }
     setAssignment(assignment, meetingId, info) {
         const assigned = this.setPublisher(info.name);
         const partner = this.setPublisher(info.partner);
@@ -161,5 +168,8 @@ export default class Engine {
                 publishers.push(publisher[publisher.length - 1] || publisher)
             });
         return publishers;
+    }
+    destroy() {
+        this.lib.drop('library');
     }
 }

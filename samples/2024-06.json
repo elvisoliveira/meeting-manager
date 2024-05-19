@@ -41,7 +41,7 @@
                     "number": 5,
                     "lesson": "th lição 18",
                     "theme": "Qual é a explicação do Salmo 46:10?",
-                    "assigned": "Robert Downey Jr."
+                    "assigned": "Johnny Depp"
                 },
                 {
                     "time": 4,
@@ -64,7 +64,7 @@
                     "time": 5,
                     "title": "Necessidades locais",
                     "number": 8,
-                    "speaker": "Leonardo DiCaprio"
+                    "speaker": "Tom Hanks"
                 }
             ],
             "congregation_bible_study": {
@@ -72,7 +72,7 @@
                 "title": "Estudo bíblico de congregação",
                 "number": 9,
                 "conductor": "Will Smith",
-                "reader": "Johnny Depp"
+                "reader": "Leonardo DiCaprio"
             },
             "closing_song": 111,
             "closing_prayer": "Brad Pitt"
@@ -256,7 +256,7 @@
                     "number": 5,
                     "lesson": "lmd lição 7 ponto 4",
                     "assigned": "Nicole Kidman",
-                    "assistant": "Margot Robbie"
+                    "assistant": "Jessica Chastain"
                 },
                 {
                     "time": 5,

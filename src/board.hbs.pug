@@ -57,7 +57,8 @@ tr
               | {{#each this.apply_yourself_to_the_field_ministry}}
               tr
                 td.time {{time this.time}}
-                td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}') {{this.title}}
+                td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}')
+                  | {{this.title}}{{#if this.theme}}: {{this.theme}}{{/if}}
                 td.title
                   | {{#if this.lesson}}
                   | {{i18n 'STUDENT'}}

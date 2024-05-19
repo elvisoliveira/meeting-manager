@@ -21,6 +21,7 @@ i18next.use(detector).init(translation);
 const engine = new Engine();
 
 Handlebars.registerHelper('lowercase', (str) => (str && typeof str === 'string' && str.toLowerCase()) || '');
+Handlebars.registerHelper('includes', (elem, list) => list && list.includes(elem));
 Handlebars.registerHelper('publisher', (id) => engine.getPublisher(id).name);
 
 document.getS89 = (id) => {
@@ -102,7 +103,7 @@ const loadFiles = (files) => {
         r.onload = (e) => {
             const file = e.target.result;
             const json = new TextDecoder().decode(file);
-            engine.parseBoard(JSON.parse(json).meetings);
+            dataProccess(JSON.parse(json));
         };
         r.readAsArrayBuffer(file);
     });
@@ -195,15 +196,7 @@ const DOMContentLoaded = async (data) => {
                         entry.getFile().then(async (file) => {
                             if (!['application/json'].includes(file.type))
                                 return;
-                            file.text().then((json) => {
-                                const parsed = JSON.parse(json);
-                                if(parsed.meetings)
-                                    engine.parseBoard(parsed.meetings);
-                                ['congregation', 'time'].forEach((entry) => {
-                                    if(parsed[entry])
-                                        engine.setInfo(entry, parsed[entry])
-                                });
-                            });
+                            file.text().then((json) => dataProccess(JSON.parse(json)));
                         })
                     set('dir', dirHandle).then(() => location.reload());
                 });
@@ -236,9 +229,7 @@ const DOMContentLoaded = async (data) => {
         });
 
         dropArea.querySelector('span#sample').addEventListener('click', () => {
-            const samples = require('../samples.json');
-            engine.parseBoard(samples.meetings);
-            ['congregation', 'time'].forEach((entry) => engine.setInfo(entry, samples[entry]));
+            dataProccess(require('../samples.json'));
             window.document.dispatchEvent(new Event('DOMContentLoaded', {
                 bubbles: true,
                 cancelable: true
@@ -294,7 +285,7 @@ const DOMContentLoaded = async (data) => {
     // clear data
     document.querySelector('button#clear').addEventListener('click', () => {
         if(confirm(i18next.t('SURE'))) {
-            localStorage.clear();
+            engine.destroy();
             location.reload();
         }
     });
@@ -445,15 +436,8 @@ const DOMContentLoaded = async (data) => {
                             return;
 
                         file.text()
-                            .then((json) => {
-                                const parsed = JSON.parse(json);
-                                if(parsed.meetings)
-                                    engine.parseBoard(parsed.meetings);
-                                ['congregation', 'time'].forEach((entry) => {
-                                    if(parsed[entry])
-                                        engine.setInfo(entry, parsed[entry])
-                                });
-                            }).then(() => set('dir', dirHandle).then(() => location.reload()));
+                            .then((json) => dataProccess(JSON.parse(json)))
+                            .then(() => set('dir', dirHandle).then(() => location.reload()));
                     });
                 }
             });
@@ -464,6 +448,19 @@ const DOMContentLoaded = async (data) => {
         });
     });
 };
+
+const dataProccess = (data) => {
+    if(data.meetings)
+        engine.parseBoard(data.meetings);
+
+    if(data.absences)
+        engine.parseExceptions(data.absences);
+
+    ['congregation', 'time'].forEach((entry) => {
+        if(data[entry])
+            engine.setInfo(entry, data[entry])
+    });
+}
 
 const hasPermission = async (handle) => {
     if ((await handle.queryPermission()) === 'granted')  return true; // Permission already granted

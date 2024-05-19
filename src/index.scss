@@ -70,6 +70,9 @@ table {
                 justify-content: space-around;
                 column-gap: 5px;
             }
+            &.absence {
+                background-color: #FF7F7F;
+            }
         }
         i {
             margin-right: 5px;
