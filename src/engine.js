@@ -63,7 +63,7 @@ export default class Engine {
                 DIS: [],
                 CH: { name: m[w.CH] },
                 CP: { name: m[w.CP] },
-                BR: { name: m[w.BR].reader },
+                BR: { name: m[w.BR].reader, number: 3 },
                 OT: { name: m[w.OT].speaker },
                 SG: { name: Object.prototype.hasOwnProperty.call(m[w.SG], 'conductor') ? m[w.SG].conductor : m[w.SG] },
                 LAC: m[w.LAC].map(p => ({ name: p.speaker }))

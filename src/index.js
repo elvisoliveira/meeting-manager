@@ -1,27 +1,22 @@
 import { get, set } from 'idb-keyval';
 import { subtitles } from './refs/subtitles';
 import { fingerprints } from './refs/fingerprints';
-import { translation } from './translation';
 
 import * as Handlebars from 'handlebars';
 import * as pdfjsLib from 'pdfjs-dist';
 
+import S89 from './S89';
+import Engine from './engine';
 import TableSort from './table.sort';
-import Engine from './engine.js';
-import S89 from './S89.js';
 
-import i18next from 'i18next';
-import detector from "i18next-browser-languagedetector";
-import registerI18nHelper from 'handlebars-i18next';
-
-registerI18nHelper(Handlebars, i18next);
-
-i18next.use(detector).init(translation);
+import modRow from './modRow';
+import filter from './filter';
+import i18next from './i18n';
 
 const engine = new Engine();
 
-Handlebars.registerHelper('lowercase', (str) => (str && typeof str === 'string' && str.toLowerCase()) || '');
 Handlebars.registerHelper('includes', (elem, list) => list && list.includes(elem) ? 'absence' : '');
+Handlebars.registerHelper('lowercase', (str) => (str && typeof str === 'string' && str.toLowerCase()) || '');
 Handlebars.registerHelper('publisher', (id) => engine.getPublisher(id).name);
 
 document.getS89 = (id) => {
@@ -57,41 +52,6 @@ document.getS89 = (id) => {
             document.S89.saveImage();
             break;
     }
-}
-
-const filter = () => {
-    const main = document.getElementById('main'); // main table
-    const form = document.getElementById('filters');
-
-    const selectedOnes = Array.from(form.querySelectorAll('input[type=\'checkbox\']:checked')).map(e => e.value);
-
-    const url = new URL(window.location);
-    url.searchParams.set('filters', btoa(selectedOnes));
-
-    // Set filters as a param on the URL
-    window.history.pushState({}, '', url.toString());
-
-    // Hide rows according to the threshold range
-    const threshold = +form.querySelector('#threshold').value;
-
-    main.querySelectorAll('tbody tr').forEach((row) => {
-        // Get all td elements and reverse the array
-        const columns = Array.from(row.querySelectorAll('td')).reverse();
-        
-        // Get the value of unassigned weeks from the first column
-        const unassignedWeeks = +columns[0]?.innerText || 0;
-        
-        // Check if any of the badges match the selected ones
-        const badges = row.querySelectorAll('span');
-        const hasSelectedBadge = Array.from(badges).some((badge) => selectedOnes.includes(badge.innerText.trim()));
-        
-        // Determine whether to show or hide the row based on the conditions
-        const shouldShow = unassignedWeeks <= threshold && hasSelectedBadge;
-        row.style.display = shouldShow ? 'table-row' : 'none';
-    });
-
-    // Shows empty tablem message
-    main.querySelector('tfoot tr').style.display = document.querySelectorAll('tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
 }
 
 const loadFiles = (files) => {
@@ -253,7 +213,8 @@ const DOMContentLoaded = async (data) => {
         window.open(`board.html?${params.toString()}`, '_blank');
     }));
 
-    // table
+    // Each column represents a meeting
+    // Add sorting capabilities to each individual column
     document.querySelectorAll('label.sort, i.fa-sort').forEach(label => label.addEventListener('click', () => {
         const table = label.closest('table');
         const tbody = table.querySelector('tbody');
@@ -262,25 +223,10 @@ const DOMContentLoaded = async (data) => {
         Array.from(tbody.querySelectorAll('tr')).sort(TableSort(columnIndex, columnHeader.asc = !columnHeader.asc)).forEach(tr => tbody.appendChild(tr));
     }));
 
-    document.querySelectorAll('#main tbody tr').forEach((row) => {
-        let columns = Array.from(row.querySelectorAll('td')).reverse();
-        let count = 0;
-        columns.every((column) => {
-            if(column.querySelector('span'))
-                return false;
-            column.innerText = '-';
-            count++;
-            return true;
-        });
-        columns[0].innerText = count - 1;
-        row.querySelector('i.hide').addEventListener('click', () => row.style.display = 'none');
-        row.querySelector('i.copy').addEventListener('click', () => {
-            navigator.clipboard.writeText(row.querySelector('th').innerText.trim()).then(() => bootstrap.showToast({
-                body: i18next.t('COPIED'),
-                toastClass: 'text-bg-info'
-            }));
-        });
-    });
+    // Each row represents a publisher
+    // Add hypen to every unassigned meeting after the last assingment (assignment threshold)
+    // Add behavior for hiding rows and copying the publisher name
+    document.querySelectorAll('#main tbody tr').forEach((row) => modRow(row));
 
     // clear data
     document.querySelector('button#clear').addEventListener('click', () => {
@@ -290,7 +236,7 @@ const DOMContentLoaded = async (data) => {
         }
     });
 
-    // filter
+    // Filter
     const filters = (new URL(window.location)).searchParams.get('filters');
 
     const checkboxes = document.querySelectorAll('#filters input[type=\'checkbox\']');
@@ -298,12 +244,25 @@ const DOMContentLoaded = async (data) => {
     checkboxes.forEach(checkboxInput => {
         if(typeof filters === 'string')
             checkboxInput.checked = atob(filters).split(',').includes(checkboxInput.value);
+
         checkboxInput.addEventListener('change', filter);
     });
 
     document.getElementById('threshold').addEventListener('input', filter);
 
+    for (const button of document.querySelectorAll('button#none, button#all'))
+        button.addEventListener('click', (e) => {
+            for (const checkbox of checkboxes)
+                checkbox.checked = (e.target.id || e.target.parentElement.id) === 'all';
+
+            filter();
+        });
+
+    filter();
+
+    // Defined language change behavior
     const language = document.getElementById('language');
+
     language.addEventListener('change', (e) => {
         const modal = document.getElementById('filters');
         modal.addEventListener('hidden.bs.modal', () => {
@@ -312,18 +271,10 @@ const DOMContentLoaded = async (data) => {
         i18next.changeLanguage(e.target.value)
             .then(() => bootstrap.Modal.getInstance(modal).hide());
     });
+
     language.value = i18next.language;
 
-    for (const button of document.querySelectorAll('button#none, button#all'))
-        button.addEventListener('click', (e) => {
-            for (const checkbox of checkboxes)
-                checkbox.checked = (e.target.id || e.target.parentElement.id) === 'all';
-            filter();
-        });
-
-    filter();
-
-    // draggable
+    // Draggable behavior
     let ignore = false;
 
     window.addEventListener ('click', (event) => {
@@ -351,7 +302,7 @@ const DOMContentLoaded = async (data) => {
         window.addEventListener('mouseup', reset);
     });
 
-    // tooltip
+    // Tooltip behavior
     ([].slice.call(document.querySelectorAll('[data-bs-toggle=\'tooltip\']'))).map((tooltipTriggerEl) => {
         const { allowList } = bootstrap.Tooltip.Default;
         allowList.table = [];
@@ -363,24 +314,7 @@ const DOMContentLoaded = async (data) => {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
-    // hover
-    document.querySelectorAll('span[helper]').forEach((data) => {
-        data.addEventListener('mouseover', () => {
-            const helper = data.getAttribute('helper');
-            document.querySelectorAll('tbody th').forEach((row) => {
-                if(row.innerText == helper) {
-                    const index = Array.from(data.closest('tr').childNodes).indexOf(data.parentNode);
-                    const cols = Array.from(row.parentNode.childNodes);
-                    cols[index].id = 'red';
-                }
-            });
-            this.addEventListener('mouseout', () => {
-                document.getElementById('red')?.removeAttribute('id');
-            });
-        });
-    });
-
-    // printing
+    // Printing behavior
     document.querySelectorAll('#main thead input[type=\'checkbox\']').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             const selected = Array.from(document.querySelectorAll('#main thead input[type=\'checkbox\']:checked')).map(element => element.value);
@@ -388,6 +322,7 @@ const DOMContentLoaded = async (data) => {
         });
     });
 
+    // S89 Setup
     document.querySelector('input#S89[type=file]').addEventListener('change', function () {
         const self = this;
         const reader = new FileReader();
@@ -410,6 +345,7 @@ const DOMContentLoaded = async (data) => {
         reader.readAsArrayBuffer(this.files[0]);
     }, false);
 
+    // FileSystemObserver setup
     document.getElementById('permissions').addEventListener('click', () => {
         get('dir').then(async (handle) => {
             if ((await handle.requestPermission({ mode: 'read' })) === 'granted') // Prompt user for permission
