@@ -1,0 +1,231 @@
+{
+    "meetings": [
+        {
+            "week": "2024/32",
+            "label": "6 August",
+            "theme": "SALMOS 70-72",
+            "chairman": "Christian Bale",
+            "opening_song": 59,
+            "opening_talk": {
+                "time": 10,
+                "title": "Fale para a próxima geração sobre o poder de Deus",
+                "number": 1,
+                "speaker": "Matt Damon"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Leonardo DiCaprio"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 5",
+                "assignment": "Sal. 71:1-24",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 4 ponto 5",
+                    "assigned": "Saoirse Ronan",
+                    "assistant": "Reese Witherspoon"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 8 ponto 4",
+                    "assigned": "Julianne Moore",
+                    "assistant": "Jennifer Lawrence"
+                },
+                {
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "number": 6,
+                    "lesson": "th lição 17",
+                    "theme": "Por que as Testemunhas de Jeová mudaram algumas das suas crenças?",
+                    "assigned": "Robert Downey Jr."
+                }
+            ],
+            "middle_song": 76,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Ideias para a Adoração em Família",
+                    "number": 7,
+                    "speaker": "Christian Bale"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Will Smith",
+                "reader": "Denzel Washington"
+            },
+            "closing_song": 123,
+            "closing_prayer": "Tom Hanks"
+        },
+        {
+            "week": "2024/33",
+            "label": "13 August",
+            "theme": "SALMOS 73-74",
+            "chairman": "Will Smith",
+            "opening_song": 36,
+            "opening_talk": {
+                "time": 10,
+                "title": "O que fazer se começarmos a invejar quem não serve a Deus?",
+                "number": 1,
+                "speaker": "Johnny Depp"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Tom Hanks"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 10",
+                "assignment": "Sal. 74:1-23",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 2 ponto 4",
+                    "assigned": "Viola Davis",
+                    "assistant": "Jennifer Aniston"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 8 ponto 3",
+                    "assigned": "Emma Watson",
+                    "assistant": "Amy Adams"
+                },
+                {
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "number": 6,
+                    "lesson": "th lição 14",
+                    "theme": "Será que todas as religiões são boas?",
+                    "assigned": "Vin Diesel"
+                }
+            ],
+            "middle_song": 72,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "number": 7,
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Matt Damon",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 98,
+            "closing_prayer": "Christian Bale"
+        },
+        {
+            "week": "2024/34",
+            "label": "20 August",
+            "theme": "SALMOS 75-77",
+            "message": "Não há reunião devido ao <p>Congresso regional de 2024</p> “Declare as Boas Novas!”"
+        },
+        {
+            "week": "2024/35",
+            "label": "27 August",
+            "theme": "SALMO 78",
+            "chairman": "Matt Damon",
+            "opening_song": 97,
+            "opening_talk": {
+                "time": 10,
+                "title": "Não imite a infidelidade do povo de Israel",
+                "number": 1,
+                "speaker": "Brad Pitt"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 5",
+                "assignment": "Sal. 78:1-22",
+                "reader": "Al Pacino"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 5 ponto 5",
+                    "assigned": "Anne Hathaway",
+                    "assistant": "Halle Berry"
+                },
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 5,
+                    "lesson": "lmd lição 5 ponto 4",
+                    "assigned": "Margot Robbie",
+                    "assistant": "Jessica Chastain"
+                },
+                {
+                    "time": 1,
+                    "title": "Iniciando conversas",
+                    "number": 6,
+                    "lesson": "lmd lição 2 ponto 5",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Meryl Streep"
+                },
+                {
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "number": 7,
+                    "lesson": "lmd lição 2 ponto 4",
+                    "assigned": "Michelle Pfeiffer",
+                    "assistant": "Nicole Kidman"
+                }
+            ],
+            "middle_song": 96,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Aprenda com o exemplo de Filipe, o evangelizador",
+                    "number": 8,
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 9,
+                "conductor": "Tom Hanks",
+                "reader": "Robert Downey Jr."
+            },
+            "closing_song": 101,
+            "closing_prayer": "Denzel Washington"
+        }
+    ]
+}

@@ -199,8 +199,6 @@ const DOMContentLoaded = async (data) => {
         return;
     }
 
-    boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
-
     await fetch('filter.hbs.html').then((response) => response.text().then((html) => {
         boot.insertAdjacentHTML('beforeend', Handlebars.compile(html)({
             subtitles

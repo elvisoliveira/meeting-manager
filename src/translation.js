@@ -1,10 +1,10 @@
 exports.translation = {
     resources: {
         en: {
-            translation: require('./translations/en.json')
+            translation: require('./translations/en_US.json')
         },
         pt: {
-            translation: require('./translations/pt.json')
+            translation: require('./translations/pt_BR.json')
         }
     },
     fallbackLng: 'pt'

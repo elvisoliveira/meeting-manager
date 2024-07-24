@@ -4,6 +4,11 @@ export default function filter () {
 
     const selectedOnes = Array.from(form.querySelectorAll('input[type=\'checkbox\']:checked')).map(e => e.value);
 
+    main.querySelectorAll('.single').forEach(span => span.classList.remove('single'));
+    if (selectedOnes.length === 1)
+        main.querySelectorAll(`span.${selectedOnes[0]}`).forEach(span => span.closest('td').classList.add('single'));
+
+
     const url = new URL(window.location);
     url.searchParams.set('filters', btoa(selectedOnes));
 
@@ -26,10 +31,14 @@ export default function filter () {
 
         // Determine whether to show or hide the row based on the conditions
         const shouldShow = unassignedWeeks <= threshold && hasSelectedBadge;
+
         row.style.display = shouldShow ? 'table-row' : 'none';
     });
 
     // Shows empty tablem message
-    main.querySelector('tfoot tr').style.display = document.querySelectorAll('tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
+    main.querySelector('tfoot tr').style.display = document.querySelectorAll('tbody tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
+
+    // Once filtered, scroll to the current week
+    boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
 }
 

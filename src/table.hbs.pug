@@ -13,17 +13,25 @@ table#main.table.table-striped-columns.table-hover.m-0
           +icon('sort')(style='color: white;')
           +icon('print')(style='color: white;')
       | {{#each meetings}}
-      th(scope='col')
-        span
+      th(
+        class='{{#if this.data.message}}event{{/if}}'
+        scope='col'
+        data-bs-toggle='tooltip'
+        data-bs-html='true'
+        data-bs-placement='bottom'
+        title='{{#if this.data.message}}{{this.data.message}}{{else}}{{ i18n \'WEEK\' }}: {{this.data.week}}{{/if}}'
+      )
+        div
           input(type='checkbox' id='{{@key}}' value='{{this.date}}')
-          label.sort(for='{{@key}}') {{this.label}}
+          +icon('sort')
+          label(for='{{@key}}') {{this.label}}
       | {{/each}}
       th(
         scope='col'
         data-bs-toggle='tooltip'
         title='{{ i18n \'NO_ASSIGNMENTS\' }}'
       )
-        span
+        div
           +icon('sort')
   tbody
     | {{#each data as |value key|}}
@@ -39,7 +47,9 @@ table#main.table.table-striped-columns.table-hover.m-0
         +icon('copy copy')
         | {{this.name}}
       | {{#each this.meetings}}
-      td(class="{{includes this.date value.absences}}")
+      td(
+        class="{{includes this.date value.absences}} {{#if this.data.message}}event{{/if}}"
+      )
         div
           | {{#each this.assignments}}
           span(

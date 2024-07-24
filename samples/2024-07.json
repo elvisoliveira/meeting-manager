@@ -168,8 +168,8 @@
                     "title": "Iniciando conversas",
                     "number": 4,
                     "lesson": "lmd lição 3 ponto 4",
-                    "assigned": "Meryl Streep",
-                    "assistant": "Jennifer Lawrence"
+                    "assigned": "Meryl Streep|Denzel Washington",
+                    "assistant": "Jennifer Lawrence|Hugh Jackman"
                 },
                 {
                     "time": 2,
@@ -185,7 +185,7 @@
                     "number": 6,
                     "lesson": "lmd lição 1 ponto 5",
                     "assigned": "Jessica Chastain",
-                    "assistant": "Keira Knightley"
+                    "assistant": "Keira Knightley|Emma Watson"
                 },
                 {
                     "time": 4,
