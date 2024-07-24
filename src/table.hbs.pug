@@ -48,7 +48,7 @@ table#main.table.table-striped-columns.table-hover.m-0
         | {{this.name}}
       | {{#each this.meetings}}
       td(
-        class="{{includes this.date value.absences}} {{#if this.data.message}}event{{/if}}"
+          class="{{#if this.data.message}}event{{else}}{{includes this.date value.absences}}{{/if}}"
       )
         div
           | {{#each this.assignments}}
