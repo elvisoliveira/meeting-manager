@@ -19,7 +19,7 @@ table#main.table.table-striped-columns.table-hover.m-0
         data-bs-toggle='tooltip'
         data-bs-html='true'
         data-bs-placement='bottom'
-        title='{{#if this.data.message}}{{this.data.message}}{{else}}{{ i18n \'WEEK\' }}: {{this.data.week}}{{/if}}'
+        title=`${columnBadge}`
       )
         div
           input(type='checkbox' id='{{@key}}' value='{{this.date}}')

@@ -15,10 +15,19 @@ const tooltip = pug.compile(`
 | {{/if}}
 `);
 
+const columnBadge = pug.compile(`
+| {{#if this.data.message}}
+| {{this.data.message}}
+| {{else}}
+| {{ i18n \'WEEK\' }}: {{this.data.week}}
+| {{/if}}
+`);
+
 module.exports = {
     locals: {
         partners: partners(),
         tooltip: tooltip(),
+        columnBadge: columnBadge(),
         subtitles: require('./src/refs/subtitles.js').subtitles
     }
 };
