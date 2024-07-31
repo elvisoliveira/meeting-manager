@@ -1,27 +1,23 @@
 exports.subtitles = {
-    S: {
-        color: 'IndianRed',
+    AA: {
+        color: 'LightGreen',
         S89: false
     },
-    CH: {
-        color: 'Pink',
-        S89: false
-    },
-    SG: {
-        color: 'Violet',
-        S89: false
-    },
-    CP: {
-        color: 'Salmon',
-        S89: false
-    },
-    OT: {
-        color: 'Aquamarine',
+    AT: {
+        color: 'DarkGray',
         S89: false
     },
     BR: {
         color: 'Tomato',
         S89: true
+    },
+    CH: {
+        color: 'Pink',
+        S89: false
+    },
+    CP: {
+        color: 'Salmon',
+        S89: false
     },
     CSC: {
         color: 'Orange',
@@ -31,18 +27,6 @@ exports.subtitles = {
         color: 'Gold',
         S89: false
     },
-    SA: {
-        color: 'SkyBlue',
-        S89: true
-    },
-    AA: {
-        color: 'LightGreen',
-        S89: false
-    },
-    TA: {
-        color: 'CadetBlue',
-        S89: true
-    },
     DIS: {
         color: 'RosyBrown',
         S89: false
@@ -50,5 +34,25 @@ exports.subtitles = {
     LAC: {
         color: 'MistyRose',
         S89: false
+    },
+    OT: {
+        color: 'Aquamarine',
+        S89: false
+    },
+    S: {
+        color: 'IndianRed',
+        S89: false
+    },
+    SA: {
+        color: 'SkyBlue',
+        S89: true
+    },
+    SG: {
+        color: 'Violet',
+        S89: false
+    },
+    TA: {
+        color: 'CadetBlue',
+        S89: true
     }
 }

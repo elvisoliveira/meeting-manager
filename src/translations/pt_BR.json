@@ -38,6 +38,7 @@
     "TA": "Discurso",
     "DIS": "Consideração",
     "LAC": "Nossa Vida Cristã",
+    "AT": "Indicador",
     "BY": "por",
     "WITH": "com",
     "SONG": "Cântico",
@@ -58,5 +59,6 @@
     "COPIED": "Copiado",
     "BORDER_SPACING": "Espaçamento de borda",
     "LAYOUT": "Diagramação",
-    "PRINT": "Imprimir"
+    "PRINT": "Imprimir",
+    "ATTENDANTS": "Indicadores"
 }

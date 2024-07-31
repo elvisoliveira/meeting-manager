@@ -5,6 +5,10 @@
             "label": "6 August",
             "theme": "SALMOS 70-72",
             "chairman": "Christian Bale",
+            "attendants": [
+                "Johnny Depp",
+                "Dwayne Johnson"
+            ],
             "opening_song": 59,
             "opening_talk": {
                 "time": 10,
@@ -77,6 +81,10 @@
             "theme": "SALMOS 73-74",
             "chairman": "Will Smith",
             "opening_song": 36,
+            "attendants": [
+                "Christian Bale",
+                "Denzel Washington"
+            ],
             "opening_talk": {
                 "time": 10,
                 "title": "O que fazer se começarmos a invejar quem não serve a Deus?",
@@ -154,6 +162,10 @@
             "theme": "SALMO 78",
             "chairman": "Matt Damon",
             "opening_song": 97,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Will Smith"
+            ],
             "opening_talk": {
                 "time": 10,
                 "title": "Não imite a infidelidade do povo de Israel",

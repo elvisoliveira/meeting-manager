@@ -39,6 +39,7 @@
     "DIS": "Discussion",
     "LAC": "Living as Christians",
     "BY": "by",
+    "AT": "Attendant",
     "WITH": "with",
     "SONG": "Song",
     "PAGE": "Page",
@@ -57,5 +58,6 @@
     "COPIED": "Copied",
     "BORDER_SPACING": "Border Spacing",
     "LAYOUT": "Layout",
-    "PRINT": "Print"
+    "PRINT": "Print",
+    "ATTENDANTS": "Attendants"
 }

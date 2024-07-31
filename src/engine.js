@@ -60,6 +60,7 @@ export default class Engine {
             const data = {
                 SA: [],
                 AA: [],
+                AT: [],
                 DIS: [],
                 CH: { name: m[w.CH] },
                 CP: { name: m[w.CP] },
@@ -92,6 +93,13 @@ export default class Engine {
                         type: t
                     });
             });
+
+            if(m[w.AT])
+                m[w.AT].forEach((v) => {
+                    data.AT.push({
+                        name: v
+                    });
+                });
 
             if(m[w.AYF])
                 m[w.AYF].forEach((v) => {
