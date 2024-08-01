@@ -23,16 +23,15 @@ tr
             | {{i18n 'SONG'}}: 
             strong {{this.opening_song}}
           | {{#with this.attendants.[0]}}
-          td
-            strong {{i18n 'ATTENDANTS'}}
-          td {{this}}
+          td.title {{i18n 'ATTENDANTS'}}
+          td.assigned {{this}}
           | {{/with}}
         tr
           td.time {{time 1}}
           td(colspan='{{#if this.attendants.[1]}} 4 {{else}} 5 {{/if}}')
             | {{i18n 'OPENING_COMMENTS'}}
           | {{#with this.attendants.[1]}}
-          td {{this}}
+          td.assigned {{this}}
           | {{/with}}
       tbody.treasures
         tr
