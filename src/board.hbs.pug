@@ -23,14 +23,15 @@ tr
             | {{i18n 'SONG'}}: 
             strong {{this.opening_song}}
           | {{#with this.attendants.[0]}}
-          td.title {{i18n 'ATTENDANTS'}}
+          td.title {{i18n 'ATTENDANT'}}
           td.assigned {{this}}
           | {{/with}}
         tr
           td.time {{time 1}}
-          td(colspan='{{#if this.attendants.[1]}} 4 {{else}} 5 {{/if}}')
+          td(colspan='{{#if this.attendants.[1]}} 3 {{else}} 5 {{/if}}')
             | {{i18n 'OPENING_COMMENTS'}}
           | {{#with this.attendants.[1]}}
+          td.title {{i18n 'ATTENDANT'}}
           td.assigned {{this}}
           | {{/with}}
       tbody.treasures
@@ -98,7 +99,7 @@ tr
         | {{#with this.service_talk}}
         tr
           td.time {{time time}}
-          td(colspan='4') {{i18n 'SERVICE_TALK'}} {{theme}}
+          td(colspan='4') {{i18n 'SERVICE_TALK'}}: {{theme}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.congregation_bible_study}}

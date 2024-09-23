@@ -103,7 +103,7 @@ export default class Engine {
 
             if(m[w.AYF])
                 m[w.AYF].forEach((v) => {
-                    if(Object.prototype.hasOwnProperty.call(v, 'theme'))
+                    if(Object.prototype.hasOwnProperty.call(v, 'theme') && !Object.prototype.hasOwnProperty.call(v, 'assistant'))
                         data.TA = {
                             name: v.assigned,
                             number: v.number
