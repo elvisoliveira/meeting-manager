@@ -11,8 +11,7 @@ include utils
             tr
               th
                 span #
-              th
-                span {{ i18n 'ASSIGNMENT' }}
+              th {{ i18n 'ASSIGNMENT' }}
               th
                 span {{ i18n 'ACRONYM' }}
               th
@@ -20,9 +19,9 @@ include utils
           tbody
             | {{#each subtitles}}
             tr
-              th(style='text-align: center;')
+              th
                 input.form-check-input(type='checkbox' id='{{@key}}' value='{{@key}}' checked='')
-              td {{ i18n @key }}
+              td(style='text-align: left;') {{ i18n @key }}
               td
                 span.badge(class='{{@key}}') {{@key}}
               td

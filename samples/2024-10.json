@@ -36,7 +36,7 @@
                     "title": "Iniciando conversas",
                     "number": 4,
                     "lesson": "lmd lição 1 ponto 3",
-                    "assigned": "Julianne Moore",
+                    "assigned": "Julianne Moore|Meryl Streep",
                     "assistant": "Anne Hathaway"
                 },
                 {
@@ -151,7 +151,7 @@
                 "speaker": "Morgan Freeman",
                 "theme": "Crie coragem para pregar de casa em casa"
             },
-            "closing_song": 81,
+            "closing_song": 73,
             "closing_prayer": "Johnny Depp"
         },
         {
@@ -245,7 +245,7 @@
                 "number": 3,
                 "lesson": "th lição 12",
                 "assignment": "Sal. 102:1-28",
-                "reader": "Al Pacino"
+                "reader": "Al Pacino|Robert Downey Jr."
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -292,6 +292,81 @@
             },
             "closing_song": 96,
             "closing_prayer": "Dwayne Johnson"
+        },
+        {
+            "week": "2024/44",
+            "label": "29 October",
+            "theme": "SALMOS 103-104",
+            "chairman": "Tom Hanks",
+            "opening_song": 30,
+            "attendants": [
+                "Brad Pitt",
+                "Leonardo DiCaprio"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "‘Ele se lembra de que somos pó’",
+                "number": 1,
+                "speaker": "Christian Bale"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 11",
+                "assignment": "Sal. 104:1-24",
+                "reader": "Kevin Spacey"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 3 ponto 4",
+                    "assigned": "Saoirse Ronan",
+                    "assistant": "Halle Berry"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "th lição 9",
+                    "assigned": "Jessica Chastain",
+                    "assistant": "Jennifer Aniston"
+                },
+                {
+                    "time": 5,
+                    "title": "Discurso",
+                    "number": 6,
+                    "lesson": "th lição 1",
+                    "theme": "O marido deve ‘amar a sua esposa como a si mesmo’.",
+                    "assigned": "Vin Diesel"
+                }
+            ],
+            "middle_song": 44,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Você sabe seus limites?",
+                    "number": 7,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Matt Damon",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 55,
+            "closing_prayer": "Leonardo DiCaprio"
         }
     ]
 }

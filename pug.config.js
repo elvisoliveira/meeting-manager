@@ -7,6 +7,9 @@ table.tooltip-table {{this.partners}}
 `);
 
 const tooltip = pug.compile(`
+| {{#if this.type}}
+|   <strong>{{this.type}}</strong><br />
+| {{/if}}
 | {{i18n this.assignment}}
 | {{#if this._assigned}}
 |   <br /> {{ i18n 'BY' }} {{publisher this._assigned}}

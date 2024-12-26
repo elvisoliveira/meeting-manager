@@ -1,0 +1,374 @@
+{
+    "meetings": [
+        {
+            "week": "2024/49",
+            "label": "3 December",
+            "theme": "SALMOS 113-118",
+            "chairman": "Tom Hanks|Matt Damon",
+            "opening_song": 127,
+            "attendants": [
+                "Matt Damon",
+                "Will Smith"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "Como vou retribuir a Jeová?",
+                "number": 1,
+                "speaker": "Dwayne Johnson"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Johnny Depp"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 2",
+                "assignment": "Sal. 116:1-117:2",
+                "reader": "Al Pacino"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 7,
+                    "title": "Franqueza -- O que Jesus fez",
+                    "number": 4,
+                    "assigned": "Brad Pitt"
+                },
+                {
+                    "time": 8,
+                    "title": "Franqueza -- Imite Jesus",
+                    "number": 5,
+                    "assigned": "Matt Damon"
+                }
+            ],
+            "middle_song": 60,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "number": 6,
+                    "speaker": "Tom Hanks|Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 7,
+                "conductor": "Will Smith",
+                "reader": "Leonardo DiCaprio"
+            },
+            "closing_song": 29,
+            "closing_prayer": "Brad Pitt"
+        },
+        {
+            "week": "2024/50",
+            "label": "10 December",
+            "theme": "SALMO 119:1-56",
+            "chairman": "Matt Damon|Tom Hanks",
+            "opening_song": 124,
+            "attendants": [
+                "Dwayne Johnson",
+                "Leonardo DiCaprio"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "\"Como um jovem pode manter puro o seu caminho?\"",
+                "number": 1,
+                "speaker": "Will Smith"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 5",
+                "assignment": "Sal. 119:1-32",
+                "reader": "Vin Diesel"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 1 ponto 4",
+                    "assigned": "Margot Robbie",
+                    "assistant": "Reese Witherspoon"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 9 ponto 3",
+                    "assigned": "Emma Stone",
+                    "assistant": "Saoirse Ronan"
+                },
+                {
+                    "time": 5,
+                    "title": "Discurso",
+                    "number": 6,
+                    "lesson": "th lição 20",
+                    "theme": "Como posso resistir às tentações?",
+                    "assigned": "Kevin Spacey"
+                }
+            ],
+            "middle_song": 40,
+            "living_as_christians": [
+                {
+                    "time": 10,
+                    "title": "Realizações da Organização December",
+                    "number": 7,
+                    "speaker": "Matt Damon|Tom Hanks"
+                },
+                {
+                    "time": 5,
+                    "title": "Necessidades locais",
+                    "number": 8,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 9,
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 21,
+            "closing_prayer": "Dwayne Johnson"
+        },
+        {
+            "week": "2024/51",
+            "label": "17 December",
+            "theme": "SALMO 119:57-120",
+            "chairman": "Will Smith",
+            "opening_song": 129,
+            "attendants": [
+                "Matt Damon",
+                "Tom Hanks"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "Como perseverar diante de dificuldades",
+                "number": 1,
+                "speaker": "Leonardo DiCaprio"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Matt Damon"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 12",
+                "assignment": "Sal. 119:57-80",
+                "reader": "Ian McKellen"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 2 ponto 5",
+                    "assigned": "Halle Berry",
+                    "assistant": "Jessica Chastain"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 8 ponto 3",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Amy Adams"
+                },
+                {
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "number": 6,
+                    "lesson": "lmd lição 3 ponto 3",
+                    "theme": "O que a Bíblia diz sobre desastres naturais?",
+                    "assigned": "Meryl Streep",
+                    "assistant": "Viola Davis"
+                }
+            ],
+            "middle_song": 128,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Jeová nos ajuda a perseverar",
+                    "number": 7,
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Tom Hanks",
+                "reader": "Brad Pitt"
+            },
+            "closing_song": 32,
+            "closing_prayer": "Johnny Depp"
+        },
+        {
+            "week": "2024/52",
+            "label": "24 December",
+            "theme": "SALMO 119:121-176",
+            "chairman": "Christian Bale",
+            "opening_song": 31,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Will Smith"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "Como evitar sofrimento desnecessário",
+                "number": 1,
+                "speaker": "Tom Hanks"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Leonardo DiCaprio"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 2",
+                "assignment": "Sal. 119:121-152",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 1 ponto 5",
+                    "assigned": "Anne Hathaway",
+                    "assistant": "Jennifer Lawrence"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 8 ponto 3",
+                    "assigned": "Emma Watson",
+                    "assistant": "Julianne Moore"
+                },
+                {
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "number": 6,
+                    "lesson": "lmd lição 12 ponto 4",
+                    "assigned": "Michelle Pfeiffer",
+                    "assistant": "Jennifer Aniston"
+                }
+            ],
+            "middle_song": 121,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Não deixe o dinheiro fazer você sofrer desnecessariamente",
+                    "number": 7,
+                    "speaker": "Christian Bale"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Matt Damon",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 101,
+            "closing_prayer": "Will Smith"
+        },
+        {
+            "week": "2025/01",
+            "label": "31 December",
+            "theme": "SALMOS 120-126",
+            "chairman": "Tom Hanks",
+            "opening_song": 144,
+            "attendants": [
+                "Christian Bale",
+                "Dwayne Johnson"
+            ],
+            "opening_talk": {
+                "time": 10,
+                "title": "Eles semearam com lágrimas, mas colheram com alegria",
+                "number": 1,
+                "speaker": "Matt Damon"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 5",
+                "assignment": "Sal. 124:1-126:6",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 3 ponto 5",
+                    "assigned": "Jessica Chastain",
+                    "assistant": "Helen Mirren"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 5,
+                    "lesson": "lmd lição 9 ponto 5",
+                    "assigned": "Vin Diesel",
+                    "assistant": "Hugh Jackman"
+                },
+                {
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "number": 6,
+                    "lesson": "lmd lição 11 ponto 3",
+                    "assigned": "Julia Roberts",
+                    "assistant": "Emma Stone"
+                }
+            ],
+            "middle_song": 155,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Alegre-se com as promessas de Deus",
+                    "number": 7,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Christian Bale",
+                "reader": "Robert Downey Jr."
+            },
+            "closing_song": 58,
+            "closing_prayer": "Leonardo DiCaprio"
+        }
+    ]
+}

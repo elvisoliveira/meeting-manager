@@ -28,9 +28,9 @@ document.getS89 = (id) => {
         return;
     }
 
-    const assingment = engine.getAssignment(id);
+    const assignment = engine.getAssignment(id);
 
-    if(!subtitles[assingment.assignment].S89) {
+    if(!subtitles[assignment.assignment].S89) {
         bootstrap.showToast({
             body: i18next.t('S_89_UNNEEDED'),
             toastClass: 'text-bg-danger'
@@ -38,10 +38,10 @@ document.getS89 = (id) => {
         return;
     }
 
-    document.S89.name = assingment.assigned.name;
-    document.S89.assistant = assingment.partner?.name;
-    document.S89.date = assingment.meeting.label;
-    document.S89.part_number = assingment.number && String(assingment.number);
+    document.S89.name = assignment.assigned.name;
+    document.S89.assistant = assignment.partner?.name;
+    document.S89.date = assignment.meeting.label;
+    document.S89.part_number = assignment.number && String(assignment.number);
     document.S89.main_hall = true;
 
     switch(document.querySelector('select#output').value) {
@@ -102,13 +102,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
             if(assignments.length) {
-                assignments.forEach((assingment, ii) => {
-                    if(assingment._assigned)
+                assignments.forEach((assignment, ii) => {
+                    if(assignment._assigned)
                         assignments[ii].assignment = 'S';
-                    else if(assingment.partner)
+                    else if(assignment.partner)
                         partners.push({
-                            publisher: engine.getPublisher(assingment.partner).name,
-                            meeting: engine.getMeeting(assingment.meeting)
+                            assignment: i18next.t(assignment.assignment),
+                            type: assignment.type,
+                            publisher: engine.getPublisher(assignment.partner).name,
+                            meeting: engine.getMeeting(assignment.meeting)
                         });
                 });
                 partners.sort((a, b) => a.date - b.date);
@@ -124,7 +126,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
             publisher.meetings[i].assignments = assignments;
         });
-        publisher.partners = partners.reverse().flatMap(i => `<tr><td>${i.publisher}</td><td>${i.meeting.data.week.replace('-', '/')}</td></tr>`).join('');
+        publisher.partners = partners.reverse().flatMap(i => {
+            const date = i.meeting.data.week.replace('-', '/');
+            const year = parseInt(date.substring(0, 4));
+            return `<tr>
+                <td>${i.publisher}</td>
+                <td>${i.assignment}</td>
+                <td>${year < 2024 ? i18next.t(i.type.toUpperCase()) : i.type}</td>
+                <td>${date}</td>
+            </tr>`;
+        }).join('');
         data.push(publisher);
     });
 
@@ -222,7 +233,7 @@ const DOMContentLoaded = async (data) => {
     }));
 
     // Each row represents a publisher
-    // Add hypen to every unassigned meeting after the last assingment (assignment threshold)
+    // Add hypen to every unassigned meeting after the last assignment (assignment threshold)
     // Add behavior for hiding rows and copying the publisher name
     document.querySelectorAll('#main tbody tr').forEach((row) => modRow(row));
 

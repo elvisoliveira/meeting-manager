@@ -1,0 +1,232 @@
+{
+    "meetings": [
+        {
+            "week": "2024/45",
+            "label": "5 November",
+            "theme": "SALMO 105",
+            "chairman": "Christian Bale",
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Will Smith"
+            ],
+            "opening_song": 3,
+            "opening_talk": {
+                "time": 10,
+                "title": "“Ele se lembra do seu pacto para sempre”",
+                "number": 1,
+                "speaker": "Will Smith"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 5",
+                "assignment": "Sal. 105:24-45",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 1,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 2 ponto 5",
+                    "assigned": "Helen Mirren",
+                    "assistant": "Robert Downey Jr."
+                },
+                {
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "number": 5,
+                    "lesson": "lmd lição 4 ponto 5",
+                    "assigned": "Viola Davis",
+                    "assistant": "Emma Stone|Julia Roberts"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 6,
+                    "lesson": "lmd lição 8 ponto 3",
+                    "assigned": "Anne Hathaway|Julianne Moore",
+                    "assistant": "Keira Knightley|Jennifer Lawrence"
+                },
+                {
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "number": 7,
+                    "lesson": "lmd lição 9 ponto 5",
+                    "assigned": "Amy Adams",
+                    "assistant": "Michelle Pfeiffer"
+                }
+            ],
+            "middle_song": 84,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Demonstrações do nosso amor",
+                    "number": 8,
+                    "speaker": "Christian Bale"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 9,
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Johnny Depp|Will Smith"
+            },
+            "closing_song": 97,
+            "closing_prayer": "Matt Damon"
+        },
+        {
+            "week": "2024/46",
+            "label": "12 November",
+            "theme": "SALMO 106",
+            "chairman": "Will Smith|Matt Damon",
+            "attendants": [
+                "Tom Hanks",
+                "Dwayne Johnson"
+            ],
+            "opening_song": 36,
+            "opening_talk": {
+                "time": 10,
+                "title": "“Esqueceram-se de Deus, seu Salvador”",
+                "number": 1,
+                "speaker": "Matt Damon"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Leonardo DiCaprio"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 10",
+                "assignment": "Sal. 106:21-48",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 7,
+                    "title": "Simplicidade — O que Jesus fez",
+                    "number": 4,
+                    "assigned": "Johnny Depp"
+                },
+                {
+                    "time": 8,
+                    "title": "Simplicidade — Imite Jesus",
+                    "number": 5,
+                    "assigned": "Brad Pitt"
+                }
+            ],
+            "middle_song": 78,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "number": 6,
+                    "speaker": "Will Smith|Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 7,
+                "conductor": "Tom Hanks",
+                "reader": "Christian Bale"
+            },
+            "closing_song": 77,
+            "closing_prayer": "Christian Bale"
+        },
+        {
+            "week": "2024/47",
+            "label": "24 November",
+            "theme": "SALMOS 107-108",
+            "message": "Não há reunião devido a <p>Assembleia de Circuito</p> “Não nos Envergonhamos das Boas Novas”"
+        },
+        {
+            "week": "2024/48",
+            "label": "26 November",
+            "theme": "SALMOS 109-112",
+            "attendants": [
+                "Tom Hanks",
+                "Leonardo DiCaprio"
+            ],
+            "chairman": "Matt Damon|Will Smith",
+            "opening_song": 14,
+            "opening_talk": {
+                "time": 10,
+                "title": "Apoie o Rei Jesus!",
+                "number": 1,
+                "speaker": "Johnny Depp"
+            },
+            "spiritual_gems": {
+                "time": 10,
+                "title": "Joias espirituais",
+                "number": 2,
+                "conductor": "Dwayne Johnson"
+            },
+            "bible_reading": {
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "number": 3,
+                "lesson": "th lição 2",
+                "assignment": "Sal. 109:1-26",
+                "reader": "Hugh Jackman"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "number": 4,
+                    "lesson": "lmd lição 4 ponto 3",
+                    "assigned": "Jennifer Lawrence",
+                    "assistant": "Nicole Kidman"
+                },
+                {
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "number": 5,
+                    "lesson": "lmd lição 4 ponto 4",
+                    "theme": "Por que as Testemunhas de Jeová não participam em guerras?",
+                    "assigned": "Julianne Moore",
+                    "assistant": "Julia Roberts"
+                },
+                {
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "number": 6,
+                    "lesson": "lmd lição 11 ponto 3",
+                    "assigned": "Jennifer Aniston",
+                    "assistant": "Emma Watson"
+                }
+            ],
+            "middle_song": 72,
+            "living_as_christians": [
+                {
+                    "time": 15,
+                    "title": "Como podemos apoiar o Reino de Deus de todo o coração?",
+                    "number": 7,
+                    "speaker": "Matt Damon|Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "number": 8,
+                "conductor": "Christian Bale|Matt Damon",
+                "reader": "Robert Downey Jr."
+            },
+            "closing_song": 75,
+            "closing_prayer": "Will Smith|Tom Hanks"
+        }
+    ]
+}

@@ -147,16 +147,19 @@ table {
     }
 }
 
-.tooltip-table {
-    font-size: 12px;
-    font-family: monospace;
-    tr {
-        td:first-child {
-            text-align: left;
-        }
-        td:last-child {
-            text-align: right;
-            text-indent: 10px;
+.tooltip {
+    --bs-tooltip-max-width: none;
+    .tooltip-table {
+        font-size: 12px;
+        font-family: monospace;
+        tr {
+            td {
+                padding: 5px;
+                text-align: right;
+                &:first-child {
+                    text-align: left;
+                }
+            }
         }
     }
 }

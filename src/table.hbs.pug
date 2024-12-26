@@ -36,6 +36,8 @@ table#main.table.table-striped-columns.table-hover.m-0
   tbody
     | {{#each data as |value key|}}
     tr
+      //- to inspect / evaluate the tooltip while developing, use the click trigger
+      //- data-bs-trigger="click"
       th(
         data-bs-toggle="tooltip"
         data-bs-html="true"
