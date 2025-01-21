@@ -67,7 +67,12 @@ tr
         tr
           td.time {{time this.time}}
           td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}')
-            | {{#if this.theme}}{{this.theme}}{{else}}{{this.title}}{{/if}}
+            | {{#if this.theme}}
+            |   {{this.theme}}
+            | {{else}}
+            |   {{this.title}}
+            |   {{#if this.notes}} <i>({{this.notes}})</i>{{/if}}
+            | {{/if}}
           td.title
             | {{#if this.lesson}}
             | {{i18n 'STUDENT'}}

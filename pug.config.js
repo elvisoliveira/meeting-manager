@@ -12,9 +12,11 @@ const tooltip = pug.compile(`
 | {{/if}}
 | {{i18n this.assignment}}
 | {{#if this._assigned}}
-|   <br /> {{ i18n 'BY' }} {{publisher this._assigned}}
+|   <br /> {{ i18n 'BY' }} {{ publisher this._assigned }}
+| {{else if this._partner}}
+|   <br /> {{ i18n 'WITH' }} {{ publisher this._partner }}
 | {{else if this.partner}}
-|   <br /> {{ i18n 'WITH' }} {{publisher this.partner}}
+|   <br /> {{ i18n 'WITH' }} {{ publisher this.partner }}
 | {{/if}}
 `);
 

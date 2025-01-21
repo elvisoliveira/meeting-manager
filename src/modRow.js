@@ -8,21 +8,25 @@ export default function modRow (row) {
 
     // Iterate over each column until a <span> is found
     columns.every((column) => {
-        if (column.querySelector('span'))
+        // Ignore Substitutions, because the person did not actually participated
+        if (column.querySelector('span:not(.S)'))
             return false; // Stop iteration if a <span> is found
 
-        column.innerText = '-'; // Replace column text with '-'
+        if (!column.textContent || column.textContent.trim() === '')
+            column.textContent = '-'; // Replace column text with '-'
+
         count++;
+
         return true; // Continue iteration
     });
 
     // Update the text of the first column with the count minus one
     if (columns.length > 0)
-        columns[0].innerText = count - 1;
+        columns[0].textContent = count - 1;
 
     row.querySelector('i.hide').addEventListener('click', () => row.style.display = 'none');
     row.querySelector('i.copy').addEventListener('click', () => {
-        const name = row.querySelector('th').innerText.trim();
+        const name = row.querySelector('th').textContent.trim();
         navigator.clipboard.writeText(name).then(() => bootstrap.showToast({
             body: i18next.t('COPIED'),
             toastClass: 'text-bg-info'

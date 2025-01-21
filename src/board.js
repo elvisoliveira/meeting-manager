@@ -44,7 +44,7 @@ Handlebars.registerHelper('d', (e) => String(e).split('|').find(Boolean));
 const updateInnerText = (selector, translationKey) => {
     const element = document.querySelector(selector);
     if (element)
-        element.innerText = i18next.t(translationKey);
+        element.textContent = i18next.t(translationKey);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = `${i18next.t('MIDWEEK_MEETING')}`;
     updateInnerText('#label', 'MIDWEEK_MEETING');
 
-    document.getElementById('name').innerText = lib.queryAll('info', {
+    document.getElementById('name').textContent = lib.queryAll('info', {
         query: {
             label: 'congregation'
         }

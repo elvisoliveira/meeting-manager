@@ -12,6 +12,7 @@ div#boot {
 
 button#draggable {
     position: fixed;
+    white-space: nowrap;
     right: 10px;
     z-index: 30;
     bottom: 10px;
@@ -149,7 +150,10 @@ table {
 
 .tooltip {
     --bs-tooltip-max-width: none;
-    .tooltip-table {
+    p {
+        margin: 0;
+    }
+    table.tooltip-table {
         font-size: 12px;
         font-family: monospace;
         tr {

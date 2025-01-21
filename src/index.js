@@ -68,7 +68,7 @@ const loadFiles = (files) => {
         r.readAsArrayBuffer(file);
     });
 
-    location.reload();
+    assembleDataGrid();
 }
 
 document.addEventListener('dragstart', () => {
@@ -84,7 +84,7 @@ document.addEventListener('drop', (e) => {
     loadFiles(e.dataTransfer.files);
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
+const assembleDataGrid = () => {
     const data = [];
 
     engine.lib.queryAll('publishers', {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     DOMContentLoaded(data);
-});
+};
 
 const DOMContentLoaded = async (data) => {
 
@@ -201,10 +201,7 @@ const DOMContentLoaded = async (data) => {
 
         dropArea.querySelector('span#sample').addEventListener('click', () => {
             dataProccess(require('../samples.json'));
-            window.document.dispatchEvent(new Event('DOMContentLoaded', {
-                bubbles: true,
-                cancelable: true
-            }));
+            assembleDataGrid();
         });
 
         return;
@@ -382,7 +379,7 @@ const DOMContentLoaded = async (data) => {
 
                         file.text()
                             .then((json) => dataProccess(JSON.parse(json)))
-                            .then(() => set('dir', dirHandle).then(() => location.reload()));
+                            .then(() => set('dir', dirHandle).then(() => assembleDataGrid()));
                     });
                 }
             });
@@ -411,3 +408,5 @@ const hasPermission = async (handle) => {
     if ((await handle.queryPermission()) === 'granted')  return true; // Permission already granted
     return false; // Permission denied
 }
+
+document.addEventListener('DOMContentLoaded', assembleDataGrid());

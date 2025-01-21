@@ -14,7 +14,7 @@
                 "number": 1,
                 "time": 10,
                 "title": "Pais, continuem cuidando bem da sua preciosa herança",
-                "speaker": "Denzel Washington"
+                "speaker": "Denzel Washington|Matt Damon"
             },
             "spiritual_gems": {
                 "number": 2,
@@ -28,7 +28,7 @@
                 "number": 3,
                 "time": 4,
                 "title": "Leitura da Bíblia",
-                "reader": "Al Pacino"
+                "reader": "Al Pacino|Johnny Depp"
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -77,9 +77,9 @@
         },
         {
             "week": "2025/03",
-            "label": "14 January",
+            "label": "16 January",
             "theme": "SALMOS 135-137",
-            "chairman": "Christian Bale",
+            "chairman": "Christian Bale|Will Smith",
             "opening_song": 2,
             "attendants": [
                 "Matt Damon",
@@ -112,7 +112,7 @@
                     "time": 3,
                     "title": "Iniciando conversas",
                     "assigned": "Jennifer Lawrence",
-                    "assistant": "Meryl Streep"
+                    "assistant": "Meryl Streep|Jennifer Aniston"
                 },
                 {
                     "lesson": "lmd lição 9 ponto 4",
@@ -120,15 +120,15 @@
                     "time": 4,
                     "title": "Cultivando o interesse",
                     "assigned": "Julianne Moore",
-                    "assistant": "Anne Hathaway"
+                    "assistant": "Anne Hathaway|Keira Knightley"
                 },
                 {
                     "lesson": "th lição 12",
                     "number": 6,
                     "time": 5,
                     "title": "Explicando suas crenças",
-                    "assigned": "Ian McKellen",
-                    "assistant": "Denzel Washington"
+                    "assigned": "Ian McKellen|Amy Adams",
+                    "assistant": "Denzel Washington|Robert Downey Jr."
                 }
             ],
             "middle_song": 10,
@@ -137,7 +137,7 @@
                     "number": 7,
                     "time": 15,
                     "title": "Necessidades locais",
-                    "speaker": "Christian Bale"
+                    "speaker": "Christian Bale|Will Smith"
                 }
             ],
             "congregation_bible_study": {
@@ -154,7 +154,7 @@
             "week": "2025/04",
             "label": "21 January",
             "theme": "SALMOS 138-139",
-            "chairman": "Will Smith",
+            "chairman": "Will Smith|Christian Bale",
             "opening_song": 93,
             "attendants": [
                 "Tom Hanks",

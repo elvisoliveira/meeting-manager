@@ -23,11 +23,11 @@ export default function filter () {
         const columns = Array.from(row.querySelectorAll('td')).reverse();
 
         // Get the value of unassigned weeks from the first column
-        const unassignedWeeks = +columns[0]?.innerText || 0;
+        const unassignedWeeks = +columns[0]?.textContent || 0;
 
         // Check if any of the badges match the selected ones
         const badges = row.querySelectorAll('span');
-        const hasSelectedBadge = Array.from(badges).some((badge) => selectedOnes.includes(badge.innerText.trim()));
+        const hasSelectedBadge = Array.from(badges).some((badge) => selectedOnes.includes(badge.textContent.trim()));
 
         // Determine whether to show or hide the row based on the conditions
         const shouldShow = unassignedWeeks <= threshold && hasSelectedBadge;
