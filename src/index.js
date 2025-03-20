@@ -368,20 +368,26 @@ const DOMContentLoaded = async (data) => {
             if(!hasPermission) {
                 document.getElementById('permissions').setAttribute('style', 'display: block;'); return;
             }
-            const observer = new FileSystemObserver((records) => {
+            const observer = new FileSystemObserver(async (records) => {
+                observer.disconnect();
+
                 for (const record of records) {
                     if (record.type !== 'modified')
                         return;
 
-                    record.changedHandle.getFile().then(async (file) => {
+                    await record.changedHandle.getFile().then(async (file) => {
                         if (!['application/json'].includes(file.type))
                             return;
 
-                        file.text()
-                            .then((json) => dataProccess(JSON.parse(json)))
-                            .then(() => set('dir', dirHandle).then(() => assembleDataGrid()));
+                        await file.text().then((json) => {
+                            dataProccess(JSON.parse(json));
+                        }).then(() => {
+                            set('dir', dirHandle);
+                        });
                     });
                 }
+
+                assembleDataGrid();
             });
             observer.observe(dirHandle, {
                 recursive: false

@@ -50,7 +50,8 @@ const updateInnerText = (selector, translationKey) => {
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URL(location.href).searchParams;
     const meetings = lib.queryAll('meetings', {
-        query: (r) => Array.from(params.getAll('date')).includes(r.date)
+        query: (r) => Array.from(params.getAll('date')).includes(r.date),
+        sort: [['date', 'ASC']]
     });
 
     fetch('board.hbs.html').then((response) => response.text().then((html) => {

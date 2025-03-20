@@ -1,0 +1,250 @@
+{
+    "meetings": [
+        {
+            "week": "2025/10",
+            "label": "4 March",
+            "theme": "PROVÉRBIOS 3",
+            "chairman": "Matt Damon",
+            "opening_song": 8,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Christian Bale"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Mostre que confia em Jeová",
+                "speaker": "Dwayne Johnson"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Johnny Depp"
+            },
+            "bible_reading": {
+                "assignment": "Pro. 3:1-18",
+                "lesson": "th lição 12",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Al Pacino"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 1 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Saoirse Ronan|Jessica Chastain",
+                    "assistant": "Keira Knightley"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Brad Pitt",
+                    "assistant": "Jennifer Lawrence",
+                    "notes": "em holandês"
+                },
+                {
+                    "lesson": "th lição 20",
+                    "number": 6,
+                    "theme": "Mostre que confia em Jeová ao enfrentar apatia na pregação.",
+                    "time": 5,
+                    "title": "Discurso",
+                    "assigned": "Ian McKellen"
+                }
+            ],
+            "middle_song": 124,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Mostre que confia na organização de Jeová",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Christian Bale",
+                "reader": "Will Smith"
+            },
+            "closing_song": 57,
+            "closing_prayer": "Tom Hanks"
+        },
+        {
+            "week": "2025/11",
+            "label": "11 March",
+            "theme": "PROVÉRBIOS 4",
+            "chairman": "Will Smith",
+            "opening_song": 36,
+            "attendants": [
+                "Dwayne Johnson",
+                "Tom Hanks"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "‘Proteja o seu coração’",
+                "speaker": "Leonardo DiCaprio"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "assignment": "Pro. 4:1-18",
+                "lesson": "th lição 12",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Hugh Jackman"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 1 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Julia Roberts",
+                    "assistant": "Julianne Moore",
+                    "notes": "em holandês"
+                },
+                {
+                    "lesson": "lmd lição 2 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Margot Robbie",
+                    "assistant": "Jennifer Aniston"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 4",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Amy Adams",
+                    "assistant": "Meryl Streep"
+                }
+            ],
+            "middle_song": 16,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 10,
+                    "title": "Realizações da Organização, março",
+                    "speaker": "Will Smith"
+                },
+                {
+                    "number": 8,
+                    "time": 5,
+                    "title": "Campanha da Celebração — Início no sábado, 15 March",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Matt Damon",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 76,
+            "closing_prayer": "Christian Bale"
+        },
+        {
+            "week": "2025/12",
+            "label": "18 March",
+            "theme": "PROVÉRBIOS 5",
+            "message": "Não há reunião devido a <p>Assembleia de Circuito</p> Comportem-se de uma Maneira Digna das Boas Novas"
+        },
+        {
+            "week": "2025/13",
+            "label": "25 March",
+            "theme": "PROVÉRBIOS 6",
+            "chairman": "Tom Hanks",
+            "opening_song": 11,
+            "attendants": [
+                "Matt Damon",
+                "Leonardo DiCaprio"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "O que podemos aprender com as formigas?",
+                "speaker": "Matt Damon"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "assignment": "Pro. 6:1-26",
+                "lesson": "th lição 10",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Brad Pitt"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 4 ponto 3",
+                    "number": 4,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Robert Downey Jr.",
+                    "assistant": "Hugh Jackman"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Reese Witherspoon",
+                    "assistant": "Halle Berry"
+                },
+                {
+                    "lesson": "lmd lição 5 ponto 3",
+                    "number": 6,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Chris Hemsworth",
+                    "assistant": "Harrison Ford",
+                    "notes": "em holandês"
+                }
+            ],
+            "middle_song": 2,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 5,
+                    "title": "A Criação Mostra Que Jeová Quer Que Você se Alegre — Animais Fascinantes",
+                    "speaker": "Tom Hanks"
+                },
+                {
+                    "number": 8,
+                    "time": 10,
+                    "title": "Necessidades locais",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 126,
+            "closing_prayer": "Johnny Depp"
+        }
+    ]
+}
