@@ -45,8 +45,8 @@
                     "number": 5,
                     "time": 4,
                     "title": "Cultivando o interesse",
-                    "assigned": "Emma Stone",
-                    "assistant": "Emma Watson"
+                    "assigned": "Emma Stone|Emma Watson",
+                    "assistant": "Emma Watson|Meryl Streep"
                 },
                 {
                     "lesson": "lmd lição 9 ponto 3",
@@ -120,7 +120,7 @@
                     "number": 5,
                     "time": 3,
                     "title": "Iniciando conversas",
-                    "assigned": "Jennifer Lawrence",
+                    "assigned": "Jennifer Lawrence|Jennifer Aniston",
                     "assistant": "Julianne Moore",
                     "notes": "em Holandês"
                 },

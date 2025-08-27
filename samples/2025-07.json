@@ -1,0 +1,400 @@
+{
+    "meetings": [
+        {
+            "week": "2025/27",
+            "label": "1 July",
+            "theme": "PROVÉRBIOS 20",
+            "chairman": "Tom Hanks",
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Matt Damon"
+            ],
+            "opening_song": 131,
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Como ter um namoro que resulte em uma boa decisão",
+                "speaker": "Christian Bale"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Denzel Washington"
+            },
+            "bible_reading": {
+                "assignment": "Pro.20: 1 - 15",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Robert Downey Jr."
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 3 ponto 3",
+                    "number": 4,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Amy Adams",
+                    "assistant": "Anne Hathaway"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 5",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Emma Watson",
+                    "assistant": "Keira Knightley"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 4",
+                    "number": 6,
+                    "time": 4,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Julianne Moore",
+                    "assistant": "Daniel Radcliffe"
+                }
+            ],
+            "middle_song": 78,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 5,
+                    "title": "Incentive outros a experimentar nosso curso bíblico",
+                    "speaker": "Tom Hanks"
+                },
+                {
+                    "number": 8,
+                    "time": 10,
+                    "title": "Realizações da Organização, junho",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Will Smith",
+                "reader": "Ian McKellen"
+            },
+            "closing_song": 150,
+            "closing_prayer": "Leonardo DiCaprio"
+        },
+        {
+            "week": "2025/28",
+            "label": "8 July",
+            "theme": "PROVÉRBIOS 21",
+            "chairman": "Will Smith",
+            "attendants": [
+                "Tom Hanks",
+                "Denzel Washington"
+            ],
+            "opening_song": 98,
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Sábios princípios para ter um casamento feliz",
+                "speaker": "Johnny Depp|Tom Hanks"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Christian Bale"
+            },
+            "bible_reading": {
+                "assignment": "Pro.21: 1 - 18",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 3 ponto 3",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Michelle Pfeiffer",
+                    "assistant": "Saoirse Ronan"
+                },
+                {
+                    "lesson": "lmd lição 7 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Jennifer Lawrence",
+                    "assistant": "Halle Berry"
+                },
+                {
+                    "lesson": "lmd lição 4 ponto 3",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Julia Roberts",
+                    "assistant": "Jennifer Aniston"
+                }
+            ],
+            "middle_song": 132,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Mostre respeito no seu casamento",
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Matt Damon",
+                "reader": "Brad Pitt"
+            },
+            "closing_song": 72,
+            "closing_prayer": "Tom Hanks"
+        },
+        {
+            "week": "2025/29",
+            "label": "15 July",
+            "theme": "PROVÉRBIOS 22",
+            "chairman": "Matt Damon",
+            "attendants": [
+                "Will Smith",
+                "Christian Bale"
+            ],
+            "opening_song": 79,
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Sábios princípios para criar filhos",
+                "speaker": "Leonardo DiCaprio"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "assignment": "Pro.22: 1 - 19",
+                "lesson": "th lição 10",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 5 ponto 4",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Meryl Streep",
+                    "assistant": "Reese Witherspoon"
+                },
+                {
+                    "lesson": "lmd lição 1 ponto 4",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Emma Stone",
+                    "assistant": "Jessica Chastain"
+                },
+                {
+                    "lesson": "th lição 20",
+                    "number": 6,
+                    "theme": "O que fazer se eu desobedeci meus pais ?",
+                    "time": 5,
+                    "title": "Discurso",
+                    "assigned": "Brad Pitt"
+                }
+            ],
+            "middle_song": 134,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Seja paciente, mas não aceite mau comportamento",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Christian Bale",
+                "reader": "Denzel Washington"
+            },
+            "closing_song": 6,
+            "closing_prayer": "Johnny Depp"
+        },
+        {
+            "week": "2025/30",
+            "label": "22 July",
+            "theme": "PROVÉRBIOS 23",
+            "chairman": "Christian Bale",
+            "attendants": [
+                "Matt Damon",
+                "Leonardo DiCaprio"
+            ],
+            "opening_song": 97,
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Sábios princípios para o uso do álcool",
+                "speaker": "Tom Hanks"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "assignment": "Pro.23: 1 - 24",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Hugh Jackman"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 3 ponto 5",
+                    "number": 4,
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "assigned": "Ian McKellen",
+                    "assistant": "Chris Hemsworth",
+                    "notes": "em Holandês"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 5",
+                    "number": 5,
+                    "time": 5,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Viola Davis",
+                    "assistant": "Margot Robbie"
+                },
+                {
+                    "lesson": "lmd lição 12 ponto 4",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "assigned": "Amy Adams",
+                    "assistant": "Emma Watson"
+                }
+            ],
+            "middle_song": 35,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 8,
+                    "title": "Devo servir bebidas alcoólicas ou não ?",
+                    "speaker": "Christian Bale"
+                },
+                {
+                    "number": 8,
+                    "time": 7,
+                    "title": "Necessidades locais",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 40,
+            "closing_prayer": "Denzel Washington"
+        },
+        {
+            "week": "2025/31",
+            "label": "29 July",
+            "theme": "PROVÉRBIOS 24",
+            "chairman": "Matt Damon",
+            "attendants": [
+                "Christian Bale",
+                "Denzel Washington"
+            ],
+            "opening_song": 38,
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Como se fortalecer para enfrentar dificuldades",
+                "speaker": "Denzel Washington"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Johnny Depp"
+            },
+            "bible_reading": {
+                "assignment": "Pro.24 : 1 - 20",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Ruben Aguiar"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 2 ponto 4",
+                    "number": 4,
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "assigned": "Anne Hathaway",
+                    "assistant": "Julianne Moore"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 4",
+                    "number": 5,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Jennifer Aniston",
+                    "assistant": "Nicole Kidman"
+                },
+                {
+                    "lesson": "lmd lição 4 ponto 3",
+                    "number": 6,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Jessica Alba"
+                },
+                {
+                    "lesson": "th lição 6",
+                    "number": 7,
+                    "theme": "Deus se comunica conosco.",
+                    "time": 3,
+                    "title": "Discurso",
+                    "assigned": "Ian McKellen"
+                }
+            ],
+            "middle_song": 99,
+            "living_as_christians": [
+                {
+                    "number": 8,
+                    "time": 15,
+                    "title": "Ajudem uns aos outros em situações difíceis",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Christian Bale",
+                "reader": "Leonardo DiCaprio"
+            },
+            "closing_song": 112,
+            "closing_prayer": "Brad Pitt"
+        }
+    ]
+}
