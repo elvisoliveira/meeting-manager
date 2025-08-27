@@ -202,8 +202,8 @@
                     "number": 5,
                     "time": 3,
                     "title": "Iniciando conversas",
-                    "assigned": "Margot Robbie",
-                    "assistant": "Emma Stone"
+                    "assigned": "Margot Robbie|Reese Witherspoon",
+                    "assistant": "Gwyneth Paltrow|Emma Stone"
                 },
                 {
                     "lesson": "lmd lição 1 ponto 4",
@@ -211,7 +211,7 @@
                     "time": 2,
                     "title": "Iniciando conversas",
                     "assigned": "Jennifer Aniston",
-                    "assistant": "Anne Hathaway"
+                    "assistant": "Anne Hathaway|Saoirse Ronan"
                 },
                 {
                     "lesson": "lmd lição 2 ponto 4",
