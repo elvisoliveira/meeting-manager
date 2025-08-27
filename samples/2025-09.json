@@ -216,6 +216,7 @@
                 }
             ],
             "service_talk": {
+                "time": 30,
                 "speaker": "Adrian Smith",
                 "theme": "Qual é a sua fortaleza?"
             },
