@@ -41,4 +41,3 @@ export default function filter () {
     // Once filtered, scroll to the current week
     boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
 }
-

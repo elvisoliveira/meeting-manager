@@ -1,5 +1,5 @@
 import localStorageDB from 'localstoragedb';
-import { workbook as w } from './refs/workbook';
+import { workbook as w } from '../refs/workbook';
 
 export default class Engine {
     constructor() {

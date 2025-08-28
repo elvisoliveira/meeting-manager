@@ -1,5 +1,5 @@
 import * as pdfjsLib from 'pdfjs-dist';
-import { fields } from './refs/S89';
+import { fields } from '../refs/S89';
 
 export default class S89 {
     constructor(doc) {

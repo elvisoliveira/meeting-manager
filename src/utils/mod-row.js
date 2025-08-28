@@ -1,4 +1,4 @@
-import i18next from "./i18n";
+import i18next from "../config/i18n";
 
 export default function modRow (row) {
     // Select all <td> elements from the row and reverse their order

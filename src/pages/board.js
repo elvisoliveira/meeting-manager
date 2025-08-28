@@ -8,7 +8,7 @@ import i18next from 'i18next';
 import detector from "i18next-browser-languagedetector";
 import registerI18nHelper from 'handlebars-i18next';
 
-import { translation } from './translation';
+import { translation } from '../config/translation';
 
 const lib = new localStorageDB('library', localStorage);
 

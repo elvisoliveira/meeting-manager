@@ -5,13 +5,13 @@ import { fingerprints } from './refs/fingerprints';
 import * as Handlebars from 'handlebars';
 import * as pdfjsLib from 'pdfjs-dist';
 
-import S89 from './S89';
-import Engine from './engine';
-import TableSort from './table.sort';
+import S89 from './core/S89';
+import Engine from './core/engine';
+import TableSort from './utils/table-sort';
 
-import modRow from './modRow';
-import filter from './filter';
-import i18next from './i18n';
+import modRow from './utils/mod-row';
+import filter from './utils/filter';
+import i18next from './config/i18n';
 
 const engine = new Engine();
 
