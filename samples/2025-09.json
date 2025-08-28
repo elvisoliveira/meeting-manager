@@ -6,6 +6,10 @@
             "theme": "PROVÉRBIOS 29",
             "chairman": "Matt Damon",
             "opening_song": 28,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Denzel Washington"
+            ],
             "opening_talk": {
                 "number": 1,
                 "time": 10,
@@ -77,6 +81,10 @@
             "theme": "PROVÉRBIOS 30",
             "chairman": "Will Smith",
             "opening_song": 136,
+            "attendants": [
+                "Matt Damon",
+                "Dwayne Johnson"
+            ],
             "opening_talk": {
                 "number": 1,
                 "time": 10,
@@ -154,6 +162,10 @@
             "theme": "PROVÉRBIOS 31",
             "chairman": "Tom Hanks",
             "opening_song": 135,
+            "attendants": [
+                "Will Smith",
+                "Leonardo DiCaprio"
+            ],
             "opening_talk": {
                 "number": 1,
                 "time": 10,
@@ -180,8 +192,8 @@
                     "number": 4,
                     "time": 3,
                     "title": "Iniciando conversas",
-                    "assigned": "Amy Adams",
-                    "assistant": "Meryl Streep"
+                    "assigned": "Meryl Streep",
+                    "assistant": "Amy Adams"
                 },
                 {
                     "lesson": "lmd lição 1 ponto 4",
@@ -229,6 +241,10 @@
             "theme": "ECLESIASTES 1-2",
             "chairman": "Matt Damon",
             "opening_song": 103,
+            "attendants": [
+                "Denzel Washington",
+                "Tom Hanks"
+            ],
             "opening_talk": {
                 "number": 1,
                 "time": 10,
@@ -308,6 +324,10 @@
             "theme": "ECLESIASTES 3-4",
             "chairman": "Will Smith",
             "opening_song": 93,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Matt Damon"
+            ],
             "opening_talk": {
                 "number": 1,
                 "time": 10,
