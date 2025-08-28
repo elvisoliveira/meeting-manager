@@ -47,13 +47,12 @@ export class FileLoader {
         dropArea.querySelector('.button').onclick = async () => {
             if ('showDirectoryPicker' in window) {
                 window.showDirectoryPicker().then(async (dirHandle) => {
-                    for await (const entry of dirHandle.values()) {
+                    for await (const entry of dirHandle.values())
                         entry.getFile().then(async (file) => {
                             if (!['application/json'].includes(file.type))
                                 return;
                             file.text().then((json) => this.dataProcessor(JSON.parse(json)));
                         });
-                    }
                     const { set } = await import('idb-keyval');
                     set('dir', dirHandle).then(() => location.reload());
                 });

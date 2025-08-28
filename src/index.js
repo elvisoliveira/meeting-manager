@@ -4,7 +4,7 @@ import { S89Service } from './services/s89-service';
 import { FileLoader } from './services/file-loader';
 import { DataGrid } from './services/data-grid';
 import { UIHandlers } from './services/ui-handlers';
-import { FileSystemObserver } from './services/file-system-observer';
+import { FileSystemWatcher } from './services/file-system-observer';
 import { DataProcessor } from './services/data-processor';
 
 class MeetingManagerApp {
@@ -14,7 +14,7 @@ class MeetingManagerApp {
         this.dataGrid = new DataGrid(this.engine);
         this.uiHandlers = new UIHandlers(this.engine);
         this.s89Service = new S89Service(this.engine);
-        this.fileSystemObserver = new FileSystemObserver(
+        this.fileSystemObserver = new FileSystemWatcher(
             (data) => this.dataProcessor.processData(data),
             () => this.assembleDataGrid()
         );

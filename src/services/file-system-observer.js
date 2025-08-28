@@ -1,6 +1,6 @@
 import { get, set } from 'idb-keyval';
 
-export class FileSystemObserver {
+export class FileSystemWatcher {
     constructor(dataProcessor, onDataChange) {
         this.dataProcessor = dataProcessor;
         this.onDataChange = onDataChange;
@@ -12,9 +12,7 @@ export class FileSystemObserver {
 
         permissionsButton.addEventListener('click', () => {
             get('dir').then(async (handle) => {
-                if ((await handle.requestPermission({ mode: 'read' })) === 'granted') {
-                    location.reload();
-                }
+                if ((await handle.requestPermission({ mode: 'read' })) === 'granted') location.reload();
             });
         });
     }
@@ -26,9 +24,8 @@ export class FileSystemObserver {
         const hasPermission = await this.hasPermission(dirHandle);
         if (!hasPermission) {
             const permissionsButton = document.getElementById('permissions');
-            if (permissionsButton) {
+            if (permissionsButton)
                 permissionsButton.setAttribute('style', 'display: block;');
-            }
             return;
         }
 
@@ -54,7 +51,7 @@ export class FileSystemObserver {
             });
 
             observer.observe(dirHandle, { recursive: false });
-            console.log('FileSystemObserver setup:', observer);
+            console.log(observer);
         }
     }
 
