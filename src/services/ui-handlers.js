@@ -137,9 +137,8 @@ export class UIHandlers {
                 const selected = Array.from(document.querySelectorAll('#main thead input[type=\'checkbox\']:checked'))
                     .map(element => element.value);
                 const printIcon = document.querySelector('i.fa-print');
-                if (printIcon) {
+                if (printIcon)
                     printIcon.style.display = selected.length > 0 ? 'inline' : 'none';
-                }
             });
         });
     }

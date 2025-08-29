@@ -3,59 +3,59 @@ import { workbook as w } from '../refs/workbook';
 
 export default class Engine {
     constructor() {
-        const self = this;
         const database = {
             info: ['label', 'value'],
             meetings: ['label', 'date', 'data'],
             publishers: ['name', 'absences'],
             assignments: ['meeting', 'assignment', 'type', 'number', 'assigned', 'partner', '_assigned', '_partner']
+        };
+
+        this.lib = new localStorageDB('library', localStorage);
+
+        for (const [key, fields] of Object.entries(database)) {
+            if (!this.lib.tableExists(key))
+                this.lib.createTable(key, fields);
         }
-
-        self.lib = new localStorageDB('library', localStorage);
-
-        Object.keys(database).forEach((key) => {
-            if(!self.lib.tableExists(key))
-                self.lib.createTable(key, database[key]);
-        });
     }
     getPublisher(ID) {
+        if (!ID) return null;
         const publisher = this.lib.queryAll('publishers', {
             query: { ID }
         }).find(Boolean);
         return publisher;
     }
     getMeeting(ID) {
+        if (!ID) return null;
         const meeting = this.lib.queryAll('meetings', {
             query: { ID }
         }).find(Boolean);
         return meeting;
     }
     getAssignment(ID) {
+        if (!ID) return null;
         const assignment = this.lib.queryAll('assignments', {
             query: { ID }
         }).find(Boolean);
+        if (!assignment) return null;
         assignment.assigned = this.getPublisher(assignment.assigned);
         assignment.partner = this.getPublisher(assignment.partner);
         assignment.meeting = this.getMeeting(assignment.meeting);
         return assignment;
     }
     parseBoard(meetings) {
-        const self = this;
-
-        meetings.forEach((m) => { // meeting
+        for (const m of meetings) { // meeting
             const date = m.week.replace(/\D/g, '');
-            const meeting = self.lib.insertOrUpdate('meetings', { date }, {
+            const meeting = this.lib.insertOrUpdate('meetings', { date }, {
                 date,
                 data: m,
                 label: m.label,
             });
 
-            if (m.message)
-                return
+            if (m.message) continue;
 
             const meetingId = meeting[meeting.length - 1] || meeting;
 
-            self.lib.deleteRows('assignments', { meeting: meetingId });
+            this.lib.deleteRows('assignments', { meeting: meetingId });
 
             const data = {
                 SA: [],
@@ -66,49 +66,49 @@ export default class Engine {
                 CP: { name: m[w.CP] },
                 BR: { name: m[w.BR].reader, number: 3 },
                 OT: { name: m[w.OT].speaker },
-                SG: { name: Object.prototype.hasOwnProperty.call(m[w.SG], 'conductor') ? m[w.SG].conductor : m[w.SG] },
+                SG: { name: ('conductor' in m[w.SG]) ? m[w.SG].conductor : m[w.SG] },
                 LAC: m[w.LAC].map(p => ({ name: p.speaker }))
             };
 
-            if(Object.prototype.hasOwnProperty.call(m, w.CBS)) {
+            if (w.CBS in m) {
                 data.CSC = { name: m[w.CBS].conductor };
-                if(Object.prototype.hasOwnProperty.call(m[w.CBS], 'reader'))
+                if ('reader' in m[w.CBS])
                     data.CSR = { name: m[w.CBS].reader };
             }
 
-            if(Object.prototype.hasOwnProperty.call(m, w.TA))
+            if (w.TA in m)
                 data.TA = { name: m[w.TA].student };
 
             [w.IC, w.RV, w.BS].forEach((t) => {
-                if (Object.prototype.hasOwnProperty.call(m, t) && Object.prototype.hasOwnProperty.call(m[t], 'student'))
+                if (t in m && 'student' in m[t])
                     data.SA.push({
                         name: m[t].student,
-                        partner: Object.prototype.hasOwnProperty.call(m[t], 'assistant') && m[t].assistant,
+                        partner: ('assistant' in m[t]) && m[t].assistant,
                         type: t,
                     });
-                if (Object.prototype.hasOwnProperty.call(m, t) && Object.prototype.hasOwnProperty.call(m[t], 'assistant'))
+                if (t in m && 'assistant' in m[t])
                     data.AA.push({
                         name: m[t].assistant,
-                        partner: Object.prototype.hasOwnProperty.call(m[t], 'student') && m[t].student,
+                        partner: ('student' in m[t]) && m[t].student,
                         type: t
                     });
             });
 
-            if(m[w.AT])
+            if (m[w.AT])
                 m[w.AT].forEach((v) => {
                     data.AT.push({
                         name: v
                     });
                 });
 
-            if(m[w.AYF])
+            if (m[w.AYF])
                 m[w.AYF].forEach((v) => {
-                    if(Object.prototype.hasOwnProperty.call(v, 'theme') && !Object.prototype.hasOwnProperty.call(v, 'assistant'))
+                    if ('theme' in v && !('assistant' in v))
                         data.TA = {
                             name: v.assigned,
                             number: v.number
                         };
-                    else if(Object.prototype.hasOwnProperty.call(v, 'assistant')) {
+                    else if ('assistant' in v) {
                         data.SA.push({
                             name: v.assigned,
                             partner: v.assistant,
@@ -127,23 +127,25 @@ export default class Engine {
                         });
                 });
 
-            Object.keys(data).forEach((key) =>  {
-                if(Array.isArray(data[key]))
-                    data[key].forEach((info) => {
+            // Process assignments more efficiently
+            for (const [key, value] of Object.entries(data)) {
+                if (Array.isArray(value)) {
+                    for (const info of value)
                         this.setAssignment(key, meetingId, info);
-                    });
-                else
-                    this.setAssignment(key, meetingId, data[key]);
-            });
-        });
+                } else if (value)
+                    this.setAssignment(key, meetingId, value);
+            }
+        }
 
-        self.lib.commit();
+        this.lib.commit();
     }
     parseExceptions(absences) {
-        Object.entries(absences).forEach(([key, value]) => this.lib.update('publishers', { name: key }, (r) => {
-            r.absences = value.map((e) => e.replace(/\D/g, ''));
-            return r;
-        }));
+        for (const [key, value] of Object.entries(absences)) {
+            this.lib.update('publishers', { name: key }, (r) => {
+                r.absences = value.map((e) => e.replace(/\D/g, ''));
+                return r;
+            });
+        }
         this.lib.commit();
     }
     setAssignment(assignment, meetingId, info) {
@@ -161,19 +163,21 @@ export default class Engine {
         });
     }
     setInfo(label, value) {
-        this.lib.insert('info', {
+        this.lib.insertOrUpdate('info', { label }, {
             label,
             value
         });
         this.lib.commit();
     }
     setPublisher(name) {
-        const self = this;
         const publishers = [];
         if (name)
-            String(name).split('|').forEach((name) => {
-                const publisher = self.lib.insertOrUpdate('publishers', { name }, { name });
-                publishers.push(publisher[publisher.length - 1] || publisher)
+            String(name).split('|').forEach((publisherName) => {
+                const trimmedName = publisherName.trim();
+                if (trimmedName) {
+                    const publisher = this.lib.insertOrUpdate('publishers', { name: trimmedName }, { name: trimmedName });
+                    publishers.push(publisher[publisher.length - 1] || publisher);
+                }
             });
         return publishers;
     }
