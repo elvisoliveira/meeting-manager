@@ -12,10 +12,9 @@ export default class Engine {
 
         this.lib = new localStorageDB('library', localStorage);
 
-        for (const [key, fields] of Object.entries(database)) {
+        for (const [key, fields] of Object.entries(database))
             if (!this.lib.tableExists(key))
                 this.lib.createTable(key, fields);
-        }
     }
     getPublisher(ID) {
         if (!ID) return null;
@@ -128,24 +127,22 @@ export default class Engine {
                 });
 
             // Process assignments more efficiently
-            for (const [key, value] of Object.entries(data)) {
-                if (Array.isArray(value)) {
+            for (const [key, value] of Object.entries(data))
+                if (Array.isArray(value))
                     for (const info of value)
                         this.setAssignment(key, meetingId, info);
-                } else if (value)
+                else if (value)
                     this.setAssignment(key, meetingId, value);
-            }
         }
 
         this.lib.commit();
     }
     parseExceptions(absences) {
-        for (const [key, value] of Object.entries(absences)) {
+        for (const [key, value] of Object.entries(absences))
             this.lib.update('publishers', { name: key }, (r) => {
                 r.absences = value.map((e) => e.replace(/\D/g, ''));
                 return r;
             });
-        }
         this.lib.commit();
     }
     setAssignment(assignment, meetingId, info) {

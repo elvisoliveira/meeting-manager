@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sort: [['date', 'ASC']]
     });
 
-    fetch('board.hbs.html').then((response) => response.text().then((html) => {
+    const layout = params.getAll('layout');
+
+    fetch(`layout.${layout || 'default'}.hbs.html`).then((response) => response.text().then((html) => {
         document.getElementById('boot').innerHTML = Handlebars.compile(html)({
             meetings: meetings.map(a => a.data)
         });

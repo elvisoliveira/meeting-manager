@@ -4,18 +4,15 @@ export class DataProcessor {
     }
 
     processData(data) {
-        if (data.meetings) {
+        if (data.meetings)
             this.engine.parseBoard(data.meetings);
-        }
 
-        if (data.absences) {
+        if (data.absences)
             this.engine.parseExceptions(data.absences);
-        }
 
         ['congregation', 'time'].forEach((entry) => {
-            if (data[entry]) {
+            if (data[entry])
                 this.engine.setInfo(entry, data[entry]);
-            }
         });
     }
 }
