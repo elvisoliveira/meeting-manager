@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "predev": "json-merger --default-array-merge-operation \"concat\" --output ./samples.json $(ls ./samples/*.json)",
-        "dev": "parcel serve ./src/*.{hbs,pug} --no-cache --no-hmr --host 127.0.0.1 --port 9624 --open chromium",
+        "dev": "parcel serve ./src/*.{hbs,pug} ./src/templates/*.{hbs,pug} --no-cache --no-hmr --host 127.0.0.1 --port 9624 --open chromium",
         "prebuild": "npm run predev",
         "build": "rm -rf ./docs && parcel build ./src/*.{hbs,pug} --dist-dir ./docs --public-url /meeting-manager"
     },

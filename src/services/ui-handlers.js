@@ -10,7 +10,7 @@ export class UIHandlers {
 
     setupPrintHandler() {
         document.querySelector('i.fa-print')?.addEventListener('click', () => {
-            const ids = Array.from(document.querySelectorAll('table input:checked')).map(input => input.value);
+            const ids = Array.from(document.querySelectorAll('table#main input:checked')).map(input => input.value);
             const params = new URLSearchParams(ids.map(d => ['date', d]));
             window.open(`board.html?${params.toString()}`, '_blank');
         });

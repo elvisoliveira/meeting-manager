@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sort: [['date', 'ASC']]
     });
 
-    const layout = params.getAll('layout');
+    const layout = params.get('layout');
 
     fetch(`layout.${layout || 'default'}.hbs.html`).then((response) => response.text().then((html) => {
         document.getElementById('boot').innerHTML = Handlebars.compile(html)({
@@ -81,6 +81,12 @@ document.querySelector('#borderSpacing input').addEventListener('change', (e) =>
     document.querySelectorAll('table.meeting').forEach(el => {
         el.style.borderSpacing = `0 ${value}px`;
     });
+});
+
+document.querySelector('#layoutType select').addEventListener('change', (e) => {
+    const url = new URL(window.location);
+    url.searchParams.set('layout', e.target.value);
+    window.location.href = url.toString();
 });
 
 updateInnerText('#borderSpacing label', 'BORDER_SPACING');

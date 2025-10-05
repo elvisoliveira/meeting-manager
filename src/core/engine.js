@@ -65,7 +65,7 @@ export default class Engine {
                 CP: { name: m[w.CP] },
                 BR: { name: m[w.BR].reader, number: 3 },
                 OT: { name: m[w.OT].speaker },
-                SG: { name: ('conductor' in m[w.SG]) ? m[w.SG].conductor : m[w.SG] },
+                SG: { name: (m[w.SG] && typeof m[w.SG] === 'object' && 'conductor' in m[w.SG]) ? m[w.SG].conductor : m[w.SG] },
                 LAC: m[w.LAC].map(p => ({ name: p.speaker }))
             };
 

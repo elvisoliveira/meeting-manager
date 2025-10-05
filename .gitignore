@@ -1,7 +1,8 @@
-.parcel-cache/
+/.parcel-cache/
 
-dist/
-node_modules/
+/dist/
+/docs/
+/node_modules/
 
 samples.json
 
