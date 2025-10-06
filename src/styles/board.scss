@@ -17,12 +17,14 @@ $grey: #2a6b77;
     div.options {
         display: none;
     }
+
     .schedule {
         width: 100% !important;
     }
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -33,41 +35,50 @@ div.options {
     position: fixed;
     right: 0;
     padding: 10px;
+
     form {
         fieldset {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 10px;
             margin-bottom: 10px;
+
             legend {
                 font-weight: bold;
                 padding: 0 10px;
                 color: #333;
             }
+
             dl {
                 dt {
                     margin-bottom: 10px;
                     font-weight: bold;
                     color: #333;
+
                     label {
                         display: block;
                         margin-bottom: 5px;
                         color: #555;
                     }
                 }
+
                 dd {
                     margin-bottom: 10px;
+
+                    select,
                     input[type="number"] {
                         width: 100%;
                         padding: 8px;
                         border: 1px solid #ccc;
+                        background-color: #fff;
                         border-radius: 3px;
                         box-sizing: border-box;
                     }
                 }
             }
         }
-        > button {
+
+        >button {
             display: block;
             width: 100%;
             padding: 10px;
@@ -85,18 +96,24 @@ div.options {
 table {
     width: 100%;
     border-collapse: separate;
-    td {
-        padding: 3px;
-        &.hr {
-            height: auto;
-            background-color: #FFF;
-        }
-    }
+
     &.meeting {
-        border-spacing: 0 4px;
-        > tbody {
-            &.apply, &.living, &.treasures {
-                > tr:not(:first-child) {
+
+        td {
+
+
+            &.hr {
+                height: auto;
+                background-color: #FFF;
+            }
+        }
+
+        >tbody {
+
+            &.apply,
+            &.living,
+            &.treasures {
+                >tr:not(:first-child) {
                     &:nth-child(odd) {
                         background-color: #f1f1f1;
                     }
@@ -104,23 +121,30 @@ table {
             }
         }
     }
+
     &.schedule {
         float: left;
         width: calc(100% - 300px);
-        > tbody {
+
+        >tbody {
             counter-reset: page;
-            > tr {
+
+            >tr {
                 tfoot {
                     display: none;
                     text-align: right;
+
                     span.page {
                         padding: 0 8px;
                     }
                 }
+
                 &:nth-child(even) {
                     page-break-after: always;
+
                     tfoot {
                         display: table-row-group;
+
                         span.page {
                             &:after {
                                 counter-increment: page;
@@ -132,15 +156,18 @@ table {
             }
         }
     }
+
     thead {
         tr {
             td {
+
                 // font-weight: bold;
                 &:nth-child(2) {
                     font-family: "Oranienbaum";
                     font-size: 25px;
                     text-align: right;
                 }
+
                 &:nth-child(1) {
                     font-size: 15px;
                     text-transform: uppercase;
@@ -151,106 +178,249 @@ table {
     }
 }
 
-tbody.apply, tbody.living, tbody.treasures {
-    tr {
-        &:nth-child(1) {
-            td {
-                font-weight: bold;
-                height: 20px;
-                text-indent: 5px;
-                text-transform: uppercase;
-                &:nth-child(1) {
-                    padding: 5px;
-                    display: flex;
-                    justify-content: center;
-                }
-                img {
-                    float: left;
-                    max-height: 20px;
-                }
-            }
-        }
-    }
-}
+tbody.vertical {
+    table.meeting {
+        border-spacing: 0;
 
-tbody.treasures {
-    tr {
-        &:nth-child(1) {
-            td {
-                &:nth-child(1) {
-                    background-color: $grey;
-                }
-            }
-        }
         td {
-            color: $grey;
+            vertical-align: bottom;
+            padding: 5px;
         }
-    }
-}
 
-tbody.apply {
-    tr {
-        &:nth-child(1) {
-            td {
+        tbody.apply,
+        tbody.living,
+        tbody.treasures {
+            tr {
                 &:nth-child(1) {
-                    background-color: $yellow;
+                    td {
+                        &:nth-child(1) {
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-size: 14px;
+                        }
+
+                        &:nth-child(1),
+                        &:nth-child(3) {
+                            border-bottom-style: solid;
+                            border-bottom-width: 1px;
+                        }
+                    }
+                }
+
+                td:nth-child(2) {
+                    color: #fff;
+                    text-align: center;
+
+                    svg {
+                        max-height: 25px;
+                        max-width: 25px;
+                    }
                 }
             }
         }
-        td {
-            color: $yellow;
-        }
-    }
-}
 
-tbody.living {
-    tr {
-        &:nth-child(1) {
-            td {
-                &:nth-child(1) {
-                    background-color: $red;
+        tbody {
+            tr {
+                td {
+                    &:nth-child(2) {
+                        background-color: #ccc;
+                    }
                 }
             }
         }
-        td {
-            color: $red;
+
+        tbody.treasures {
+            tr {
+                &:nth-child(1) {
+                    color: $grey;
+                }
+
+                td {
+                    border-color: $grey;
+
+                    &:nth-child(2) {
+                        background-color: $grey;
+                    }
+                }
+            }
+        }
+
+        tbody.apply {
+            tr {
+                &:nth-child(1) {
+                    color: $yellow;
+                }
+
+                td {
+                    &:nth-child(2) {
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+
+        tbody.living {
+            tr {
+                &:nth-child(1) {
+                    color: $red;
+                }
+
+                td {
+                    &:nth-child(2) {
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+
+        tr {
+            td:nth-child(1) {
+                width: 50%;
+                text-align: right;
+            }
+
+            td:nth-child(2) {
+                width: 40px;
+            }
+
+            td:nth-child(3) {
+                width: 50%;
+                text-align: left;
+            }
+        }
+    }
+
+    tr.head {
+        td.assigned {
+            text-transform: uppercase;
+            font-weight: bold;
         }
     }
 }
 
-tr.apply,
-tr.living,
-tr.treasures {
-    td {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 19px;
-        white-space: normal;
-    }
-}
+tbody.default {
+    table.meeting {
+        border-spacing: 0 4px;
 
-tr.head {
-    td.label {
-        font-size: 14px;
+        td {
+            padding: 3px;
+        }
+
+        td.time,
+        td.title {
+            // color: $grey;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    }
+
+    tbody.apply,
+    tbody.living,
+    tbody.treasures {
+        tr {
+            &:nth-child(1) {
+                td {
+                    font-weight: bold;
+                    height: 20px;
+                    text-indent: 5px;
+                    text-transform: uppercase;
+
+                    &:nth-child(1) {
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    img {
+                        float: left;
+                        max-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    tbody.treasures {
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(1) {
+                        background-color: $grey;
+                    }
+                }
+            }
+
+            td {
+                color: $grey;
+            }
+        }
+    }
+
+    tbody.apply {
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(1) {
+                        background-color: $yellow;
+                    }
+                }
+            }
+
+            td {
+                color: $yellow;
+            }
+        }
+    }
+
+    tbody.living {
+        tr {
+            &:nth-child(1) {
+                td {
+                    &:nth-child(1) {
+                        background-color: $red;
+                    }
+                }
+            }
+
+            td {
+                color: $red;
+            }
+        }
+    }
+
+    tr.apply,
+    tr.living,
+    tr.treasures {
+        td {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            white-space: normal;
+        }
+    }
+
+    td.title,
+    td.assigned {
+        width: 0.1%;
+        white-space: nowrap;
+    }
+
+    td.title {
+        text-align: right;
+    }
+
+    tr.head {
+        td.label {
+            font-size: 14px;
+        }
     }
 }
 
 td.time {
     width: 40px;
 }
-td.time, td.title {
-    // color: $grey;
-    font-weight: bold;
-    text-align: center;
-}
 
-td.title, td.assigned {
-    width: 0.1%;
-    white-space: nowrap;
-}
-td.title {
-    text-align: right;
-}
 td.label {
     font-weight: bold;
     text-transform: uppercase;
@@ -262,10 +432,13 @@ div.message {
     margin: 8px;
     padding: 29px 0px;
     text-align: center;
+
     p {
         font-size: 50px;
     }
-    &, p {
+
+    &,
+    p {
         font-family: "Oranienbaum";
     }
 }

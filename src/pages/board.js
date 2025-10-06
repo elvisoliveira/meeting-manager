@@ -47,6 +47,8 @@ const updateInnerText = (selector, translationKey) => {
         element.textContent = i18next.t(translationKey);
 };
 
+const layoutType = document.querySelector('select[name="layoutType"]');
+
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URL(location.href).searchParams;
     const meetings = lib.queryAll('meetings', {
@@ -54,10 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
         sort: [['date', 'ASC']]
     });
 
-    const layout = params.get('layout');
+    const boot = document.getElementById('boot');
+    const layout = params.get('layout') || 'default';
 
-    fetch(`layout.${layout || 'default'}.hbs.html`).then((response) => response.text().then((html) => {
-        document.getElementById('boot').innerHTML = Handlebars.compile(html)({
+    layoutType.value = layout;
+
+    fetch(`layout.${layout}.hbs.html`).then((response) => response.text().then((html) => {
+        boot.classList.add(layout);
+        boot.innerHTML = Handlebars.compile(html)({
             meetings: meetings.map(a => a.data)
         });
     }));
@@ -83,12 +89,17 @@ document.querySelector('#borderSpacing input').addEventListener('change', (e) =>
     });
 });
 
-document.querySelector('#layoutType select').addEventListener('change', (e) => {
+layoutType.addEventListener('change', (e) => {
     const url = new URL(window.location);
     url.searchParams.set('layout', e.target.value);
     window.location.href = url.toString();
 });
 
-updateInnerText('#borderSpacing label', 'BORDER_SPACING');
-updateInnerText('#layout', 'LAYOUT');
-updateInnerText('#print', 'PRINT');
+[
+    ['#layoutType label', 'TYPE'],
+    ['#borderSpacing label', 'BORDER_SPACING'],
+    ['#layout', 'LAYOUT'],
+    ['#print', 'PRINT']
+].forEach(([selector, translationKey]) => {
+    updateInnerText(selector, translationKey);
+});
