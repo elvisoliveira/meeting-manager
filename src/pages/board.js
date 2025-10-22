@@ -9,6 +9,7 @@ import detector from "i18next-browser-languagedetector";
 import registerI18nHelper from 'handlebars-i18next';
 
 import { translation } from '../config/translation';
+import { songs } from '../refs/songs';
 
 const lib = new localStorageDB('library', localStorage);
 
@@ -37,9 +38,16 @@ const TimeManager = {
     }
 };
 
-Handlebars.registerHelper('time', (minutes) => TimeManager.updateTime(minutes));
+Handlebars.registerHelper('timer', (minutes) => TimeManager.updateTime(minutes));
 
 Handlebars.registerHelper('d', (e) => String(e).split('|').find(Boolean));
+
+Handlebars.registerHelper('song', (number) => {
+    const currentLanguage = i18next.language;
+    const songsForLanguage = songs[currentLanguage] || songs['pt']; // fallback to Portuguese
+    const song = songsForLanguage.find(song => song.number === parseInt(number));
+    return song.title || '';
+});
 
 const updateInnerText = (selector, translationKey) => {
     const element = document.querySelector(selector);
@@ -89,6 +97,36 @@ document.querySelector('#borderSpacing input').addEventListener('change', (e) =>
     });
 });
 
+document.querySelector('#padding input').addEventListener('change', (e) => {
+    const value = e.target.value;
+    document.querySelectorAll('table.meeting td').forEach(el => {
+        el.style.padding = `${value}px 5px`;
+    });
+});
+
+document.querySelector('#header select').addEventListener('change', (e) => {
+    const elm = document.querySelector('thead');
+    elm.removeAttribute("class");
+    elm.classList.add(e.target.value);
+});
+
+document.querySelector('#footer select').addEventListener('change', (e) => {
+    const value = e.target.value;
+    document.querySelectorAll('tfoot').forEach(el => {
+        el.removeAttribute("class");
+        el.classList.add(value);
+    });
+});
+
+document.querySelector('#dividers select').addEventListener('change', (e) => {
+    const value = e.target.value;
+    document.querySelectorAll('td.hr').forEach(el => {
+        const elm = el.closest('tr');
+        elm.removeAttribute("class");
+        elm.classList.add(value);
+    });
+});
+
 layoutType.addEventListener('change', (e) => {
     const url = new URL(window.location);
     url.searchParams.set('layout', e.target.value);
@@ -98,6 +136,10 @@ layoutType.addEventListener('change', (e) => {
 [
     ['#layoutType label', 'TYPE'],
     ['#borderSpacing label', 'BORDER_SPACING'],
+    ['#padding label', 'PADDING'],
+    ['#footer label', 'FOOTER'],
+    ['#header label', 'HEADER'],
+    ['#dividers label', 'DIVIDERS'],
     ['#layout', 'LAYOUT'],
     ['#print', 'PRINT']
 ].forEach(([selector, translationKey]) => {

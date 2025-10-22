@@ -15,103 +15,130 @@ tr
       | {{#unless this.message}}
       tbody
         tr.head
-          td.label {{this.theme}}
-          td.time {{time 5}}
-          td.assigned {{this.label}}
+          td
+            span.uppercase {{this.label}}<br />
+            span
+              strong {{i18n 'SONG'}}&nbsp;
+              | {{this.opening_song}}<br />
+              i ({{song this.opening_song}})
+          td.time {{timer 5}}
+          td
+            span.uppercase {{this.theme}}<br />
+            span
+              strong {{i18n 'CH'}}: 
+              | {{d this.chairman}}<br />
+            span
+              strong {{i18n 'ATTENDANTS'}}: 
+              | {{d this.attendants.[0]}} &amp; {{d this.attendants.[1]}}
       tbody
         tr
-          td {{i18n 'OPENING_COMMENTS'}}
-          td.time {{time 1}}
-          td.assigned
-            strong {{i18n 'CH'}}: 
-            | {{d this.chairman}}<br />
-            strong {{i18n 'ATTENDANT'}}: 
-            | {{d this.attendants.[0]}} {{d this.attendants.[1]}}<br />
-            strong {{i18n 'SONG'}}: 
-            | {{this.opening_song}}
+          td {{i18n 'OPENING_COMMENTS'}} <i>(1 min)</i>
+          td.time {{timer 1}}
+          td.assigned &nbsp;
       tbody.treasures
         tr
-          td {{i18n 'TREASURES'}}
+          td
+            div.section {{i18n 'TREASURES'}}
           td
             +section('treasures')
           td
+            div.section &nbsp;
         | {{#with this.opening_talk}}
         tr
-          td {{title}}
-          td.time {{time time}}
+          td
+            | {{this.title}} <i>({{time}} min)</i>
+          td.time {{timer time}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.spiritual_gems}}
         tr
-          td {{title}}
-          td.time {{time time}}
+          td
+            | {{this.title}} <i>({{time}} min)</i>
+          td.time {{timer time}}
           td.assigned {{d conductor}}
         | {{/with}}
         | {{#with this.bible_reading}}
         tr
-          td {{title}}
-          td.time {{time time}}
+          td
+            | {{this.title}} <i>({{time}} min)</i>
+          td.time {{timer time}}
           td.assigned {{d reader}}
         | {{/with}}
       tbody.apply
         tr
-          td {{i18n 'APPLY'}}
+          td
+            div.section {{i18n 'APPLY'}}
           td
             +section('apply')
           td
+            div.section &nbsp;
         | {{#each this.apply_yourself_to_the_field_ministry}}
         tr
           td
             | {{#if this.theme}}
-            |   {{this.theme}}
+            |   {{this.theme}} <i>({{time}} min)</i>
             | {{else}}
-            |   {{this.title}}
+            |   {{this.title}} <i>({{time}} min)</i>
             |   {{#if this.notes}} <i>({{this.notes}})</i>{{/if}}
             | {{/if}}
-          td.time {{time this.time}}
-          td.assigned {{d this.assigned}}
+          td.time {{timer this.time}}
+          td.assigned
+            | {{d this.assigned}}
+            | {{#if this.assistant}}
+            i ({{i18n 'ASSISTANT'}}: {{d this.assistant}})
+            | {{/if}}
         | {{/each}}
       tbody.living
         tr
           td
-            | {{i18n 'LIVING'}}
+            div.section {{i18n 'LIVING'}}
           td
             +section('living')
           td
-            | {{i18n 'SONG'}}: 
-            strong {{this.middle_song}}
+            div.section
+              | {{i18n 'SONG'}}&nbsp;
+              strong {{this.middle_song}}&nbsp;
+              i ({{song this.middle_song}})
         | {{#each this.living_as_christians}}
         tr
-          td {{this.title}}
-          td.time {{time this.time}}
+          td
+            | {{this.title}}&nbsp;
+            i ({{time}} min)
+          td.time {{timer this.time}}
           td.assigned {{d this.speaker}}
         | {{/each}}
         | {{#with this.service_talk}}
         tr
           td {{i18n 'SERVICE_TALK'}}: {{theme}}
-          td.time {{time time}}
+          td.time {{timer time}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.congregation_bible_study}}
         tr
-          td {{title}}
-          td.time {{time time}}
-          td.assigned {{d conductor}}
+          td
+            | {{this.title}}&nbsp;
+            i ({{time}} min)
+          td.time {{timer time}}
+          td.assigned
+            | {{d conductor}}&nbsp;
+            i ({{i18n 'READER'}}: {{d reader}})
         | {{/with}}
       tbody
         tr
-          td {{i18n 'CONCLUDING_COMMENTS'}}
-          td.time {{time 3}}
+          td {{i18n 'CONCLUDING_COMMENTS'}} <i>(3 min)</i>
+          td.time {{timer 3}}
           td.assigned
         tr
           td
-            | {{i18n 'SONG'}}: 
-            strong {{this.closing_song}}
-          td.time {{time 5}}
+            | {{i18n 'SONG'}}&nbsp;
+            strong {{this.closing_song}}&nbsp;
+            i ({{song this.closing_song}})
+          td.time {{timer 5}}
           td.assigned
-            | {{i18n 'PRAYER'}}: {{this.closing_prayer}}
+            strong {{i18n 'PRAYER'}}: 
+            | {{this.closing_prayer}}
         tr
-          td.hr(colspan='3') {{time 0}}
+          td.hr(colspan='3') {{timer 0}}
             hr
       | {{/unless}}
       tfoot

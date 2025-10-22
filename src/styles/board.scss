@@ -158,20 +158,40 @@ table {
     }
 
     thead {
-        tr {
-            td {
+        &.horizontal {
+            tr td {
+                vertical-align: baseline;
 
-                // font-weight: bold;
-                &:nth-child(2) {
-                    font-family: "Oranienbaum";
-                    font-size: 25px;
-                    text-align: right;
+                div {
+                    &#label {
+                        float: right;
+                        font-family: "Oranienbaum";
+                        font-size: 25px;
+                    }
+
+                    &#name {
+                        float: left;
+                        padding-top: 9px;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        &.vertical {
+            div {
+                text-align: center;
+                text-transform: uppercase;
+
+                &#label {
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 10px;
                 }
 
-                &:nth-child(1) {
+                &#name {
                     font-size: 15px;
-                    text-transform: uppercase;
-                    vertical-align: bottom;
                 }
             }
         }
@@ -183,8 +203,13 @@ tbody.vertical {
         border-spacing: 0;
 
         td {
-            vertical-align: bottom;
+            vertical-align: top;
             padding: 5px;
+
+            i {
+                font-size: 11px;
+                color: #909090;
+            }
         }
 
         tbody.apply,
@@ -193,6 +218,8 @@ tbody.vertical {
             tr {
                 &:nth-child(1) {
                     td {
+                        vertical-align: baseline;
+
                         &:nth-child(1) {
                             text-transform: uppercase;
                             font-weight: bold;
@@ -201,8 +228,11 @@ tbody.vertical {
 
                         &:nth-child(1),
                         &:nth-child(3) {
-                            border-bottom-style: solid;
-                            border-bottom-width: 1px;
+                            div.section {
+                                border-bottom-style: solid;
+                                border-bottom-width: 1px;
+                                padding-bottom: 5px;
+                            }
                         }
                     }
                 }
@@ -210,10 +240,16 @@ tbody.vertical {
                 td:nth-child(2) {
                     color: #fff;
                     text-align: center;
+                    position: relative;
 
                     svg {
                         max-height: 25px;
                         max-width: 25px;
+
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
                 }
             }
@@ -223,7 +259,7 @@ tbody.vertical {
             tr {
                 td {
                     &:nth-child(2) {
-                        background-color: #ccc;
+                        background-color: #f1f1f1;
                     }
                 }
             }
@@ -236,7 +272,9 @@ tbody.vertical {
                 }
 
                 td {
-                    border-color: $grey;
+                    div.section {
+                        border-color: $grey;
+                    }
 
                     &:nth-child(2) {
                         background-color: $grey;
@@ -291,7 +329,9 @@ tbody.vertical {
     }
 
     tr.head {
-        td.assigned {
+
+        td.assigned,
+        span.uppercase {
             text-transform: uppercase;
             font-weight: bold;
         }
@@ -414,6 +454,14 @@ tbody.default {
         td.label {
             font-size: 14px;
         }
+    }
+}
+
+tr,
+tfoot,
+thead {
+    &.disabled {
+        display: none !important;
     }
 }
 

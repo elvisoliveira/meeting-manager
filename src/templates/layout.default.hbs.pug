@@ -18,7 +18,7 @@ tr
           td.title {{i18n 'CH'}}
           td.assigned {{d this.chairman}}
         tr
-          td.time {{time 5}}
+          td.time {{timer 5}}
           td(colspan='{{#if this.attendants.[0]}} 3 {{else}} 5 {{/if}}')
             | {{i18n 'SONG'}}: 
             strong {{this.opening_song}}
@@ -27,7 +27,7 @@ tr
           td.assigned {{this}}
           | {{/with}}
         tr
-          td.time {{time 1}}
+          td.time {{timer 1}}
           td(colspan='{{#if this.attendants.[1]}} 3 {{else}} 5 {{/if}}')
             | {{i18n 'OPENING_COMMENTS'}}
           | {{#with this.attendants.[1]}}
@@ -41,19 +41,19 @@ tr
           td(colspan='5') {{i18n 'TREASURES'}}
         | {{#with this.opening_talk}}
         tr
-          td.time {{time time}}
+          td.time {{timer time}}
           td(colspan='4') {{title}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.spiritual_gems}}
         tr
-          td.time {{time time}}
+          td.time {{timer time}}
           td(colspan='4') {{title}}
           td.assigned {{d conductor}}
         | {{/with}}
         | {{#with this.bible_reading}}
         tr
-          td.time {{time time}}
+          td.time {{timer time}}
           td(colspan='3') {{title}}
           td.title {{i18n 'STUDENT'}}
           td.assigned {{d reader}}
@@ -65,7 +65,7 @@ tr
           td(colspan='3') {{i18n 'APPLY'}}
         | {{#each this.apply_yourself_to_the_field_ministry}}
         tr
-          td.time {{time this.time}}
+          td.time {{timer this.time}}
           td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}')
             | {{#if this.theme}}
             |   {{this.theme}}
@@ -91,25 +91,25 @@ tr
             +section('living')
           td(colspan='6') {{i18n 'LIVING'}}
         tr
-          td.time {{time 5}}
+          td.time {{timer 5}}
           td(colspan='5')
             | {{i18n 'SONG'}}: 
             strong {{this.middle_song}}
         | {{#each this.living_as_christians}}
         tr
-          td.time {{time this.time}}
+          td.time {{timer this.time}}
           td(colspan='4') {{this.title}}
           td.assigned {{d this.speaker}}
         | {{/each}}
         | {{#with this.service_talk}}
         tr
-          td.time {{time time}}
+          td.time {{timer time}}
           td(colspan='4') {{i18n 'SERVICE_TALK'}}: {{theme}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.congregation_bible_study}}
         tr
-          td.time {{time time}}
+          td.time {{timer time}}
           td(colspan='0') {{title}}
           td.title {{i18n 'CONDUCTOR'}}
           td.assigned {{d conductor}}
@@ -118,17 +118,17 @@ tr
         | {{/with}}
       tbody
         tr
-          td.time {{time 3}}
+          td.time {{timer 3}}
           td(colspan='5') {{i18n 'CONCLUDING_COMMENTS'}}
         tr
-          td.time {{time 5}}
+          td.time {{timer 5}}
           td(colspan='3')
             | {{i18n 'SONG'}}: 
             strong {{this.closing_song}}
           td.title {{i18n 'PRAYER'}}
           td.assigned {{this.closing_prayer}}
         tr
-          td.hr(colspan='6') {{time 0}}
+          td.hr(colspan='6') {{timer 0}}
             hr
       | {{/if}}
       tfoot
