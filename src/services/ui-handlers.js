@@ -1,5 +1,5 @@
 import TableSort from '../utils/table-sort';
-import modRow from '../utils/mod-row';
+import RowModifier from '../utils/row-modifier';
 import filter from '../utils/filter';
 import i18next from '../config/i18n';
 
@@ -17,7 +17,7 @@ export class UIHandlers {
     }
 
     setupTableSorting() {
-        document.querySelectorAll('label.sort, i.fa-sort').forEach(label => 
+        document.querySelectorAll('label.sort, i.fa-sort').forEach(label =>
             label.addEventListener('click', () => {
                 const table = label.closest('table');
                 const tbody = table.querySelector('tbody');
@@ -31,7 +31,7 @@ export class UIHandlers {
     }
 
     setupRowModification() {
-        document.querySelectorAll('#main tbody tr').forEach((row) => modRow(row));
+        document.querySelectorAll('#main tbody tr').forEach((row) => RowModifier.process(row));
     }
 
     setupClearDataHandler() {
@@ -44,14 +44,20 @@ export class UIHandlers {
     }
 
     setupFilterHandlers() {
+        const self = this;
         const filters = (new URL(window.location)).searchParams.get('filters');
         const checkboxes = document.querySelectorAll('#filters input[type=\'checkbox\']');
 
         checkboxes.forEach(checkboxInput => {
-            if (typeof filters === 'string')
+            if (typeof filters === 'string') {
                 checkboxInput.checked = atob(filters).split(',').includes(checkboxInput.value);
+                self.setupRowModification();
+            }
 
-            checkboxInput.addEventListener('change', filter);
+            checkboxInput.addEventListener('change', () => {
+                self.setupRowModification();
+                filter();
+            });
         });
 
         document.getElementById('threshold')?.addEventListener('input', filter);
@@ -61,6 +67,7 @@ export class UIHandlers {
                 checkboxes.forEach(checkbox => {
                     checkbox.checked = (e.target.id || e.target.parentElement.id) === 'all';
                 });
+                self.setupRowModification();
                 filter();
             })
         );
@@ -93,10 +100,10 @@ export class UIHandlers {
         const draggable = document.getElementById('draggable');
         if (!draggable) return;
 
-        draggable.addEventListener('mousedown', function(e) {
+        draggable.addEventListener('mousedown', function (e) {
             let offsetX = e.clientX - parseInt(window.getComputedStyle(this).left);
             let offsetY = e.clientY - parseInt(window.getComputedStyle(this).top);
-            
+
             function mouseMoveHandler(e) {
                 Object.assign(document.getElementById('draggable').style, {
                     top: (e.clientY - offsetY) + 'px',
@@ -106,12 +113,12 @@ export class UIHandlers {
                 });
                 ignore = true;
             }
-            
+
             const reset = () => {
                 window.removeEventListener('mousemove', mouseMoveHandler);
                 window.removeEventListener('mouseup', reset);
             };
-            
+
             window.addEventListener('mousemove', mouseMoveHandler);
             window.addEventListener('mouseup', reset);
         });

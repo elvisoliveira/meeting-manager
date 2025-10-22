@@ -19,34 +19,55 @@ i18next.use(detector).init(translation);
 
 dayjs.extend(custom);
 
-const time = dayjs(lib.queryAll('info', {
-    query: {
-        label: 'time'
-    }
-}).find(Boolean).value, 'HH:mm');
+const getInfoValue = (label) => {
+    const info = lib.queryAll('info', { query: { label } }).find(Boolean);
+    return info?.value || '';
+};
+
+const time = dayjs(getInfoValue('time'), 'HH:mm');
 
 const TimeManager = {
     time,
     updateTime(minutes) {
-        if (!minutes)
+        if (!minutes || minutes === 0) {
             this.time = time; // reset
-        else {
-            const temp = this.time;
-            this.time = this.time.add(minutes, 'minutes');
-            return temp.format('HH:mm');
+            return;
         }
+
+        const temp = this.time;
+        this.time = this.time.add(minutes, 'minutes');
+        return temp.format('HH:mm');
+    },
+    getCurrentTime() {
+        return this.time.format('HH:mm');
+    },
+    reset() {
+        this.time = time;
     }
 };
 
-Handlebars.registerHelper('timer', (minutes) => TimeManager.updateTime(minutes));
+Handlebars.registerHelper('timer', (minutes, additionalMinutes) => {
+    const parsedMinutes = parseInt(minutes + (additionalMinutes || 0), 10);
+    return isNaN(parsedMinutes) ? TimeManager.getCurrentTime() : TimeManager.updateTime(parsedMinutes);
+});
 
 Handlebars.registerHelper('d', (e) => String(e).split('|').find(Boolean));
 
 Handlebars.registerHelper('song', (number) => {
+    if (!number) return '';
+
     const currentLanguage = i18next.language;
     const songsForLanguage = songs[currentLanguage] || songs['pt']; // fallback to Portuguese
-    const song = songsForLanguage.find(song => song.number === parseInt(number));
-    return song.title || '';
+    const song = songsForLanguage?.find(song => song.number === parseInt(number, 10));
+    return song?.title || '';
+});
+
+Handlebars.registerHelper('songObject', (number) => {
+    if (!number) return null;
+
+    const currentLanguage = i18next.language;
+    const songsForLanguage = songs[currentLanguage] || songs['pt']; // fallback to Portuguese
+    return songsForLanguage?.find(song => song.number === parseInt(number, 10)) || null;
 });
 
 const updateInnerText = (selector, translationKey) => {
@@ -55,93 +76,139 @@ const updateInnerText = (selector, translationKey) => {
         element.textContent = i18next.t(translationKey);
 };
 
+const addEventListenerSafe = (selector, event, handler) => {
+    const element = document.querySelector(selector);
+    if (element)
+        element.addEventListener(event, handler);
+};
+
 const layoutType = document.querySelector('select[name="layoutType"]');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URL(location.href).searchParams;
-    const meetings = lib.queryAll('meetings', {
-        query: (r) => Array.from(params.getAll('date')).includes(r.date),
-        sort: [['date', 'ASC']]
-    });
-
-    const boot = document.getElementById('boot');
-    const layout = params.get('layout') || 'default';
-
-    layoutType.value = layout;
-
-    fetch(`layout.${layout}.hbs.html`).then((response) => response.text().then((html) => {
-        boot.classList.add(layout);
-        boot.innerHTML = Handlebars.compile(html)({
-            meetings: meetings.map(a => a.data)
+const initializeApp = async () => {
+    try {
+        const params = new URL(location.href).searchParams;
+        const meetings = lib.queryAll('meetings', {
+            query: (r) => Array.from(params.getAll('date')).includes(r.date),
+            sort: [['date', 'ASC']]
         });
-    }));
 
-    document.title = `${i18next.t('MIDWEEK_MEETING')}`;
-    updateInnerText('#label', 'MIDWEEK_MEETING');
+        const boot = document.getElementById('boot');
+        const layout = params.get('layout') || 'default';
 
-    document.getElementById('name').textContent = lib.queryAll('info', {
-        query: {
-            label: 'congregation'
+        if (layoutType)
+            layoutType.value = layout;
+
+        if (boot) {
+            const response = await fetch(`layout.${layout}.hbs.html`);
+            if (!response.ok)
+                throw new Error(`Failed to load layout: ${response.status}`);
+
+            const html = await response.text();
+            boot.innerHTML = Handlebars.compile(html)({
+                meetings: meetings.map(a => a.data)
+            });
+
+            document.querySelectorAll('.schedule').forEach(el => {
+                el.classList.add(layout);
+            });
         }
-    }).find(Boolean).value;
-});
 
-document.getElementById('print').addEventListener('click', () => {
-    window.print();
-});
+        document.title = i18next.t('MIDWEEK_MEETING');
+        updateInnerText('#label', 'MIDWEEK_MEETING');
 
-document.querySelector('#borderSpacing input').addEventListener('change', (e) => {
+        const nameElement = document.getElementById('name');
+        if (nameElement)
+            nameElement.textContent = getInfoValue('congregation');
+    } catch (error) {
+        console.error('Failed to initialize app:', error);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', initializeApp);
+
+// Event handlers
+const handlePrint = () => window.print();
+
+const handleBorderSpacing = (e) => {
     const value = e.target.value;
     document.querySelectorAll('table.meeting').forEach(el => {
         el.style.borderSpacing = `0 ${value}px`;
     });
-});
+};
 
-document.querySelector('#padding input').addEventListener('change', (e) => {
+const handlePadding = (e) => {
     const value = e.target.value;
     document.querySelectorAll('table.meeting td').forEach(el => {
         el.style.padding = `${value}px 5px`;
     });
-});
+};
 
-document.querySelector('#header select').addEventListener('change', (e) => {
+const handleSpacing = (e) => {
+    const value = e.target.value;
+    document.querySelectorAll('table.meeting').forEach(el => {
+        el.style.marginTop = `${value}px`;
+    });
+};
+
+const handleHeaderChange = (e) => {
     const elm = document.querySelector('thead');
-    elm.removeAttribute("class");
-    elm.classList.add(e.target.value);
-});
+    if (elm)
+        elm.className = e.target.value;
+};
 
-document.querySelector('#footer select').addEventListener('change', (e) => {
+const handleFooterChange = (e) => {
     const value = e.target.value;
     document.querySelectorAll('tfoot').forEach(el => {
-        el.removeAttribute("class");
-        el.classList.add(value);
+        el.className = value;
     });
-});
+};
 
-document.querySelector('#dividers select').addEventListener('change', (e) => {
+const handleDividersChange = (e) => {
     const value = e.target.value;
     document.querySelectorAll('td.hr').forEach(el => {
         const elm = el.closest('tr');
-        elm.removeAttribute("class");
-        elm.classList.add(value);
+        if (elm)
+            elm.className = value;
     });
-});
+};
 
-layoutType.addEventListener('change', (e) => {
+const handleLayoutChange = (e) => {
     const url = new URL(window.location);
     url.searchParams.set('layout', e.target.value);
     window.location.href = url.toString();
-});
+};
 
-[
+// Attach event listeners
+addEventListenerSafe('#print', 'click', handlePrint);
+addEventListenerSafe('#borderSpacing input', 'change', handleBorderSpacing);
+addEventListenerSafe('#padding input', 'change', handlePadding);
+addEventListenerSafe('#spacing input', 'change', handleSpacing);
+addEventListenerSafe('#header select', 'change', handleHeaderChange);
+addEventListenerSafe('#footer select', 'change', handleFooterChange);
+addEventListenerSafe('#dividers select', 'change', handleDividersChange);
+
+if (layoutType)
+    layoutType.addEventListener('change', handleLayoutChange);
+
+// Translation mappings
+const TRANSLATION_MAPPINGS = [
     ['#layoutType label', 'TYPE'],
     ['#borderSpacing label', 'BORDER_SPACING'],
     ['#padding label', 'PADDING'],
     ['#footer label', 'FOOTER'],
     ['#header label', 'HEADER'],
+    ['#spacing label', 'SPACING'],
     ['#dividers label', 'DIVIDERS'],
     ['#layout', 'LAYOUT'],
     ['#print', 'PRINT']
-].forEach(([selector, translationKey]) => {
-    updateInnerText(selector, translationKey);
-});
+];
+
+// Apply translations
+const applyTranslations = () => {
+    TRANSLATION_MAPPINGS.forEach(([selector, translationKey]) => {
+        updateInnerText(selector, translationKey);
+    });
+};
+
+// Initialize translations
+applyTranslations();

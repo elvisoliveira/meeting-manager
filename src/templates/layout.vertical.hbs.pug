@@ -4,13 +4,11 @@ tr
   td(colspan='2')
     table.meeting
       | {{#if this.message}}
-      tbody
-        tr.head
-          td.label {{this.label}} - {{this.theme}}
-      tbody
+      tbody.message
         tr
           td
-            .message {{{this.message}}}
+            div.head {{this.label}} - {{this.theme}}
+            div.body {{{this.message}}}
       | {{/if}}
       | {{#unless this.message}}
       tbody
@@ -81,7 +79,7 @@ tr
             |   {{this.title}} <i>({{time}} min)</i>
             |   {{#if this.notes}} <i>({{this.notes}})</i>{{/if}}
             | {{/if}}
-          td.time {{timer this.time}}
+          td.time {{timer this.time 1}}
           td.assigned
             | {{d this.assigned}}
             | {{#if this.assistant}}

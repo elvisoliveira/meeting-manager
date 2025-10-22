@@ -180,27 +180,34 @@ table {
         }
 
         &.vertical {
-            div {
-                text-align: center;
-                text-transform: uppercase;
+            tr:first-child td {
+                div {
+                    text-align: center;
+                    text-transform: uppercase;
 
-                &#label {
-                    font-weight: bold;
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                }
+                    &#label {
+                        font-weight: bold;
+                        font-size: 20px;
 
-                &#name {
-                    font-size: 15px;
+                    }
+
+                    &#name {
+                        font-size: 15px;
+                    }
                 }
             }
         }
     }
 }
 
-tbody.vertical {
+table.vertical {
+    hr {
+        border-top: 1px solid #000;
+    }
+
     table.meeting {
         border-spacing: 0;
+        margin-top: 10px;
 
         td {
             vertical-align: top;
@@ -465,28 +472,46 @@ thead {
     }
 }
 
-td.time {
-    width: 40px;
-}
-
-td.label {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-div.message {
-    background-color: #f1f1f1;
-    font-size: 22px;
-    margin: 8px;
-    padding: 29px 0px;
-    text-align: center;
-
-    p {
-        font-size: 50px;
+td {
+    &.time {
+        width: 40px;
     }
 
-    &,
-    p {
-        font-family: "Oranienbaum";
+    &.label {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+tbody.message {
+    background-color: #f1f1f1;
+
+    td {
+        padding: 0 !important;
+
+        div.head {
+            text-transform: uppercase;
+            background-color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+        div.body {
+            font-size: 22px;
+            margin: 8px;
+            padding: 29px 0px;
+            text-align: center;
+
+            p {
+                font-size: 50px;
+            }
+
+            &,
+            p {
+                font-family: "Oranienbaum";
+            }
+        }
     }
 }
