@@ -1,0 +1,243 @@
+{
+    "meetings": [
+        {
+            "week": "2025/45",
+            "label": "4 November",
+            "theme": "CÂNTICO DE SALOMÃO 1-2",
+            "chairman": "Matt Damon",
+            "opening_song": 132,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Will Smith"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Uma história de amor verdadeiro",
+                "speaker": "Leonardo DiCaprio"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Dwayne Johnson"
+            },
+            "bible_reading": {
+                "assignment": "Cân. 2:1-17",
+                "lesson": "th lição 12",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 1 ponto 3",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Julia Roberts"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Saoirse Ronan",
+                    "assistant": "Jennifer Aniston"
+                },
+                {
+                    "lesson": "th lição 8",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "assigned": "Viola Davis",
+                    "assistant": "Jessica Chastain"
+                }
+            ],
+            "middle_song": 46,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "“A pessoa generosa será abençoada”",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Will Smith",
+                "reader": "Brad Pitt"
+            },
+            "closing_song": 137,
+            "closing_prayer": "Johnny Depp"
+        },
+        {
+            "week": "2025/46",
+            "label": "16 November",
+            "theme": "CÂNTICO DE SALOMÃO 3-5",
+            "message": "Não há reunião devido a <p>Assembleia de Circuito</p> “Ouça o Que o Espírito Diz às Congregações”"
+        },
+        {
+            "week": "2025/47",
+            "label": "18 November",
+            "theme": "CÂNTICO DE SALOMÃO 6-8",
+            "chairman": "Tom Hanks",
+            "opening_song": 34,
+            "attendants": [
+                "Denzel Washington",
+                "Dwayne Johnson"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Seja uma muralha, não uma porta",
+                "speaker": "Denzel Washington"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "assignment": "Cân. 7:1-13",
+                "lesson": "th lição 12",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Al Pacino"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 4 ponto 4",
+                    "number": 4,
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "assigned": "Margot Robbie",
+                    "assistant": "Emma Stone"
+                },
+                {
+                    "lesson": "lmd lição 1 ponto 4",
+                    "number": 5,
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "assigned": "Halle Berry",
+                    "assistant": "Julianne Moore"
+                },
+                {
+                    "lesson": "lmd lição 2 ponto 4",
+                    "number": 6,
+                    "time": 2,
+                    "title": "Iniciando conversas",
+                    "assigned": "Hugh Jackman",
+                    "assistant": "Ian McKellen"
+                },
+                {
+                    "lesson": "th lição 7",
+                    "number": 7,
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Reese Witherspoon",
+                    "assistant": "Emma Watson"
+                }
+            ],
+            "middle_song": 121,
+            "living_as_christians": [
+                {
+                    "number": 8,
+                    "time": 15,
+                    "title": "Fuja da imoralidade sexual",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Matt Damon",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 51,
+            "closing_prayer": "Leonardo DiCaprio"
+        },
+        {
+            "week": "2025/48",
+            "label": "25 November",
+            "theme": "ISAÍAS 1-2",
+            "chairman": "Will Smith",
+            "opening_song": 44,
+            "attendants": [
+                "Tom Hanks",
+                "Brad Pitt"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Esperança para os que estão ‘carregados de erro’",
+                "speaker": "Matt Damon"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Tom Hanks"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 2:1-11",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Ian McKellen"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 3 ponto 3",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Gwyneth Paltrow",
+                    "assistant": "Nicole Kidman"
+                },
+                {
+                    "lesson": "lmd lição 7 ponto 4",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Amy Adams",
+                    "assistant": "Jodie Foster"
+                },
+                {
+                    "lesson": "th lição 20",
+                    "number": 6,
+                    "theme": "O que é pecado?",
+                    "time": 5,
+                    "title": "Discurso",
+                    "assigned": "Robert Downey Jr."
+                }
+            ],
+            "middle_song": 38,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Torne-se Amigo de Jeová — Jeová nos Perdoa",
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Denzel Washington"
+            },
+            "closing_song": 89,
+            "closing_prayer": "Dwayne Johnson"
+        }
+    ]
+}
