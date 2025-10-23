@@ -5,12 +5,12 @@ head
   link(href='../styles/board.scss' rel='stylesheet')
   link(href='https://fonts.googleapis.com/css?family=Noto+Sans|Fira+Sans|Open+Sans|Oranienbaum' rel='stylesheet')
 table.schedule
-  thead.horizontal
+  thead.vertical
     tr
       td
         div#name
         div#label
-    tr
+    tr.disabled
       td.hr(colspan='2')
         hr
   tbody#boot
@@ -48,7 +48,7 @@ table.schedule
           label(for='header')
         dd
           select(name='header')
-            each variable in ['Horizontal', 'Vertical', 'Disabled']
+            each variable in ['Vertical', 'Horizontal', 'Disabled']
               option(value=variable.toLowerCase()) #{variable}
       dl(id='footer')
         dt
@@ -62,7 +62,7 @@ table.schedule
           label(for='dividers')
         dd
           select(name='dividers')
-            each variable in ['Enabled', 'Disabled']
+            each variable in ['Disabled', 'Enabled']
               option(value=variable.toLowerCase()) #{variable}
     button(type='button' id='print')
 script(type='module' src='../pages/board.js')

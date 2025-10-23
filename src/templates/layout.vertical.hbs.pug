@@ -26,7 +26,7 @@ tr
               strong {{i18n 'CH'}}: 
               | {{d this.chairman}}<br />
             span
-              strong {{i18n 'ATTENDANTS'}}: 
+              strong {{i18n 'ATTENDANTS'}}:&nbsp;
               | {{d this.attendants.[0]}} &amp; {{d this.attendants.[1]}}
       tbody
         tr
@@ -94,6 +94,7 @@ tr
             +section('living')
           td
             div.section
+              | <!-- {{timer 5}} -->
               | {{i18n 'SONG'}}&nbsp;
               strong {{this.middle_song}}&nbsp;
               i ({{song this.middle_song}})
@@ -135,7 +136,7 @@ tr
           td.assigned
             strong {{i18n 'PRAYER'}}: 
             | {{this.closing_prayer}}
-        tr
+        tr.disabled
           td.hr(colspan='3') {{timer 0}}
             hr
       | {{/unless}}
