@@ -1,360 +1,385 @@
 {
-  "meetings": [
-    {
-      "label": "1-7 December",
-      "theme": "ISAÍAS 3-5",
-      "chairman": "",
-      "opening_song": 135,
-      "opening_talk": {
-        "number": 1,
-        "time": 10,
-        "title": "Jeová merecia e esperava obediência do seu povo",
-        "speaker": ""
-      },
-      "spiritual_gems": {
-        "number": 2,
-        "time": 10,
-        "title": "Joias espirituais",
-        "conductor": ""
-      },
-      "bible_reading": {
-        "assignment": "Isa. 5:1-12",
-        "lesson": "th lição 5",
-        "number": 3,
-        "time": 4,
-        "title": "Leitura da Bíblia",
-        "reader": ""
-      },
-      "apply_yourself_to_the_field_ministry": [
+    "meetings": [
         {
-          "lesson": "lmd lição 1 ponto 5",
-          "number": 4,
-          "time": 3,
-          "title": "Iniciando conversas",
-          "assigned": "",
-          "assistant": ""
+            "week": "2025/49",
+            "label": "2 December",
+            "theme": "ISAÍAS 3-5",
+            "chairman": "Matt Damon",
+            "opening_song": 135,
+            "attendants": [
+                "Will Smith",
+                "Leonardo DiCaprio"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Jeová merecia e esperava obediência do seu povo",
+                "speaker": "Will Smith"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Johnny Depp"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 5:1-12",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Hugh Jackman"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 1 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Ian McKellen",
+                    "assistant": "Chris Hemsworth"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 5",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Jennifer Aniston",
+                    "assistant": "Meryl Streep"
+                },
+                {
+                    "lesson": "lmd lição 12 ponto 4",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "assigned": "Julia Roberts",
+                    "assistant": "Reese Witherspoon"
+                }
+            ],
+            "middle_song": 65,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Tom Hanks",
+                "reader": "Dwayne Johnson"
+            },
+            "closing_song": 4,
+            "closing_prayer": "Denzel Washington"
         },
         {
-          "lesson": "lmd lição 9 ponto 5",
-          "number": 5,
-          "time": 4,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
+            "week": "2025/50",
+            "label": "9 December",
+            "theme": "ISAÍAS 6-8",
+            "chairman": "Tom Hanks",
+            "opening_song": 75,
+            "attendants": [
+                "Brad Pitt",
+                "Dwayne Johnson"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "“Aqui estou! Envia-me!”",
+                "speaker": "Dwayne Johnson"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Leonardo DiCaprio"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 8:1-13",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Daniel Radcliffe"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 4 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Emma Stone",
+                    "assistant": "Saoirse Ronan"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Emma Watson",
+                    "assistant": "Jessica Chastain"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 5",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Halle Berry"
+                }
+            ],
+            "middle_song": 83,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Pregação de casa em casa — nossa marca registrada",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Will Smith",
+                "reader": "Ian McKellen"
+            },
+            "closing_song": 123,
+            "closing_prayer": "Brad Pitt"
         },
         {
-          "lesson": "lmd lição 12 ponto 4",
-          "number": 6,
-          "time": 5,
-          "title": "Fazendo discípulos",
-          "assigned": "",
-          "assistant": ""
+            "week": "2025/51",
+            "label": "16 December",
+            "theme": "ISAÍAS 9-10",
+            "chairman": "Will Smith",
+            "opening_song": 77,
+            "attendants": [
+                "Tom Hanks",
+                "Matt Damon"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Foi profetizada “uma grande luz”",
+                "speaker": "Tom Hanks"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Dwayne Johnson"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 10:1-14",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Peter Dinklage"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 1 ponto 4",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Amy Adams",
+                    "assistant": "Margot Robbie"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Viola Davis",
+                    "assistant": "Jodie Foster"
+                },
+                {
+                    "lesson": "th lição 12",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Julianne Moore",
+                    "assistant": "Jennifer Aniston"
+                }
+            ],
+            "middle_song": 95,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 5,
+                    "title": "A luz está cada vez mais clara",
+                    "speaker": "Will Smith"
+                },
+                {
+                    "number": 8,
+                    "time": 10,
+                    "title": "Realizações da Organização, dezembro",
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Matt Damon",
+                "reader": "Robert Downey Jr."
+            },
+            "closing_song": 92,
+            "closing_prayer": "Johnny Depp"
+        },
+        {
+            "week": "2025/52",
+            "label": "23 December",
+            "theme": "ISAÍAS 11-13",
+            "chairman": "Matt Damon",
+            "opening_song": 14,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Will Smith"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Como o Messias seria?",
+                "speaker": "Johnny Depp"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Will Smith"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 11:1-12",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 2 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Reese Witherspoon",
+                    "assistant": "Nicole Kidman"
+                },
+                {
+                    "lesson": "lmd lição 8 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Meryl Streep",
+                    "assistant": "Emma Stone"
+                },
+                {
+                    "lesson": "lmd lição 11 ponto 4",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "assigned": "Dwayne Johnson",
+                    "assistant": "Al Pacino"
+                }
+            ],
+            "middle_song": 57,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Você faz um “julgamento justo”?",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Tom Hanks",
+                "reader": "Leonardo DiCaprio"
+            },
+            "closing_song": 12,
+            "closing_prayer": "Robert Downey Jr."
+        },
+        {
+            "week": "2025/53",
+            "label": "30 December",
+            "theme": "ISAÍAS 14-16",
+            "chairman": "Tom Hanks",
+            "opening_song": 63,
+            "attendants": [
+                "Brad Pitt",
+                "Matt Damon"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Os inimigos do povo de Deus serão punidos",
+                "speaker": "Denzel Washington"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Matt Damon"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 16:1-14",
+                "lesson": "th lição 10",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 2 ponto 5",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Jessica Chastain",
+                    "assistant": "Julia Roberts"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 4",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Robert Downey Jr.",
+                    "assistant": "Hugh Jackman"
+                },
+                {
+                    "lesson": "th lição 14",
+                    "number": 6,
+                    "theme": "O que é profecia?",
+                    "time": 5,
+                    "title": "Discurso",
+                    "assigned": "Brad Pitt"
+                }
+            ],
+            "middle_song": 2,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Will Smith"
+            },
+            "closing_song": 21,
+            "closing_prayer": "Dwayne Johnson"
         }
-      ],
-      "middle_song": 65,
-      "living_as_christians": [
-        {
-          "number": 7,
-          "time": 15,
-          "title": "Necessidades locais",
-          "speaker": ""
-        }
-      ],
-      "congregation_bible_study": {
-        "number": 8,
-        "time": 30,
-        "title": "Estudo bíblico de congregação",
-        "conductor": "",
-        "reader": ""
-      },
-      "closing_song": 4,
-      "closing_prayer": ""
-    },
-    {
-      "label": "8-14 December",
-      "theme": "ISAÍAS 6-8",
-      "chairman": "",
-      "opening_song": 75,
-      "opening_talk": {
-        "number": 1,
-        "time": 10,
-        "title": "“Aqui estou! Envia-me!”",
-        "speaker": ""
-      },
-      "spiritual_gems": {
-        "number": 2,
-        "time": 10,
-        "title": "Joias espirituais",
-        "conductor": ""
-      },
-      "bible_reading": {
-        "assignment": "Isa. 8:1-13",
-        "lesson": "th lição 5",
-        "number": 3,
-        "time": 4,
-        "title": "Leitura da Bíblia",
-        "reader": ""
-      },
-      "apply_yourself_to_the_field_ministry": [
-        {
-          "lesson": "lmd lição 4 ponto 5",
-          "number": 4,
-          "time": 3,
-          "title": "Iniciando conversas",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 9 ponto 3",
-          "number": 5,
-          "time": 4,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 9 ponto 5",
-          "number": 6,
-          "time": 5,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
-        }
-      ],
-      "middle_song": 83,
-      "living_as_christians": [
-        {
-          "number": 7,
-          "time": 15,
-          "title": "Pregação de casa em casa — nossa marca registrada",
-          "speaker": ""
-        }
-      ],
-      "congregation_bible_study": {
-        "number": 8,
-        "time": 30,
-        "title": "Estudo bíblico de congregação",
-        "conductor": "",
-        "reader": ""
-      },
-      "closing_song": 123,
-      "closing_prayer": ""
-    },
-    {
-      "label": "15-21 December",
-      "theme": "ISAÍAS 9-10",
-      "chairman": "",
-      "opening_song": 77,
-      "opening_talk": {
-        "number": 1,
-        "time": 10,
-        "title": "Foi profetizada “uma grande luz”",
-        "speaker": ""
-      },
-      "spiritual_gems": {
-        "number": 2,
-        "time": 10,
-        "title": "Joias espirituais",
-        "conductor": ""
-      },
-      "bible_reading": {
-        "assignment": "Isa. 10:1-14",
-        "lesson": "th lição 11",
-        "number": 3,
-        "time": 4,
-        "title": "Leitura da Bíblia",
-        "reader": ""
-      },
-      "apply_yourself_to_the_field_ministry": [
-        {
-          "lesson": "lmd lição 1 ponto 4",
-          "number": 4,
-          "time": 3,
-          "title": "Iniciando conversas",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 9 ponto 3",
-          "number": 5,
-          "time": 4,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "th lição 12",
-          "number": 6,
-          "time": 5,
-          "title": "Explicando suas crenças",
-          "assigned": "",
-          "assistant": ""
-        }
-      ],
-      "middle_song": 95,
-      "living_as_christians": [
-        {
-          "number": 7,
-          "time": 5,
-          "title": "A luz está cada vez mais clara",
-          "speaker": ""
-        },
-        {
-          "number": 8,
-          "time": 10,
-          "title": "Realizações da Organização, dezembro",
-          "speaker": ""
-        }
-      ],
-      "congregation_bible_study": {
-        "number": 9,
-        "time": 30,
-        "title": "Estudo bíblico de congregação",
-        "conductor": "",
-        "reader": ""
-      },
-      "closing_song": 92,
-      "closing_prayer": ""
-    },
-    {
-      "label": "22-28 December",
-      "theme": "ISAÍAS 11-13",
-      "chairman": "",
-      "opening_song": 14,
-      "opening_talk": {
-        "number": 1,
-        "time": 10,
-        "title": "Como o Messias seria?",
-        "speaker": ""
-      },
-      "spiritual_gems": {
-        "number": 2,
-        "time": 10,
-        "title": "Joias espirituais",
-        "conductor": ""
-      },
-      "bible_reading": {
-        "assignment": "Isa. 11:1-12",
-        "lesson": "th lição 11",
-        "number": 3,
-        "time": 4,
-        "title": "Leitura da Bíblia",
-        "reader": ""
-      },
-      "apply_yourself_to_the_field_ministry": [
-        {
-          "lesson": "lmd lição 2 ponto 5",
-          "number": 4,
-          "time": 3,
-          "title": "Iniciando conversas",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 8 ponto 3",
-          "number": 5,
-          "time": 4,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 11 ponto 4",
-          "number": 6,
-          "time": 5,
-          "title": "Fazendo discípulos",
-          "assigned": "",
-          "assistant": ""
-        }
-      ],
-      "middle_song": 57,
-      "living_as_christians": [
-        {
-          "number": 7,
-          "time": 15,
-          "title": "Você faz um “julgamento justo”?",
-          "speaker": ""
-        }
-      ],
-      "congregation_bible_study": {
-        "number": 8,
-        "time": 30,
-        "title": "Estudo bíblico de congregação",
-        "conductor": "",
-        "reader": ""
-      },
-      "closing_song": 12,
-      "closing_prayer": ""
-    },
-    {
-      "label": "29 December DE 2025–4 January DE 2026",
-      "theme": "ISAÍAS 14-16",
-      "chairman": "",
-      "opening_song": 63,
-      "opening_talk": {
-        "number": 1,
-        "time": 10,
-        "title": "Os inimigos do povo de Deus serão punidos",
-        "speaker": ""
-      },
-      "spiritual_gems": {
-        "number": 2,
-        "time": 10,
-        "title": "Joias espirituais",
-        "conductor": ""
-      },
-      "bible_reading": {
-        "assignment": "Isa. 16:1-14",
-        "lesson": "th lição 10",
-        "number": 3,
-        "time": 4,
-        "title": "Leitura da Bíblia",
-        "reader": ""
-      },
-      "apply_yourself_to_the_field_ministry": [
-        {
-          "lesson": "lmd lição 2 ponto 5",
-          "number": 4,
-          "time": 3,
-          "title": "Iniciando conversas",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "lmd lição 9 ponto 4",
-          "number": 5,
-          "time": 4,
-          "title": "Cultivando o interesse",
-          "assigned": "",
-          "assistant": ""
-        },
-        {
-          "lesson": "th lição 14",
-          "number": 6,
-          "theme": "O que é profecia?",
-          "time": 5,
-          "title": "Discurso",
-          "assigned": ""
-        }
-      ],
-      "middle_song": 2,
-      "living_as_christians": [
-        {
-          "number": 7,
-          "time": 15,
-          "title": "Necessidades locais",
-          "speaker": ""
-        }
-      ],
-      "congregation_bible_study": {
-        "number": 8,
-        "time": 30,
-        "title": "Estudo bíblico de congregação",
-        "conductor": "",
-        "reader": ""
-      },
-      "closing_song": 21,
-      "closing_prayer": ""
-    }
-  ]
+    ]
 }
