@@ -1,0 +1,360 @@
+{
+  "meetings": [
+    {
+      "label": "1-7 December",
+      "theme": "ISAÍAS 3-5",
+      "chairman": "",
+      "opening_song": 135,
+      "opening_talk": {
+        "number": 1,
+        "time": 10,
+        "title": "Jeová merecia e esperava obediência do seu povo",
+        "speaker": ""
+      },
+      "spiritual_gems": {
+        "number": 2,
+        "time": 10,
+        "title": "Joias espirituais",
+        "conductor": ""
+      },
+      "bible_reading": {
+        "assignment": "Isa. 5:1-12",
+        "lesson": "th lição 5",
+        "number": 3,
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "reader": ""
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "lesson": "lmd lição 1 ponto 5",
+          "number": 4,
+          "time": 3,
+          "title": "Iniciando conversas",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 9 ponto 5",
+          "number": 5,
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 12 ponto 4",
+          "number": 6,
+          "time": 5,
+          "title": "Fazendo discípulos",
+          "assigned": "",
+          "assistant": ""
+        }
+      ],
+      "middle_song": 65,
+      "living_as_christians": [
+        {
+          "number": 7,
+          "time": 15,
+          "title": "Necessidades locais",
+          "speaker": ""
+        }
+      ],
+      "congregation_bible_study": {
+        "number": 8,
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "conductor": "",
+        "reader": ""
+      },
+      "closing_song": 4,
+      "closing_prayer": ""
+    },
+    {
+      "label": "8-14 December",
+      "theme": "ISAÍAS 6-8",
+      "chairman": "",
+      "opening_song": 75,
+      "opening_talk": {
+        "number": 1,
+        "time": 10,
+        "title": "“Aqui estou! Envia-me!”",
+        "speaker": ""
+      },
+      "spiritual_gems": {
+        "number": 2,
+        "time": 10,
+        "title": "Joias espirituais",
+        "conductor": ""
+      },
+      "bible_reading": {
+        "assignment": "Isa. 8:1-13",
+        "lesson": "th lição 5",
+        "number": 3,
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "reader": ""
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "lesson": "lmd lição 4 ponto 5",
+          "number": 4,
+          "time": 3,
+          "title": "Iniciando conversas",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 9 ponto 3",
+          "number": 5,
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 9 ponto 5",
+          "number": 6,
+          "time": 5,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        }
+      ],
+      "middle_song": 83,
+      "living_as_christians": [
+        {
+          "number": 7,
+          "time": 15,
+          "title": "Pregação de casa em casa — nossa marca registrada",
+          "speaker": ""
+        }
+      ],
+      "congregation_bible_study": {
+        "number": 8,
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "conductor": "",
+        "reader": ""
+      },
+      "closing_song": 123,
+      "closing_prayer": ""
+    },
+    {
+      "label": "15-21 December",
+      "theme": "ISAÍAS 9-10",
+      "chairman": "",
+      "opening_song": 77,
+      "opening_talk": {
+        "number": 1,
+        "time": 10,
+        "title": "Foi profetizada “uma grande luz”",
+        "speaker": ""
+      },
+      "spiritual_gems": {
+        "number": 2,
+        "time": 10,
+        "title": "Joias espirituais",
+        "conductor": ""
+      },
+      "bible_reading": {
+        "assignment": "Isa. 10:1-14",
+        "lesson": "th lição 11",
+        "number": 3,
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "reader": ""
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "lesson": "lmd lição 1 ponto 4",
+          "number": 4,
+          "time": 3,
+          "title": "Iniciando conversas",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 9 ponto 3",
+          "number": 5,
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "th lição 12",
+          "number": 6,
+          "time": 5,
+          "title": "Explicando suas crenças",
+          "assigned": "",
+          "assistant": ""
+        }
+      ],
+      "middle_song": 95,
+      "living_as_christians": [
+        {
+          "number": 7,
+          "time": 5,
+          "title": "A luz está cada vez mais clara",
+          "speaker": ""
+        },
+        {
+          "number": 8,
+          "time": 10,
+          "title": "Realizações da Organização, dezembro",
+          "speaker": ""
+        }
+      ],
+      "congregation_bible_study": {
+        "number": 9,
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "conductor": "",
+        "reader": ""
+      },
+      "closing_song": 92,
+      "closing_prayer": ""
+    },
+    {
+      "label": "22-28 December",
+      "theme": "ISAÍAS 11-13",
+      "chairman": "",
+      "opening_song": 14,
+      "opening_talk": {
+        "number": 1,
+        "time": 10,
+        "title": "Como o Messias seria?",
+        "speaker": ""
+      },
+      "spiritual_gems": {
+        "number": 2,
+        "time": 10,
+        "title": "Joias espirituais",
+        "conductor": ""
+      },
+      "bible_reading": {
+        "assignment": "Isa. 11:1-12",
+        "lesson": "th lição 11",
+        "number": 3,
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "reader": ""
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "lesson": "lmd lição 2 ponto 5",
+          "number": 4,
+          "time": 3,
+          "title": "Iniciando conversas",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 8 ponto 3",
+          "number": 5,
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 11 ponto 4",
+          "number": 6,
+          "time": 5,
+          "title": "Fazendo discípulos",
+          "assigned": "",
+          "assistant": ""
+        }
+      ],
+      "middle_song": 57,
+      "living_as_christians": [
+        {
+          "number": 7,
+          "time": 15,
+          "title": "Você faz um “julgamento justo”?",
+          "speaker": ""
+        }
+      ],
+      "congregation_bible_study": {
+        "number": 8,
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "conductor": "",
+        "reader": ""
+      },
+      "closing_song": 12,
+      "closing_prayer": ""
+    },
+    {
+      "label": "29 December DE 2025–4 January DE 2026",
+      "theme": "ISAÍAS 14-16",
+      "chairman": "",
+      "opening_song": 63,
+      "opening_talk": {
+        "number": 1,
+        "time": 10,
+        "title": "Os inimigos do povo de Deus serão punidos",
+        "speaker": ""
+      },
+      "spiritual_gems": {
+        "number": 2,
+        "time": 10,
+        "title": "Joias espirituais",
+        "conductor": ""
+      },
+      "bible_reading": {
+        "assignment": "Isa. 16:1-14",
+        "lesson": "th lição 10",
+        "number": 3,
+        "time": 4,
+        "title": "Leitura da Bíblia",
+        "reader": ""
+      },
+      "apply_yourself_to_the_field_ministry": [
+        {
+          "lesson": "lmd lição 2 ponto 5",
+          "number": 4,
+          "time": 3,
+          "title": "Iniciando conversas",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "lmd lição 9 ponto 4",
+          "number": 5,
+          "time": 4,
+          "title": "Cultivando o interesse",
+          "assigned": "",
+          "assistant": ""
+        },
+        {
+          "lesson": "th lição 14",
+          "number": 6,
+          "theme": "O que é profecia?",
+          "time": 5,
+          "title": "Discurso",
+          "assigned": ""
+        }
+      ],
+      "middle_song": 2,
+      "living_as_christians": [
+        {
+          "number": 7,
+          "time": 15,
+          "title": "Necessidades locais",
+          "speaker": ""
+        }
+      ],
+      "congregation_bible_study": {
+        "number": 8,
+        "time": 30,
+        "title": "Estudo bíblico de congregação",
+        "conductor": "",
+        "reader": ""
+      },
+      "closing_song": 21,
+      "closing_prayer": ""
+    }
+  ]
+}
