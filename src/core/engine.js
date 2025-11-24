@@ -44,6 +44,26 @@ export default class Engine {
     parseBoard(meetings) {
         for (const m of meetings) { // meeting
             const date = m.week.replace(/\D/g, '');
+
+            // Parse the date string (format: "YYYYWW")
+            const year = parseInt(date.substring(0, 4));
+            const week = parseInt(date.substring(4, 6));
+
+            // Get current date and calculate current week number
+            const now = new Date();
+            const currentYear = now.getFullYear();
+
+            // Calculate approximate date from the given week
+            const givenDate = new Date(year, 0, 1 + (week - 1) * 7);
+
+            // Calculate difference in months (approximately)
+            const monthsDiff = (currentYear - year) * 12 +
+                (now.getMonth() - givenDate.getMonth()) +
+                (now.getDate() - givenDate.getDate()) / 30;
+
+            if (monthsDiff > 6)
+                continue;
+
             const meeting = this.lib.insertOrUpdate('meetings', { date }, {
                 date,
                 data: m,
