@@ -141,7 +141,7 @@
                     "number": 7,
                     "time": 5,
                     "title": "Explicando suas crenças",
-                    "assigned": "Reese Witherspoon",
+                    "assigned": "Reese Witherspoon|Amy Adams",
                     "assistant": "Emma Watson"
                 }
             ],
@@ -192,7 +192,7 @@
                 "number": 3,
                 "time": 4,
                 "title": "Leitura da Bíblia",
-                "reader": "Ian McKellen"
+                "reader": "Ian McKellen|Dwayne Johnson"
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -201,7 +201,7 @@
                     "time": 3,
                     "title": "Iniciando conversas",
                     "assigned": "Gwyneth Paltrow",
-                    "assistant": "Nicole Kidman"
+                    "assistant": "Nicole Kidman|Halle Berry"
                 },
                 {
                     "lesson": "lmd lição 7 ponto 4",
