@@ -168,7 +168,7 @@
             "week": "2026/03",
             "label": "20 January",
             "theme": "ISAÍAS 24-27",
-            "chairman": "Tom Hanks",
+            "chairman": "Tom Hanks|Will Smith",
             "opening_song": 159,
             "attendants": [
                 "Matt Damon",
@@ -201,7 +201,7 @@
                     "time": 3,
                     "lesson": "lmd lição 1 ponto 3",
                     "assigned": "Julianne Moore",
-                    "assistant": "Daniel Radcliffe"
+                    "assistant": "Daniel Radcliffe|Reese Witherspoon"
                 },
                 {
                     "number": 5,
@@ -226,7 +226,7 @@
                     "number": 7,
                     "title": "Confie plenamente em Jeová ao se preparar para um tratamento médico ou uma cirurgia",
                     "time": 15,
-                    "speaker": "Tom Hanks"
+                    "speaker": "Tom Hanks|Will Smith"
                 }
             ],
             "congregation_bible_study": {
@@ -243,7 +243,7 @@
             "week": "2026/04",
             "label": "27 January",
             "theme": "ISAÍAS 28-29",
-            "chairman": "Will Smith",
+            "chairman": "Will Smith|Tom Hanks",
             "opening_song": 28,
             "attendants": [
                 "Tom Hanks",
@@ -315,7 +315,7 @@
                     "number": 9,
                     "title": "Necessidades locais",
                     "time": 7,
-                    "speaker": "Leonardo DiCaprio"
+                    "speaker": "Leonardo DiCaprio|Tom Hanks"
                 }
             ],
             "congregation_bible_study": {

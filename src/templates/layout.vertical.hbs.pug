@@ -108,7 +108,9 @@ tr
         | {{/each}}
         | {{#with this.service_talk}}
         tr
-          td {{i18n 'SERVICE_TALK'}}: {{theme}}
+          td 
+            | {{i18n 'SERVICE_TALK'}}: {{theme}}&nbsp;
+            i ({{time}} min)
           td.time {{timer time}}
           td.assigned {{d speaker}}
         | {{/with}}

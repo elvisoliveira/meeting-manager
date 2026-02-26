@@ -1,0 +1,318 @@
+{
+    "meetings": [
+        {
+            "week": "2026/09",
+            "label": "2-8 March",
+            "theme": "ISAÍAS 41-42",
+            "chairman": "Matt Damon",
+            "opening_song": 8,
+            "attendants": [
+                "Dwayne Johnson",
+                "Tom Hanks"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "“Não tenha medo”",
+                "speaker": "Leonardo DiCaprio"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Johnny Depp"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 42:1-13",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Hugh Jackman"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 6 ponto 4",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Reese Witherspoon",
+                    "assistant": "Amy Adams"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 5",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Iniciando conversas",
+                    "assigned": "Streaming"
+                },
+                {
+                    "lesson": "th lição 1",
+                    "number": 6,
+                    "theme": "Como superar o medo da morte?",
+                    "time": 5,
+                    "title": "Explicando suas crenças",
+                    "assigned": "Matt Damon"
+                }
+            ],
+            "middle_song": 19,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 5,
+                    "title": "Campanha da Celebração — Início no sábado, 7 March",
+                    "speaker": "Tom Hanks"
+                },
+                {
+                    "number": 8,
+                    "time": 10,
+                    "title": "Realizações da Organização, março",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Will Smith",
+                "reader": "Brad Pitt"
+            },
+            "closing_song": 110,
+            "closing_prayer": "Robert Downey Jr."
+        },
+        {
+            "week": "2026/10",
+            "label": "9-15 March",
+            "theme": "ISAÍAS 43-44",
+            "chairman": "Tom Hanks",
+            "opening_song": 63,
+            "attendants": [
+                "Brad Pitt",
+                "Matt Damon"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Uma profecia escrita 200 anos antes de se cumprir",
+                "speaker": "Will Smith"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Leonardo DiCaprio"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 44:9-20",
+                "lesson": "th lição 10",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Harrison Ford"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 4 ponto 3",
+                    "number": 4,
+                    "time": 1,
+                    "title": "Iniciando conversas",
+                    "assigned": "Peter Dinklage",
+                    "assistant": "Al Pacino"
+                },
+                {
+                    "lesson": "lmd lição 3 ponto 4",
+                    "number": 5,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Streaming"
+                },
+                {
+                    "lesson": "lmd lição 6 ponto 3",
+                    "number": 6,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Dwayne Johnson",
+                    "assistant": "Johnny Depp"
+                },
+                {
+                    "lesson": "lmd lição 7 ponto 4",
+                    "number": 7,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Julianne Moore",
+                    "assistant": "Julia Roberts"
+                }
+            ],
+            "middle_song": 69,
+            "living_as_christians": [
+                {
+                    "number": 8,
+                    "time": 15,
+                    "title": "Necessidades locais",
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "service_talk": {
+                "time": 30,
+                "speaker": "Adrian Smith",
+                "theme": "Amor — O perfeito vínculo de união"
+            },
+            "closing_song": 137,
+            "closing_prayer": "Matt Damon"
+        },
+        {
+            "week": "2026/11",
+            "label": "16-22 March",
+            "theme": "ISAÍAS 45-47",
+            "chairman": "Will Smith",
+            "opening_song": 2,
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Tom Hanks"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "“Eu sou Deus, e não há ninguém igual a mim”",
+                "speaker": "Tom Hanks"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Brad Pitt"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 45:1-11",
+                "lesson": "th lição 5",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Chris Hemsworth"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 5 ponto 3",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Streaming"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 5",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Viola Davis",
+                    "assistant": "Vera Farmiga"
+                },
+                {
+                    "lesson": "lmd lição 11 ponto 3",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Fazendo discípulos",
+                    "assigned": "Anna Kendrick",
+                    "assistant": "Meryl Streep"
+                }
+            ],
+            "middle_song": 38,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 7,
+                    "title": "A única fonte de ajuda em que podemos confiar",
+                    "speaker": "Johnny Depp"
+                },
+                {
+                    "number": 8,
+                    "time": 8,
+                    "title": "Atualizações do Departamento Local de Projeto/Construção — 2026",
+                    "speaker": "Will Smith"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Matt Damon",
+                "reader": "Ian McKellen"
+            },
+            "closing_song": 148,
+            "closing_prayer": "Leonardo DiCaprio"
+        },
+        {
+            "week": "2026/12",
+            "label": "23-29 March",
+            "theme": "ISAÍAS 48-49",
+            "chairman": "Matt Damon",
+            "opening_song": 89,
+            "attendants": [
+                "Will Smith",
+                "Dwayne Johnson"
+            ],
+            "opening_talk": {
+                "number": 1,
+                "time": 10,
+                "title": "Sinta os benefícios de prestar atenção ao que Jeová diz",
+                "speaker": "Johnny Depp"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "time": 10,
+                "title": "Joias espirituais",
+                "conductor": "Dwayne Johnson"
+            },
+            "bible_reading": {
+                "assignment": "Isa. 48:9-20",
+                "lesson": "th lição 11",
+                "number": 3,
+                "time": 4,
+                "title": "Leitura da Bíblia",
+                "reader": "Daniel Radcliffe"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "lesson": "lmd lição 5 ponto 3",
+                    "number": 4,
+                    "time": 3,
+                    "title": "Iniciando conversas",
+                    "assigned": "Leonardo DiCaprio",
+                    "assistant": "Brad Pitt"
+                },
+                {
+                    "lesson": "lmd lição 9 ponto 3",
+                    "number": 5,
+                    "time": 4,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Streaming"
+                },
+                {
+                    "lesson": "lmd lição 8 ponto 3",
+                    "number": 6,
+                    "time": 5,
+                    "title": "Cultivando o interesse",
+                    "assigned": "Keira Knightley",
+                    "assistant": "Saoirse Ronan"
+                }
+            ],
+            "middle_song": 107,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "time": 15,
+                    "title": "Aproveite bem as oportunidades do dia mais importante do ano",
+                    "speaker": "Matt Damon"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "time": 30,
+                "title": "Estudo bíblico de congregação",
+                "conductor": "Tom Hanks",
+                "reader": "Will Smith"
+            },
+            "closing_song": 134,
+            "closing_prayer": "Brad Pitt"
+        }
+    ]
+}
