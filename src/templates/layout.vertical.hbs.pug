@@ -7,7 +7,7 @@ tr
       tbody.message
         tr
           td
-            div.head {{this.label}} - {{this.theme}}
+            div.head {{this.label}}{{#if this.theme}} - {{this.theme}}{{/if}}
             div.body {{{this.message}}}
       | {{/if}}
       | {{#unless this.message}}
@@ -27,7 +27,8 @@ tr
               | {{d this.chairman}}<br />
             span
               strong {{i18n 'ATTENDANTS'}}:&nbsp;
-              | {{d this.attendants.[0]}} &amp; {{d this.attendants.[1]}}
+              | {{#if this.attendants.[0]}}{{d this.attendants.[0]}}{{/if}}
+              | {{#if this.attendants.[1]}}{{#if this.attendants.[0]}} &amp; {{/if}}{{d this.attendants.[1]}}{{/if}}
       tbody
         tr
           td {{i18n 'OPENING_COMMENTS'}} <i>(1 min)</i>
@@ -44,21 +45,21 @@ tr
         | {{#with this.opening_talk}}
         tr
           td
-            | {{this.title}} <i>({{time}} min)</i>
+            | {{{this.title}}} <i>({{time}} min)</i>
           td.time {{timer time}}
           td.assigned {{d speaker}}
         | {{/with}}
         | {{#with this.spiritual_gems}}
         tr
           td
-            | {{this.title}} <i>({{time}} min)</i>
+            | {{{this.title}}} <i>({{time}} min)</i>
           td.time {{timer time}}
           td.assigned {{d conductor}}
         | {{/with}}
         | {{#with this.bible_reading}}
         tr
           td
-            | {{this.title}} <i>({{time}} min)</i>
+            | {{{this.title}}} <i>({{time}} min)</i>
           td.time {{timer time}}
           td.assigned {{d reader}}
         | {{/with}}
@@ -76,7 +77,7 @@ tr
             | {{#if this.theme}}
             |   {{this.theme}} <i>({{time}} min)</i>
             | {{else}}
-            |   {{this.title}} <i>({{time}} min)</i>
+            |   {{{this.title}}} <i>({{time}} min)</i>
             |   {{#if this.notes}} <i>({{this.notes}})</i>{{/if}}
             | {{/if}}
           td.time {{timer this.time 1}}
@@ -101,7 +102,7 @@ tr
         | {{#each this.living_as_christians}}
         tr
           td
-            | {{this.title}}&nbsp;
+            | {{{this.title}}}&nbsp;
             i ({{time}} min)
           td.time {{timer this.time}}
           td.assigned {{d this.speaker}}
@@ -109,7 +110,7 @@ tr
         | {{#with this.service_talk}}
         tr
           td 
-            | {{i18n 'SERVICE_TALK'}}: {{theme}}&nbsp;
+            | {{i18n 'SERVICE_TALK'}}: {{{theme}}}&nbsp;
             i ({{time}} min)
           td.time {{timer time}}
           td.assigned {{d speaker}}
@@ -117,7 +118,7 @@ tr
         | {{#with this.congregation_bible_study}}
         tr
           td
-            | {{this.title}}&nbsp;
+            | {{{this.title}}}&nbsp;
             i ({{time}} min)
           td.time {{timer time}}
           td.assigned

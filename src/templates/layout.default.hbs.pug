@@ -6,7 +6,7 @@ tr
       | {{#if this.message}}
       tbody
         tr.head
-          td.label {{this.label}} - {{this.theme}}
+          td.label {{this.label}}{{#if this.theme}} - {{this.theme}}{{/if}}
       tbody
         tr
           td
@@ -14,7 +14,7 @@ tr
       | {{else}}
       tbody
         tr.head
-          td.label(colspan='4') {{this.label}} - {{this.theme}}
+          td.label(colspan='4') {{this.label}}{{#if this.theme}} - {{this.theme}}{{/if}}
           td.title {{i18n 'CH'}}
           td.assigned {{d this.chairman}}
         tr
