@@ -60,7 +60,7 @@
                 {
                     "number": 7,
                     "time": 5,
-                    "title": "Campanha da Celebração — Início no sábado, 7 March",
+                    "title": "Campanha da Celebração — <br />Início no sábado, 7 March",
                     "speaker": "Tom Hanks"
                 },
                 {
@@ -154,8 +154,8 @@
             ],
             "service_talk": {
                 "time": 30,
-                "speaker": "Ashton Kutcher",
-                "theme": "Amor — O perfeito vínculo de união"
+                "speaker": "Gerard Butler",
+                "theme": "O que você vai fazer<br /> “pela causa das boas novas”?"
             },
             "closing_song": 137,
             "closing_prayer": "Matt Damon"
@@ -226,7 +226,7 @@
                 {
                     "number": 8,
                     "time": 8,
-                    "title": "Atualizações do Departamento Local de Projeto/Construção — 2026",
+                    "title": "Atualizações do Departamento Local <br />de Projeto/Construção — 2026",
                     "speaker": "Will Smith"
                 }
             ],
@@ -253,7 +253,7 @@
             "opening_talk": {
                 "number": 1,
                 "time": 10,
-                "title": "Sinta os benefícios de prestar atenção ao que Jeová diz",
+                "title": "Sinta os benefícios de prestar<br /> atenção ao que Jeová diz",
                 "speaker": "Johnny Depp"
             },
             "spiritual_gems": {
@@ -300,7 +300,7 @@
                 {
                     "number": 7,
                     "time": 15,
-                    "title": "Aproveite bem as oportunidades do dia mais importante do ano",
+                    "title": "Aproveite bem as oportunidades <br />do dia mais importante do ano",
                     "speaker": "Matt Damon"
                 }
             ],
