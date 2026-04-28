@@ -4,18 +4,10 @@ import dayjs from 'dayjs';
 import custom from 'dayjs/plugin/customParseFormat';
 import localStorageDB from 'localstoragedb';
 
-import i18next from 'i18next';
-import detector from "i18next-browser-languagedetector";
-import registerI18nHelper from 'handlebars-i18next';
-
-import { translation } from '../config/translation';
+import i18next from '../config/i18n';
 import { songs } from '../refs/songs';
 
 const lib = new localStorageDB('library', localStorage);
-
-registerI18nHelper(Handlebars, i18next);
-
-i18next.use(detector).init(translation);
 
 dayjs.extend(custom);
 

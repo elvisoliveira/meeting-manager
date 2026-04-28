@@ -1,3 +1,5 @@
+import samplesData from '../../samples.json';
+
 export class FileLoader {
     constructor(dataProcessor, onFilesLoaded) {
         this.dataProcessor = dataProcessor;
@@ -27,10 +29,6 @@ export class FileLoader {
     }
 
     setupDragAndDrop() {
-        document.addEventListener('dragstart', () => {
-            console.log('dragstart');
-        });
-
         document.addEventListener('dragover', (e) => {
             e.preventDefault();
         });
@@ -90,7 +88,7 @@ export class FileLoader {
         });
 
         dropArea.querySelector('span#sample')?.addEventListener('click', () => {
-            this.dataProcessor(require('../../samples.json'));
+            this.dataProcessor(samplesData);
             this.onFilesLoaded();
         });
     }

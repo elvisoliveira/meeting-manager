@@ -1,4 +1,5 @@
 import * as pdfjsLib from 'pdfjs-dist';
+import download from 'downloadjs';
 import { fields } from '../refs/S89';
 
 export default class S89 {
@@ -32,7 +33,7 @@ export default class S89 {
         const self = this;
         // Fix for PDF readers lacking the appearance dictionary (NeedAppearances)
         this.save().then(byteArray => PDFLib.PDFDocument.load(byteArray).then(pdf => {
-            pdf.save().then(file => require('downloadjs')(file, `${self.date} - ${self.name}.pdf`, 'application/pdf'));
+            pdf.save().then(file => download(file, `${self.date} - ${self.name}.pdf`, 'application/pdf'));
         }));
     }
     saveImage() {
@@ -52,7 +53,7 @@ export default class S89 {
                     page.render({
                         viewport,
                         canvasContext: canvas.getContext('2d')
-                    }).promise.then(() => require('downloadjs')(canvas.toDataURL(), `${self.date} - ${self.name}.png`, 'image/png'));
+                    }).promise.then(() => download(canvas.toDataURL(), `${self.date} - ${self.name}.png`, 'image/png'));
                 });
             });
         });

@@ -39,5 +39,5 @@ export default function filter () {
     main.querySelector('tfoot tr').style.display = document.querySelectorAll('tbody tr[style*=\'display: table-row\']').length ? 'none' : 'table-row';
 
     // Once filtered, scroll to the current week
-    boot.scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth , 0);
+    document.getElementById('boot').scrollTo(document.body.getElementsByTagName('table').item(0).scrollWidth, 0);
 }

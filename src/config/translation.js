@@ -1,11 +1,10 @@
-exports.translation = {
+import en from '../translations/en_US.json';
+import pt from '../translations/pt_BR.json';
+
+export const translation = {
     resources: {
-        en: {
-            translation: require('../translations/en_US.json')
-        },
-        pt: {
-            translation: require('../translations/pt_BR.json')
-        }
+        en: { translation: en },
+        pt: { translation: pt }
     },
     fallbackLng: 'pt'
-}
+};

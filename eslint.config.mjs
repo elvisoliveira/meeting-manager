@@ -11,7 +11,6 @@ export default [
                 ...globals.browser,
                 ...globals.node,
                 ...globals.amd,
-                boot: 'readonly',
                 bootstrap: 'readonly',
                 PDFLib: 'readonly',
                 FileSystemObserver: 'readonly'

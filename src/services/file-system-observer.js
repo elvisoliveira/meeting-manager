@@ -51,7 +51,6 @@ export class FileSystemWatcher {
             });
 
             observer.observe(dirHandle, { recursive: false });
-            console.log(observer);
         }
     }
 

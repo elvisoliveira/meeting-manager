@@ -74,8 +74,8 @@ export class DataGrid {
     async renderTable(data) {
         const response = await fetch('table.hbs.html');
         const html = await response.text();
-        
-        boot.innerHTML = Handlebars.compile(html)({
+
+        document.getElementById('boot').innerHTML = Handlebars.compile(html)({
             data,
             subtitles,
             meetings: this.engine.lib.queryAll('meetings', {
@@ -87,8 +87,8 @@ export class DataGrid {
     async renderFilter() {
         const response = await fetch('filter.hbs.html');
         const html = await response.text();
-        
-        boot.insertAdjacentHTML('beforeend', Handlebars.compile(html)({
+
+        document.getElementById('boot').insertAdjacentHTML('beforeend', Handlebars.compile(html)({
             subtitles
         }));
     }
