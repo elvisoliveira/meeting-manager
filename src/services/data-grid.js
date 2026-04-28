@@ -38,7 +38,7 @@ export class DataGrid {
                                 meeting: this.engine.getMeeting(assignment.meeting)
                             });
                     });
-                    partners.sort((a, b) => a.date - b.date);
+                    partners.sort((a, b) => a.meeting.date.localeCompare(b.meeting.date));
                 }
                 
                 this.engine.lib.queryAll('assignments', {

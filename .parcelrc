@@ -11,10 +11,5 @@
             "@parcel/compressor-gzip",
             "@parcel/compressor-brotli"
         ]
-    },
-    "validators": {
-        "*.{js,tsx}": [
-            "@parcel/validator-eslint"
-        ]
     }
 }

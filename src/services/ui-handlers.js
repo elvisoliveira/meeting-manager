@@ -125,16 +125,15 @@ export class UIHandlers {
     }
 
     setupTooltips() {
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle=\'tooltip\']');
-        tooltipTriggerList.forEach((tooltipTriggerEl) => {
-            const { allowList } = bootstrap.Tooltip.Default;
-            allowList.table = [];
-            allowList.thead = [];
-            allowList.tbody = [];
-            allowList.tr = [];
-            allowList.td = [];
+        const { allowList } = bootstrap.Tooltip.Default;
+        allowList.table = [];
+        allowList.thead = [];
+        allowList.tbody = [];
+        allowList.tr = [];
+        allowList.td = [];
 
-            return new bootstrap.Tooltip(tooltipTriggerEl);
+        document.querySelectorAll('[data-bs-toggle=\'tooltip\']').forEach((tooltipTriggerEl) => {
+            new bootstrap.Tooltip(tooltipTriggerEl);
         });
     }
 

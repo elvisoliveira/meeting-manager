@@ -5,19 +5,23 @@ export class FileLoader {
         this.setupDragAndDrop();
     }
 
-    loadFiles(files) {
-        Array.from(files).forEach((file) => {
-            if (!['application/json'].includes(file.type))
-                return;
+    async loadFiles(files) {
+        const jsonFiles = Array.from(files).filter((f) => f.type === 'application/json');
 
+        await Promise.all(jsonFiles.map((file) => new Promise((resolve, reject) => {
             const r = new FileReader();
             r.onload = (e) => {
-                const file = e.target.result;
-                const json = new TextDecoder().decode(file);
-                this.dataProcessor(JSON.parse(json));
+                try {
+                    const json = new TextDecoder().decode(e.target.result);
+                    this.dataProcessor(JSON.parse(json));
+                    resolve();
+                } catch (err) {
+                    reject(err);
+                }
             };
+            r.onerror = () => reject(r.error);
             r.readAsArrayBuffer(file);
-        });
+        })));
 
         this.onFilesLoaded();
     }
@@ -46,16 +50,19 @@ export class FileLoader {
 
         dropArea.querySelector('.button').onclick = async () => {
             if ('showDirectoryPicker' in window) {
-                window.showDirectoryPicker().then(async (dirHandle) => {
-                    for await (const entry of dirHandle.values())
-                        entry.getFile().then(async (file) => {
-                            if (!['application/json'].includes(file.type))
-                                return;
-                            file.text().then((json) => this.dataProcessor(JSON.parse(json)));
-                        });
-                    const { set } = await import('idb-keyval');
-                    set('dir', dirHandle).then(() => location.reload());
-                });
+                const dirHandle = await window.showDirectoryPicker();
+                const fileTasks = [];
+                for await (const entry of dirHandle.values())
+                    fileTasks.push((async () => {
+                        const file = await entry.getFile();
+                        if (file.type !== 'application/json') return;
+                        const json = await file.text();
+                        this.dataProcessor(JSON.parse(json));
+                    })());
+                await Promise.all(fileTasks);
+                const { set } = await import('idb-keyval');
+                await set('dir', dirHandle);
+                location.reload();
                 return;
             }
             input.click();

@@ -47,8 +47,10 @@ const TimeManager = {
 };
 
 Handlebars.registerHelper('timer', (minutes, additionalMinutes) => {
-    const parsedMinutes = parseInt(minutes + (additionalMinutes || 0), 10);
-    return isNaN(parsedMinutes) ? TimeManager.getCurrentTime() : TimeManager.updateTime(parsedMinutes);
+    const base = parseInt(minutes, 10);
+    if (isNaN(base)) return TimeManager.getCurrentTime();
+    const extra = typeof additionalMinutes === 'number' ? additionalMinutes : 0;
+    return TimeManager.updateTime(base + extra);
 });
 
 Handlebars.registerHelper('d', (e) => String(e).split('|').find(Boolean));

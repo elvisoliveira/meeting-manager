@@ -32,34 +32,30 @@ export default class Engine {
     }
     getAssignment(ID) {
         if (!ID) return null;
-        const assignment = this.lib.queryAll('assignments', {
+        const row = this.lib.queryAll('assignments', {
             query: { ID }
         }).find(Boolean);
-        if (!assignment) return null;
-        assignment.assigned = this.getPublisher(assignment.assigned);
-        assignment.partner = this.getPublisher(assignment.partner);
-        assignment.meeting = this.getMeeting(assignment.meeting);
-        return assignment;
+        if (!row) return null;
+        return {
+            ...row,
+            assigned: this.getPublisher(row.assigned),
+            partner: this.getPublisher(row.partner),
+            meeting: this.getMeeting(row.meeting)
+        };
     }
     parseBoard(meetings) {
+        const MS_PER_MONTH = 1000 * 60 * 60 * 24 * 30;
+
         for (const m of meetings) { // meeting
             const date = m.week.replace(/\D/g, '');
 
             // Parse the date string (format: "YYYYWW")
-            const year = parseInt(date.substring(0, 4));
-            const week = parseInt(date.substring(4, 6));
+            const year = parseInt(date.substring(0, 4), 10);
+            const week = parseInt(date.substring(4, 6), 10);
 
-            // Get current date and calculate current week number
-            const now = new Date();
-            const currentYear = now.getFullYear();
-
-            // Calculate approximate date from the given week
+            // Approximate date for the given ISO week
             const givenDate = new Date(year, 0, 1 + (week - 1) * 7);
-
-            // Calculate difference in months (approximately)
-            const monthsDiff = (currentYear - year) * 12 +
-                (now.getMonth() - givenDate.getMonth()) +
-                (now.getDate() - givenDate.getDate()) / 30;
+            const monthsDiff = (Date.now() - givenDate.getTime()) / MS_PER_MONTH;
 
             if (monthsDiff > 6)
                 continue;
@@ -158,11 +154,17 @@ export default class Engine {
         this.lib.commit();
     }
     parseExceptions(absences) {
-        for (const [key, value] of Object.entries(absences))
-            this.lib.update('publishers', { name: key }, (r) => {
-                r.absences = value.map((e) => e.replace(/\D/g, ''));
-                return r;
-            });
+        for (const [key, value] of Object.entries(absences)) {
+            const dates = value.map((e) => e.replace(/\D/g, ''));
+            const exists = this.lib.queryAll('publishers', { query: { name: key } }).length > 0;
+            if (exists)
+                this.lib.update('publishers', { name: key }, (r) => {
+                    r.absences = dates;
+                    return r;
+                });
+            else
+                this.lib.insert('publishers', { name: key, absences: dates });
+        }
         this.lib.commit();
     }
     setAssignment(assignment, meetingId, info) {
