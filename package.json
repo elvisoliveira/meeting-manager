@@ -4,6 +4,7 @@
     "description": "",
     "scripts": {
         "lint": "eslint src",
+    "report": "node scripts/eligibility-report.js",
         "predev": "json-merger --default-array-merge-operation \"concat\" --output ./samples.json $(ls ./samples/*.json)",
         "dev": "parcel serve ./src/*.{hbs,pug} ./src/templates/*.{hbs,pug} --no-cache --no-hmr --host 127.0.0.1 --port 9624 --open chromium",
         "prebuild": "npm run predev && npm run lint",
@@ -21,6 +22,7 @@
         "localstoragedb": "^2.3.2"
     },
     "devDependencies": {
+        "@eslint/js": "^9.0.0",
         "@parcel/compressor-brotli": "^2.11.0",
         "@parcel/compressor-gzip": "^2.11.0",
         "@parcel/config-default": "^2.11.0",
@@ -31,7 +33,6 @@
         "@parcel/transformer-sass": "^2.11.0",
         "buffer": "^6.0.3",
         "eslint": "^9.0.0",
-        "@eslint/js": "^9.0.0",
         "globals": "^15.0.0",
         "json-merger": "^1.1.10",
         "parcel": "^2.11.0",
