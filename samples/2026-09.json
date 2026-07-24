@@ -20,7 +20,7 @@
                 "number": 2,
                 "title": "Joias espirituais",
                 "time": 10,
-                "conductor": "Johnny Depp"
+                "conductor": "Tom Hanks"
             },
             "bible_reading": {
                 "number": 3,
@@ -53,7 +53,7 @@
                     "time": 5,
                     "lesson": "th lição 14",
                     "theme": "Por que as Testemunhas de Jeová são neutras em assuntos políticos?",
-                    "assigned": "Tom Hanks"
+                    "assigned": "Dwayne Johnson"
                 }
             ],
             "middle_song": 67,
@@ -70,7 +70,7 @@
                 "title": "Estudo bíblico de congregação",
                 "time": 30,
                 "conductor": "Will Smith",
-                "reader": "Dwayne Johnson"
+                "reader": "Johnny Depp"
             },
             "closing_song": 132,
             "closing_prayer": "Robert Downey Jr."
@@ -119,8 +119,8 @@
                     "title": "Iniciando conversas",
                     "time": 4,
                     "lesson": "lmd lição 4 ponto 4",
-                    "assigned": "Halle Berry",
-                    "assistant": "Julia Roberts"
+                    "assigned": "Meryl Streep",
+                    "assistant": "Jennifer Aniston"
                 },
                 {
                     "number": 6,
@@ -186,16 +186,16 @@
                     "title": "Iniciando conversas",
                     "time": 2,
                     "lesson": "lmd lição 3 ponto 3",
-                    "assigned": "Leonardo DiCaprio",
-                    "assistant": "Al Pacino"
+                    "assigned": "Halle Berry",
+                    "assistant": "Saoirse Ronan"
                 },
                 {
                     "number": 5,
                     "title": "Iniciando conversas",
                     "time": 2,
                     "lesson": "lmd lição 3 ponto 5",
-                    "assigned": "Reese Witherspoon",
-                    "assistant": "Jennifer Aniston"
+                    "assigned": "Leonardo DiCaprio",
+                    "assistant": "Al Pacino"
                 },
                 {
                     "number": 6,
@@ -203,7 +203,7 @@
                     "time": 3,
                     "lesson": "lmd lição 7 ponto 4",
                     "assigned": "Anna Kendrick",
-                    "assistant": "Saoirse Ronan"
+                    "assistant": "Reese Witherspoon"
                 },
                 {
                     "number": 7,
@@ -290,7 +290,7 @@
                     "number": 6,
                     "title": "O que você diria?",
                     "time": 6,
-                    "assigned": "Dwayne Johnson"
+                    "assigned": "Tom Hanks"
                 }
             ],
             "middle_song": 142,
@@ -307,7 +307,7 @@
                 "title": "Estudo bíblico de congregação",
                 "time": 30,
                 "conductor": "Will Smith",
-                "reader": "Tom Hanks"
+                "reader": "Dwayne Johnson"
             },
             "closing_song": 134,
             "closing_prayer": "Robert Downey Jr."
@@ -318,7 +318,7 @@
             "theme": "JEREMIAS 38-39",
             "attendants": [
                 "Dwayne Johnson",
-                "Denzel Washington"
+                "Brad Pitt"
             ],
             "chairman": "Tom Hanks",
             "opening_song": 102,
@@ -340,7 +340,7 @@
                 "time": 4,
                 "lesson": "th lição 12",
                 "assignment": "Jer. 38:1-13",
-                "reader": "Ian McKellen"
+                "reader": "Harrison Ford"
             },
             "apply_yourself_to_the_field_ministry": [
                 {
@@ -348,8 +348,8 @@
                     "title": "Iniciando conversas",
                     "time": 3,
                     "lesson": "lmd lição 9 ponto 3",
-                    "assigned": "Brad Pitt",
-                    "assistant": "Dwayne Johnson"
+                    "assigned": "Julia Roberts",
+                    "assistant": "Amy Adams"
                 },
                 {
                     "number": 5,
@@ -380,10 +380,10 @@
                 "title": "Estudo bíblico de congregação",
                 "time": 30,
                 "conductor": "Matt Damon",
-                "reader": "Johnny Depp"
+                "reader": "Ian McKellen"
             },
             "closing_song": 56,
-            "closing_prayer": "Robert Downey Jr."
+            "closing_prayer": "Johnny Depp"
         }
     ]
 }

@@ -107,7 +107,7 @@
                 "number": 2,
                 "title": "Joias espirituais",
                 "time": 10,
-                "conductor": "Tom Hanks"
+                "conductor": "Johnny Depp"
             },
             "bible_reading": {
                 "number": 3,
@@ -123,8 +123,8 @@
                     "title": "Iniciando conversas",
                     "time": 4,
                     "lesson": "lmd lição 3 ponto 4",
-                    "assigned": "Meryl Streep",
-                    "assistant": "Reese Witherspoon"
+                    "assigned": "Reese Witherspoon",
+                    "assistant": "Julia Roberts"
                 },
                 {
                     "number": 5,
@@ -155,7 +155,7 @@
                     "number": 8,
                     "title": "Campanha especial em setembro",
                     "time": 5,
-                    "speaker": "Denzel Washington"
+                    "speaker": "Tom Hanks"
                 }
             ],
             "congregation_bible_study": {
@@ -163,7 +163,7 @@
                 "title": "Estudo bíblico de congregação",
                 "time": 30,
                 "conductor": "Matt Damon",
-                "reader": "Johnny Depp"
+                "reader": "Denzel Washington"
             },
             "closing_song": 156,
             "closing_prayer": "Robert Downey Jr."
