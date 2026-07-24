@@ -1,0 +1,54 @@
+{
+  "reserved_names": [
+    "Streaming"
+  ],
+  "streaming_roles": [
+    "fm_assigned"
+  ],
+  "streaming_score": 6,
+  "streaming_min_per_week": 1,
+  "streaming_max_per_week": 2,
+  "assistant_rule": "same_gender_or_family",
+  "female_preference_roles": [
+    "fm_assigned",
+    "fm_assistant"
+  ],
+  "female_preference_factor": 1.25,
+  "double_book_penalty": 0.001,
+  "double_book_exempt_roles": [
+    "attendant",
+    "closing_prayer"
+  ],
+  "pair_spacing_weeks": 8,
+  "pair_min_factor": 0.05,
+  "any_gap_weeks": 4,
+  "monthly_rest_decay": 1,
+  "monthly_rest_min_factor": 0.15,
+  "chairman_prefers_lac": true,
+  "chairman_excluded_roles": [
+    "closing_prayer",
+    "attendant"
+  ],
+  "history_window_weeks": 26,
+  "never_gap": 60,
+  "week_format": "YYYY/WW",
+  "effective_name": "last_of_pipe_split",
+  "fill_placeholders": [
+    "",
+    "?",
+    "TBD",
+    "TODO"
+  ],
+  "male_only_roles": [
+    "chairman",
+    "attendant",
+    "opening_talk",
+    "spiritual_gems",
+    "bible_reading",
+    "fm_talk",
+    "lac_speaker",
+    "cbs_conductor",
+    "cbs_reader",
+    "closing_prayer"
+  ]
+}

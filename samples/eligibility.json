@@ -1,0 +1,379 @@
+{
+    "people": {
+        "Tom Hanks": {
+            "gender": "M",
+            "family": "Hanks",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_conductor",
+                "cbs_reader",
+                "chairman",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Matt Damon": {
+            "gender": "M",
+            "family": "Damon",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_conductor",
+                "cbs_reader",
+                "chairman",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Will Smith": {
+            "gender": "M",
+            "family": "Smith",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_conductor",
+                "cbs_reader",
+                "chairman",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Leonardo DiCaprio": {
+            "gender": "M",
+            "family": "DiCaprio",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_conductor",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Denzel Washington": {
+            "gender": "M",
+            "family": "Washington",
+            "tolerance": 2.75,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Dwayne Johnson": {
+            "gender": "M",
+            "family": "Johnson",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Johnny Depp": {
+            "gender": "M",
+            "family": "Damon",
+            "tolerance": 3,
+            "roles": [
+                "bible_reading",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "opening_talk",
+                "spiritual_gems"
+            ]
+        },
+        "Brad Pitt": {
+            "gender": "M",
+            "family": "Johnson",
+            "tolerance": 3,
+            "roles": [
+                "attendant",
+                "bible_reading",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk",
+                "lac_speaker",
+                "spiritual_gems"
+            ]
+        },
+        "Robert Downey Jr.": {
+            "gender": "M",
+            "family": "Downey",
+            "tolerance": 1,
+            "roles": [
+                "bible_reading",
+                "cbs_reader",
+                "closing_prayer",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk"
+            ]
+        },
+        "Ian McKellen": {
+            "gender": "M",
+            "family": "Washington",
+            "tolerance": 1.5,
+            "roles": [
+                "bible_reading",
+                "cbs_reader",
+                "fm_assigned",
+                "fm_assistant",
+                "fm_talk"
+            ]
+        },
+        "Hugh Jackman": {
+            "gender": "M",
+            "family": "Jackman",
+            "tolerance": 1.25,
+            "cannot_pair_with": [
+                "Chris Hemsworth"
+            ],
+            "roles": [
+                "bible_reading",
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Harrison Ford": {
+            "gender": "M",
+            "family": "Johnson",
+            "tolerance": 1,
+            "roles": [
+                "bible_reading",
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Al Pacino": {
+            "gender": "M",
+            "family": "Pacino",
+            "tolerance": 1,
+            "roles": [
+                "bible_reading",
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Chris Hemsworth": {
+            "gender": "M",
+            "family": "Hemsworth",
+            "tolerance": 0.75,
+            "cannot_pair_with": [
+                "Hugh Jackman"
+            ],
+            "roles": [
+                "bible_reading",
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Peter Dinklage": {
+            "gender": "M",
+            "family": "Pacino",
+            "tolerance": 0.75,
+            "roles": [
+                "bible_reading",
+                "fm_assigned",
+                "fm_assistant"
+            ],
+            "only_pair_with": [
+                "Al Pacino",
+                "Halle Berry"
+            ]
+        },
+        "Amy Adams": {
+            "gender": "F",
+            "family": "Downey",
+            "tolerance": 1,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Viola Davis": {
+            "gender": "F",
+            "family": "Damon",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Emma Stone": {
+            "gender": "F",
+            "family": "Jackman",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Saoirse Ronan": {
+            "gender": "F",
+            "family": "Hemsworth",
+            "tolerance": 1,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Daniel Radcliffe": {
+            "gender": "M",
+            "family": "Radcliffe",
+            "tolerance": 0.5,
+            "roles": [
+                "bible_reading",
+                "fm_assistant"
+            ]
+        },
+        "Jennifer Aniston": {
+            "gender": "F",
+            "family": "Johnson",
+            "tolerance": 1,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Emma Watson": {
+            "gender": "F",
+            "family": "Watson",
+            "tolerance": 0.5,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Julianne Moore": {
+            "gender": "F",
+            "family": "Radcliffe",
+            "tolerance": 1.25,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Halle Berry": {
+            "gender": "F",
+            "family": "Pacino",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Reese Witherspoon": {
+            "gender": "F",
+            "family": "Hanks",
+            "tolerance": 1.25,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Anna Kendrick": {
+            "gender": "F",
+            "family": "Kendrick",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Meryl Streep": {
+            "gender": "F",
+            "family": "Streep",
+            "tolerance": 1,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Julia Roberts": {
+            "gender": "F",
+            "family": "Damon",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assigned",
+                "fm_assistant"
+            ]
+        },
+        "Vera Farmiga": {
+            "gender": "F",
+            "family": "Farmiga",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assistant"
+            ]
+        },
+        "Susan Sarandon": {
+            "gender": "F",
+            "family": "Sarandon",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assistant"
+            ]
+        },
+        "Nicole Kidman": {
+            "gender": "F",
+            "family": "Kidman",
+            "tolerance": 0.25,
+            "roles": [
+                "fm_assistant"
+            ]
+        },
+        "Jodie Foster": {
+            "gender": "F",
+            "family": "Foster",
+            "tolerance": 0.75,
+            "roles": [
+                "fm_assistant"
+            ]
+        }
+    }
+}
