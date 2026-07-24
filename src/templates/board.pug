@@ -32,17 +32,23 @@ table.schedule
         dt
           label(for='borderSpacing')
         dd
-          input(type='number' name='borderSpacing' value=3 min=0 max=10)
+          .input-with-unit
+            input(type='number' name='borderSpacing' value=3 min=0 max=10)
+            span.unit px
       dl(id='padding')
         dt
           label(for='padding')
         dd
-          input(type='number' name='padding' value=5 min=0 max=10)
+          .input-with-unit
+            input(type='number' name='padding' value=5 min=0 max=10)
+            span.unit px
       dl(id='spacing')
         dt
           label(for='spacing')
         dd
-          input(type='number' name='spacing' value=10 min=0 max=30)
+          .input-with-unit
+            input(type='number' name='spacing' value=10 min=0 max=30)
+            span.unit px
       dl(id='header')
         dt
           label(for='header')

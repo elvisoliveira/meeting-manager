@@ -25,7 +25,7 @@ export class FileSystemWatcher {
         if (!hasPermission) {
             const permissionsButton = document.getElementById('permissions');
             if (permissionsButton)
-                permissionsButton.setAttribute('style', 'display: block;');
+                permissionsButton.classList.add('visible');
             return;
         }
 

@@ -48,8 +48,36 @@ export class S89Service {
     }
 
     setupS89FileHandler() {
-        document.querySelector('input#S89[type=file]').addEventListener('change', function () {
+        const input = document.querySelector('input#S89[type=file]');
+        const status = document.querySelector('#S89-status');
+        const removeBtn = document.querySelector('#S89-remove');
+        if (!input) return;
+
+        const setLoaded = (filename) => {
+            if (status) {
+                status.textContent = `${i18next.t('LOADED')}: ${filename}`;
+                status.classList.remove('text-muted');
+                status.classList.add('text-success');
+            }
+            if (removeBtn) removeBtn.style.display = '';
+        };
+
+        const setEmpty = () => {
+            if (status) {
+                status.textContent = i18next.t('NO_FILE');
+                status.classList.add('text-muted');
+                status.classList.remove('text-success');
+            }
+            if (removeBtn) removeBtn.style.display = 'none';
+        };
+
+        input.addEventListener('change', function () {
             const self = this;
+            const file = this.files[0];
+            if (!file) {
+                setEmpty();
+                return;
+            }
             const reader = new FileReader();
             reader.onload = function () {
                 pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
@@ -62,12 +90,20 @@ export class S89Service {
                             toastClass: 'text-bg-danger'
                         });
                         self.value = '';
+                        setEmpty();
                         return;
                     }
                     document.S89 = new S89(doc);
+                    setLoaded(file.name);
                 });
             };
-            reader.readAsArrayBuffer(this.files[0]);
+            reader.readAsArrayBuffer(file);
         }, false);
+
+        removeBtn?.addEventListener('click', () => {
+            input.value = '';
+            delete document.S89;
+            setEmpty();
+        });
     }
 }

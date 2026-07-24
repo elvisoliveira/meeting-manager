@@ -8,45 +8,72 @@ each type in Object.keys(subtitles)
 table#main.table.table-striped-columns.table-hover.m-0
   thead
     tr
-      th(scope='col')
+      th.col-corner(scope='col')
         div
-          +icon('sort')(style='color: white;')
-          +icon('print')(style='color: white;')
+          +icon('sort')(
+            data-tip='{{ i18n \'TIP_SORT\' }}'
+            data-tip-placement='bottom'
+            tabindex='0'
+            role='button'
+            aria-label='{{ i18n \'TIP_SORT\' }}'
+          )
+          +icon('print')(
+            data-tip='{{ i18n \'TIP_PRINT\' }}'
+            data-tip-placement='bottom'
+            tabindex='0'
+            role='button'
+            aria-label='{{ i18n \'TIP_PRINT\' }}'
+          )
       | {{#each meetings}}
       th(
-        class='{{#if this.data.message}}event{{/if}}'
+        class='col-toggle{{#if this.data.message}} event{{/if}}'
         scope='col'
-        data-bs-toggle='tooltip'
-        data-bs-html='true'
-        data-bs-placement='bottom'
-        title=`${columnBadge}`
+        data-tip-placement='bottom'
+        data-tip=`${columnBadge}`
       )
         div
-          input(type='checkbox' id='{{@key}}' value='{{this.date}}')
-          +icon('sort')
+          input(
+            type='checkbox'
+            id='{{@key}}'
+            value='{{this.date}}'
+            aria-label='{{ i18n \'TIP_COL_OFF\' }}'
+          )
+          +icon('sort')(
+            tabindex='0'
+            role='button'
+            aria-label='{{ i18n \'TIP_SORT\' }}'
+          )
           label(for='{{@key}}') {{this.label}}
       | {{/each}}
       th(
         scope='col'
-        data-bs-toggle='tooltip'
-        title='{{ i18n \'NO_ASSIGNMENTS\' }}'
+        data-tip='{{ i18n \'NO_ASSIGNMENTS\' }}'
+        data-tip-placement='bottom'
       )
         div
-          +icon('sort')
+          +icon('sort')(
+            tabindex='0'
+            role='button'
+            aria-label='{{ i18n \'TIP_SORT\' }}'
+          )
   tbody
     | {{#each data as |value key|}}
     tr
-      //- to inspect / evaluate the tooltip while developing, use the click trigger
-      //- data-bs-trigger="click"
       th(
-        data-bs-toggle="tooltip"
-        data-bs-html="true"
-        data-bs-placement="right"
-        scope="row"
-        title=`${partners}`
+        scope='row'
+        data-tip-placement='right'
+        data-tip=`${partners}`
       )
-        +icon('minus-square hide')
-        +icon('copy copy')
+        +icon('minus-square hide')(
+          tabindex='0'
+          role='button'
+          aria-label='{{ i18n \'TIP_HIDE_ROW\' }}'
+        )
+        +icon('copy copy')(
+          tabindex='0'
+          role='button'
+          aria-label='{{ i18n \'TIP_COPY_NAME\' }}'
+        )
         | {{this.name}}
       | {{#each this.meetings}}
       td(
@@ -55,11 +82,9 @@ table#main.table.table-striped-columns.table-hover.m-0
         div
           | {{#each this.assignments}}
           span(
-            data-bs-toggle="tooltip"
-            data-bs-html="true"
             onclick="getS89({{this.ID}})"
             class="badge {{this.assignment}}"
-            title=`${tooltip}`
+            data-tip=`${tooltip}`
           )
             | {{this.assignment}}
           | {{/each}}
@@ -74,21 +99,27 @@ table#main.table.table-striped-columns.table-hover.m-0
       td(colspan='{{meetings.length}}' style='text-align: center') {{ i18n 'NO_DATA' }}
       td
         +icon('hashtag')
-button#draggable.btn.btn-primary.btn-sm(
-  type='button'
-  data-bs-toggle='modal'
-  data-bs-target='#filters'
-)
-  +icon('arrows')
-  | &nbsp; {{ i18n 'SETTINGS' }}
-button#permissions.btn.btn-primary.btn-sm(type='button') {{ i18n 'GRANT_PERMISSIONS' }}
+#floating-actions
+  button#permissions.btn.btn-warning.btn-sm(type='button')
+    +icon('warning')
+    | &nbsp; {{ i18n 'GRANT_PERMISSIONS' }}
+  button#draggable.btn.btn-primary.btn-sm(
+    type='button'
+    data-bs-toggle='modal'
+    data-bs-target='#filters'
+    aria-label="{{ i18n 'SETTINGS' }}"
+  )
+    +icon('arrows')
+    | &nbsp; {{ i18n 'SETTINGS' }}
 | {{else}}
-.drag-area
+.drag-area(role='button' tabindex='0')
+  +icon('upload')
   span.header {{ i18n 'DRAG_AND_DROP' }}
-  span.header
+  span.hint {{ i18n 'DRAG_AND_DROP_HINT' }}
+  span.actions
     span#browse.button {{ i18n 'BROWSE' }}
     | &nbsp; {{ i18n 'OR' }} &nbsp;
-    span#sample.button {{ i18n 'SAMPLE' }}
+    span#sample.button {{ i18n 'VIEW_SAMPLE' }}
   span.support {{ i18n 'SUPPORTS' }}: JSON
   input(type='file' multiple='' hidden='' accept='.json')
 | {{/if}}

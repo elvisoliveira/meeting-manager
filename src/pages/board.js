@@ -174,9 +174,9 @@ const handleLayoutChange = (e) => {
 
 // Attach event listeners
 addEventListenerSafe('#print', 'click', handlePrint);
-addEventListenerSafe('#borderSpacing input', 'change', handleBorderSpacing);
-addEventListenerSafe('#padding input', 'change', handlePadding);
-addEventListenerSafe('#spacing input', 'change', handleSpacing);
+addEventListenerSafe('#borderSpacing input', 'input', handleBorderSpacing);
+addEventListenerSafe('#padding input', 'input', handlePadding);
+addEventListenerSafe('#spacing input', 'input', handleSpacing);
 addEventListenerSafe('#header select', 'change', handleHeaderChange);
 addEventListenerSafe('#footer select', 'change', handleFooterChange);
 addEventListenerSafe('#dividers select', 'change', handleDividersChange);

@@ -6,6 +6,8 @@ import { DataGrid } from './services/data-grid';
 import { UIHandlers } from './services/ui-handlers';
 import { FileSystemWatcher } from './services/file-system-observer';
 import { DataProcessor } from './services/data-processor';
+import Tooltip from './services/tooltip';
+import i18next from './config/i18n';
 
 class MeetingManagerApp {
     constructor() {
@@ -27,20 +29,40 @@ class MeetingManagerApp {
 
     init() {
         registerHandlebarsHelpers(this.engine);
-        document.addEventListener('DOMContentLoaded', () => this.assembleDataGrid());
+        document.addEventListener('DOMContentLoaded', () => {
+            new Tooltip();
+            this.assembleDataGrid();
+        });
     }
 
     async assembleDataGrid() {
-        const data = this.dataGrid.assembleData();
-        await this.dataGrid.renderTable(data);
+        try {
+            const data = this.dataGrid.assembleData();
+            await this.dataGrid.renderTable(data);
 
-        if (data.length === 0) {
-            this.fileLoader.setupDropArea();
-            return;
+            if (data.length === 0) {
+                this.fileLoader.setupDropArea();
+                return;
+            }
+
+            await this.dataGrid.renderFilter();
+            this.setupEventHandlers(data);
+        } catch (err) {
+            console.error('Failed to assemble data grid:', err);
+            const boot = document.getElementById('boot');
+            if (boot)
+                boot.innerHTML = `
+                    <div class="error-state">
+                        <p>${i18next.t('ERROR_LOAD')}</p>
+                        <pre class="text-danger small">${(err && err.message) || String(err)}</pre>
+                    </div>
+                `;
+            if (typeof bootstrap !== 'undefined' && bootstrap.showToast)
+                bootstrap.showToast({
+                    body: i18next.t('ERROR_LOAD'),
+                    toastClass: 'text-bg-danger'
+                });
         }
-
-        await this.dataGrid.renderFilter();
-        this.setupEventHandlers(data);
     }
 
     setupEventHandlers(data) {
@@ -52,8 +74,8 @@ class MeetingManagerApp {
         this.uiHandlers.setupFilterHandlers();
         this.uiHandlers.setupLanguageHandler(() => this.assembleDataGrid(data));
         this.uiHandlers.setupDraggableBehavior();
-        this.uiHandlers.setupTooltips();
         this.uiHandlers.setupPrintingBehavior();
+        this.uiHandlers.setupKeyboardShortcuts();
 
         // Setup S89 service
         this.s89Service.setupS89FileHandler();

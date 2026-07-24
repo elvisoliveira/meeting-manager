@@ -1,4 +1,5 @@
 import samplesData from '../../samples.json';
+import i18next from '../config/i18n';
 
 export class FileLoader {
     constructor(dataProcessor, onFilesLoaded) {
@@ -10,22 +11,30 @@ export class FileLoader {
     async loadFiles(files) {
         const jsonFiles = Array.from(files).filter((f) => f.type === 'application/json');
 
-        await Promise.all(jsonFiles.map((file) => new Promise((resolve, reject) => {
-            const r = new FileReader();
-            r.onload = (e) => {
-                try {
-                    const json = new TextDecoder().decode(e.target.result);
-                    this.dataProcessor(JSON.parse(json));
-                    resolve();
-                } catch (err) {
-                    reject(err);
-                }
-            };
-            r.onerror = () => reject(r.error);
-            r.readAsArrayBuffer(file);
-        })));
-
-        this.onFilesLoaded();
+        try {
+            await Promise.all(jsonFiles.map((file) => new Promise((resolve, reject) => {
+                const r = new FileReader();
+                r.onload = (e) => {
+                    try {
+                        const json = new TextDecoder().decode(e.target.result);
+                        this.dataProcessor(JSON.parse(json));
+                        resolve();
+                    } catch (err) {
+                        reject(err);
+                    }
+                };
+                r.onerror = () => reject(r.error);
+                r.readAsArrayBuffer(file);
+            })));
+            this.onFilesLoaded();
+        } catch (err) {
+            console.error('Failed to load file:', err);
+            if (typeof bootstrap !== 'undefined')
+                bootstrap.showToast({
+                    body: `${i18next.t('ERROR_LOAD')}: ${err.message || err}`,
+                    toastClass: 'text-bg-danger'
+                });
+        }
     }
 
     setupDragAndDrop() {
@@ -43,15 +52,18 @@ export class FileLoader {
         const dropArea = document.querySelector('.drag-area');
         if (!dropArea) return;
 
-        const dragText = document.querySelector('.header');
+        const dragText = dropArea.querySelector('.header');
+        const defaultText = dragText?.textContent;
         const input = dropArea.querySelector('input');
 
-        dropArea.querySelector('.button').onclick = async () => {
+        dropArea.querySelector('#browse').onclick = async () => {
             if ('showDirectoryPicker' in window) {
                 const dirHandle = await window.showDirectoryPicker();
                 const fileTasks = [];
                 for await (const entry of dirHandle.values())
                     fileTasks.push((async () => {
+                        if (entry.kind === "directory")
+                            return;
                         const file = await entry.getFile();
                         if (file.type !== 'application/json') return;
                         const json = await file.text();
@@ -74,12 +86,12 @@ export class FileLoader {
         dropArea.addEventListener('dragover', (e) => {
             e.preventDefault();
             dropArea.classList.add('active');
-            dragText.textContent = 'Release to Upload';
+            if (dragText) dragText.textContent = i18next.t('DROP_RELEASE');
         });
 
         dropArea.addEventListener('dragleave', () => {
             dropArea.classList.remove('active');
-            dragText.textContent = 'Drag & Drop';
+            if (dragText && defaultText) dragText.textContent = defaultText;
         });
 
         dropArea.addEventListener('drop', (e) => {

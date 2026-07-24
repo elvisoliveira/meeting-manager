@@ -36,7 +36,7 @@ export class UIHandlers {
 
     setupClearDataHandler() {
         document.querySelector('button#clear')?.addEventListener('click', () => {
-            if (confirm(i18next.t('SURE'))) {
+            if (confirm(i18next.t('RESET_DATA_CONFIRM'))) {
                 this.engine.destroy();
                 location.reload();
             }
@@ -45,7 +45,10 @@ export class UIHandlers {
 
     setupFilterHandlers() {
         const self = this;
-        const filters = (new URL(window.location)).searchParams.get('filters');
+        const params = (new URL(window.location)).searchParams;
+        const filters = params.get('filters');
+        const threshold = params.get('threshold');
+        const columns = params.get('columns');
         const checkboxes = document.querySelectorAll('#filters input[type=\'checkbox\']');
 
         checkboxes.forEach(checkboxInput => {
@@ -60,7 +63,23 @@ export class UIHandlers {
             });
         });
 
-        document.getElementById('threshold')?.addEventListener('input', filter);
+        const thresholdInput = document.getElementById('threshold');
+        if (thresholdInput) {
+            if (threshold !== null && !Number.isNaN(+threshold))
+                thresholdInput.value = threshold;
+            thresholdInput.addEventListener('input', filter);
+        }
+
+        if (columns) 
+            try {
+                const dates = atob(columns).split(',');
+                document.querySelectorAll('#main thead input[type=\'checkbox\']').forEach((c) => {
+                    c.checked = dates.includes(c.value);
+                });
+            } catch (e) {
+                console.warn('Invalid columns param:', e);
+            }
+        
 
         document.querySelectorAll('button#none, button#all').forEach(button =>
             button.addEventListener('click', (e) => {
@@ -97,55 +116,107 @@ export class UIHandlers {
             ignore = false;
         }, true);
 
-        const draggable = document.getElementById('draggable');
-        if (!draggable) return;
+        const handle = document.getElementById('draggable');
+        const container = document.getElementById('floating-actions');
+        if (!handle || !container) return;
 
-        draggable.addEventListener('mousedown', function (e) {
-            let offsetX = e.clientX - parseInt(window.getComputedStyle(this).left);
-            let offsetY = e.clientY - parseInt(window.getComputedStyle(this).top);
+        handle.addEventListener('mousedown', (e) => {
+            const rect = container.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            const offsetY = e.clientY - rect.top;
 
-            function mouseMoveHandler(e) {
-                Object.assign(document.getElementById('draggable').style, {
-                    top: (e.clientY - offsetY) + 'px',
-                    left: (e.clientX - offsetX) + 'px',
+            const move = (ev) => {
+                Object.assign(container.style, {
+                    top: (ev.clientY - offsetY) + 'px',
+                    left: (ev.clientX - offsetX) + 'px',
                     right: 'unset',
                     bottom: 'unset'
                 });
                 ignore = true;
-            }
+            };
 
             const reset = () => {
-                window.removeEventListener('mousemove', mouseMoveHandler);
+                window.removeEventListener('mousemove', move);
                 window.removeEventListener('mouseup', reset);
             };
 
-            window.addEventListener('mousemove', mouseMoveHandler);
+            window.addEventListener('mousemove', move);
             window.addEventListener('mouseup', reset);
         });
     }
 
-    setupTooltips() {
-        const { allowList } = bootstrap.Tooltip.Default;
-        allowList.table = [];
-        allowList.thead = [];
-        allowList.tbody = [];
-        allowList.tr = [];
-        allowList.td = [];
+    setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            const target = e.target;
+            const isTyping = target && (
+                target.tagName === 'INPUT' ||
+                target.tagName === 'TEXTAREA' ||
+                target.tagName === 'SELECT' ||
+                target.isContentEditable
+            );
 
-        document.querySelectorAll('[data-bs-toggle=\'tooltip\']').forEach((tooltipTriggerEl) => {
-            new bootstrap.Tooltip(tooltipTriggerEl);
+            if (e.key === 'Escape') {
+                const openModal = document.querySelector('.modal.show');
+                if (openModal) bootstrap.Modal.getInstance(openModal)?.hide();
+                return;
+            }
+
+            if (isTyping) return;
+
+            const filtersModal = document.getElementById('filters');
+            if (e.key === '?' || (e.key === ',' && (e.ctrlKey || e.metaKey))) {
+                if (filtersModal) {
+                    e.preventDefault();
+                    bootstrap.Modal.getOrCreateInstance(filtersModal).show();
+                }
+            } else if (e.key === 'p' && !e.ctrlKey && !e.metaKey)
+                document.querySelector('i.fa-print')?.click();
+            else if (e.key === '/')
+                if (filtersModal) {
+                    e.preventDefault();
+                    bootstrap.Modal.getOrCreateInstance(filtersModal).show();
+                    filtersModal.addEventListener('shown.bs.modal', () => {
+                        document.getElementById('threshold')?.focus();
+                    }, { once: true });
+                }
+            
         });
     }
 
     setupPrintingBehavior() {
-        document.querySelectorAll('#main thead input[type=\'checkbox\']').forEach(checkbox => {
+        const table = document.getElementById('main');
+        if (!table) return;
+        const headerCheckboxes = table.querySelectorAll('thead input[type=\'checkbox\']');
+
+        const updatePrintIcon = () => {
+            const selected = Array.from(headerCheckboxes).filter(c => c.checked);
+            const printIcon = document.querySelector('i.fa-print');
+            if (printIcon)
+                printIcon.style.display = selected.length > 0 ? 'inline' : 'none';
+        };
+
+        const updateColumnHighlight = () => {
+            headerCheckboxes.forEach((checkbox) => {
+                const headerCell = checkbox.closest('th');
+                if (!headerCell) return;
+                const colIndex = Array.from(headerCell.parentNode.children).indexOf(headerCell);
+                const on = checkbox.checked;
+                headerCell.classList.toggle('col-on', on);
+                table.querySelectorAll('tbody tr').forEach((row) => {
+                    const cell = row.children[colIndex];
+                    if (cell) cell.classList.toggle('col-on', on);
+                });
+            });
+        };
+
+        headerCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
-                const selected = Array.from(document.querySelectorAll('#main thead input[type=\'checkbox\']:checked'))
-                    .map(element => element.value);
-                const printIcon = document.querySelector('i.fa-print');
-                if (printIcon)
-                    printIcon.style.display = selected.length > 0 ? 'inline' : 'none';
+                updatePrintIcon();
+                updateColumnHighlight();
             });
         });
+
+        updatePrintIcon();
+        updateColumnHighlight();
     }
 }

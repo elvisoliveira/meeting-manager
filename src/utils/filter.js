@@ -12,11 +12,17 @@ export default function filter () {
     const url = new URL(window.location);
     url.searchParams.set('filters', btoa(selectedOnes));
 
-    // Set filters as a param on the URL
-    window.history.pushState({}, '', url.toString());
-
-    // Hide rows according to the threshold range
     const threshold = +form.querySelector('#threshold').value;
+    url.searchParams.set('threshold', String(threshold));
+
+    const selectedColumns = Array.from(main.querySelectorAll('thead input[type=\'checkbox\']:checked'))
+        .map(c => c.value);
+    if (selectedColumns.length)
+        url.searchParams.set('columns', btoa(selectedColumns.join(',')));
+    else
+        url.searchParams.delete('columns');
+
+    window.history.replaceState({}, '', url.toString());
 
     main.querySelectorAll('tbody tr').forEach((row) => {
         // Get all td elements and reverse the array

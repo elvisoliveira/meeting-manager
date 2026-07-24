@@ -1,62 +1,126 @@
 include utils
 #filters.modal.fade(tabindex='-1' aria-hidden='true')
-  .modal-dialog
+  .modal-dialog.modal-dialog-scrollable
     .modal-content
       .modal-header
         h5.modal-title {{ i18n 'SETTINGS' }}
-        button.btn-close(type='button' data-bs-dismiss='modal')
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
       .modal-body
-        table.table
-          thead
-            tr
-              th
-                span #
-              th {{ i18n 'ASSIGNMENT' }}
-              th
-                span {{ i18n 'ACRONYM' }}
-              th
-                span {{ i18n 'S_89_EN' }}
-          tbody
-            | {{#each subtitles}}
-            tr
-              th
-                input.form-check-input(type='checkbox' id='{{@key}}' value='{{@key}}' checked='')
-              td(style='text-align: left;') {{ i18n @key }}
-              td
-                span.badge(class='{{@key}}') {{@key}}
-              td
-                | {{#if this.S89 }}
-                +icon('check')
-                | {{/if}}
-            | {{/each}}
-        .form-outline.row.mt-3
-          .col-5
-            label.form-label {{ i18n 'THRESHOLD' }}
-            input#threshold.form-control(type='number' value='20')
-          .col
-            label.form-label {{ i18n 'LANGUAGE' }}
-            select#language.form-select
-              option(value='pt-BR') {{ i18n 'LANGUAGE_PT' }}
-              option(value='en-US') {{ i18n 'LANGUAGE_EN' }}
-        .form-outline.row.mt-3
-          .col-7
-            label.form-label {{ i18n 'S_89_FORM' }}
-            input#S89.form-control(type='file' accept='application/pdf')
-          .col
-            label.form-label {{ i18n 'S_89_DOWN' }}
-            select#output.form-select
-              option(value='png') .png
-              option(value='pdf') .pdf
-      .modal-footer
-        button#none.btn.btn-secondary(type='button')
-          span
-            +icon('ban')
-            | &nbsp; {{ i18n 'NONE' }}
-        button#all.btn.btn-primary(type='button')
-          span
-            +icon('check-square-o')
-            | &nbsp; {{ i18n 'ALL' }}
-        button#clear.btn.btn-danger(type='button')
-          span
-            +icon('trash')
-            | &nbsp; {{ i18n 'CLEAR' }}
+        ul.nav.nav-tabs(role='tablist')
+          li.nav-item(role='presentation')
+            button.nav-link.active(
+              type='button'
+              data-bs-toggle='tab'
+              data-bs-target='#tab-filters'
+              role='tab'
+            ) {{ i18n 'FILTERS' }}
+          li.nav-item(role='presentation')
+            button.nav-link(
+              type='button'
+              data-bs-toggle='tab'
+              data-bs-target='#tab-locale'
+              role='tab'
+            ) {{ i18n 'LOCALE' }}
+          li.nav-item(role='presentation')
+            button.nav-link(
+              type='button'
+              data-bs-toggle='tab'
+              data-bs-target='#tab-s89'
+              role='tab'
+            ) {{ i18n 'S_89_EXPORT' }}
+          li.nav-item(role='presentation')
+            button.nav-link(
+              type='button'
+              data-bs-toggle='tab'
+              data-bs-target='#tab-help'
+              role='tab'
+            ) {{ i18n 'HELP' }}
+        .tab-content.pt-3
+          #tab-filters.tab-pane.fade.show.active(role='tabpanel')
+            table.table.table-sm.align-middle
+              thead
+                tr
+                  th
+                    span #
+                  th {{ i18n 'ASSIGNMENT' }}
+                  th
+                    span {{ i18n 'ACRONYM' }}
+                  th
+                    span {{ i18n 'S_89_EN' }}
+              tbody
+                | {{#each subtitles}}
+                tr
+                  th
+                    input.form-check-input(type='checkbox' id='{{@key}}' value='{{@key}}' checked='')
+                  td(style='text-align: left;') {{ i18n @key }}
+                  td
+                    span.badge(class='{{@key}}') {{@key}}
+                  td
+                    | {{#if this.S89 }}
+                    +icon('check')
+                    | {{/if}}
+                | {{/each}}
+            .row.g-2.align-items-end
+              .col
+                button#none.btn.btn-outline-secondary.btn-sm(type='button')
+                  +icon('ban')
+                  | &nbsp; {{ i18n 'NONE' }}
+              .col
+                button#all.btn.btn-outline-primary.btn-sm(type='button')
+                  +icon('check-square-o')
+                  | &nbsp; {{ i18n 'ALL' }}
+            .form-outline.mt-3
+              label.form-label(for='threshold') {{ i18n 'THRESHOLD' }}
+              input#threshold.form-control(type='number' value='20' min='0')
+          #tab-locale.tab-pane.fade(role='tabpanel')
+            .form-outline
+              label.form-label(for='language') {{ i18n 'LANGUAGE' }}
+              select#language.form-select
+                option(value='pt-BR') {{ i18n 'LANGUAGE_PT' }}
+                option(value='en-US') {{ i18n 'LANGUAGE_EN' }}
+          #tab-s89.tab-pane.fade(role='tabpanel')
+            .form-outline
+              label.form-label(for='S89') {{ i18n 'S_89_FORM' }}
+              input#S89.form-control(type='file' accept='application/pdf')
+              .d-flex.justify-content-between.align-items-center.mt-2
+                small#S89-status.text-muted {{ i18n 'NO_FILE' }}
+                button#S89-remove.btn.btn-outline-danger.btn-sm(type='button' style='display: none;')
+                  +icon('times')
+                  | &nbsp; {{ i18n 'REMOVE' }}
+            .form-outline.mt-3
+              label.form-label(for='output') {{ i18n 'S_89_DOWN' }}
+              select#output.form-select
+                option(value='png') .png
+                option(value='pdf') .pdf
+          #tab-help.tab-pane.fade(role='tabpanel')
+            h6.text-muted.text-uppercase.small.mb-2 {{ i18n 'KEYBOARD_SHORTCUTS' }}
+            table.table.table-sm.align-middle.mb-3
+              tbody
+                tr
+                  td
+                    kbd ?
+                    |  /
+                    kbd Ctrl
+                    |  +
+                    kbd ,
+                  td {{ i18n 'HELP_OPEN_SETTINGS' }}
+                tr
+                  td
+                    kbd /
+                  td {{ i18n 'HELP_FOCUS_THRESHOLD' }}
+                tr
+                  td
+                    kbd p
+                  td {{ i18n 'HELP_PRINT' }}
+                tr
+                  td
+                    kbd Esc
+                  td {{ i18n 'HELP_DISMISS' }}
+            p.small.text-muted.mb-0 {{ i18n 'HELP_HINT' }}
+      .modal-footer.justify-content-between
+        button#clear.btn.btn-outline-danger.btn-sm(type='button')
+          +icon('trash')
+          | &nbsp; {{ i18n 'RESET_DATA' }}
+        button.btn.btn-primary.btn-sm(type='button' data-bs-dismiss='modal')
+          +icon('check')
+          | &nbsp; OK

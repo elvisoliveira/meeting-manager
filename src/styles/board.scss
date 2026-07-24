@@ -9,6 +9,17 @@ $grey: #2a6b77;
     font-size: 12px;
 }
 
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+input, textarea, select {
+    user-select: auto;
+    -webkit-user-select: auto;
+}
+
 @page {
     margin: 5mm;
     size: A4;
@@ -74,6 +85,24 @@ div.options {
                         background-color: #fff;
                         border-radius: 3px;
                         box-sizing: border-box;
+                    }
+
+                    .input-with-unit {
+                        position: relative;
+
+                        input[type="number"] {
+                            padding-right: 32px;
+                        }
+
+                        span.unit {
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: #888;
+                            font-size: 12px;
+                            pointer-events: none;
+                        }
                     }
                 }
             }
