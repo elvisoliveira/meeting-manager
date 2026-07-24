@@ -1,0 +1,172 @@
+{
+    "meetings": [
+        {
+            "week": "2026-31",
+            "label": "3-9 August",
+            "theme": "JEREMIAS 22-23",
+            "message": "Não há reunião devido ao <p>Congresso regional de 2026</p> Felicidade Eterna"
+        },
+        {
+            "week": "2026-32",
+            "label": "10-16 August",
+            "theme": "JEREMIAS 24-25",
+            "message": "Não há reunião devido ao <p>Congresso internacional</p> em Utrecht"
+        },
+        {
+            "week": "2026-33",
+            "label": "17-23 August",
+            "theme": "JEREMIAS 26-28",
+            "attendants": [
+                "Dwayne Johnson",
+                "Will Smith"
+            ],
+            "chairman": "Tom Hanks",
+            "opening_song": 77,
+            "opening_talk": {
+                "number": 1,
+                "title": "Não seja enganado por falsos profetas",
+                "time": 10,
+                "speaker": "Johnny Depp"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "title": "Joias espirituais",
+                "time": 10,
+                "conductor": "Dwayne Johnson"
+            },
+            "bible_reading": {
+                "number": 3,
+                "title": "Leitura da Bíblia",
+                "time": 4,
+                "lesson": "th lição 5",
+                "assignment": "Jer. 28:5-17",
+                "reader": "Will Smith"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "number": 4,
+                    "title": "Iniciando conversas",
+                    "time": 3,
+                    "lesson": "lmd lição 1 ponto 4",
+                    "assigned": "Denzel Washington",
+                    "assistant": "Hugh Jackman"
+                },
+                {
+                    "number": 5,
+                    "title": "Cultivando o interesse",
+                    "time": 4,
+                    "lesson": "lmd lição 9 ponto 3",
+                    "assigned": "Amy Adams",
+                    "assistant": "Susan Sarandon"
+                },
+                {
+                    "number": 6,
+                    "title": "Fazendo discípulos",
+                    "time": 5,
+                    "lesson": "lmd lição 11 ponto 4",
+                    "assigned": "Streaming",
+                    "assistant": "Streaming"
+                }
+            ],
+            "middle_song": 16,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "title": "Necessidades locais",
+                    "time": 15,
+                    "speaker": "Tom Hanks"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 8,
+                "title": "Estudo bíblico de congregação",
+                "time": 30,
+                "conductor": "Leonardo DiCaprio",
+                "reader": "Matt Damon"
+            },
+            "closing_song": 71,
+            "closing_prayer": "Robert Downey Jr."
+        },
+        {
+            "week": "2026-34",
+            "label": "24-30 August",
+            "theme": "JEREMIAS 29-30",
+            "attendants": [
+                "Leonardo DiCaprio",
+                "Matt Damon"
+            ],
+            "chairman": "Will Smith",
+            "opening_song": 12,
+            "opening_talk": {
+                "number": 1,
+                "title": "Jeová disciplina seus servos na medida certa",
+                "time": 10,
+                "speaker": "Dwayne Johnson"
+            },
+            "spiritual_gems": {
+                "number": 2,
+                "title": "Joias espirituais",
+                "time": 10,
+                "conductor": "Tom Hanks"
+            },
+            "bible_reading": {
+                "number": 3,
+                "title": "Leitura da Bíblia",
+                "time": 4,
+                "lesson": "th lição 2",
+                "assignment": "Jer. 30:1-11",
+                "reader": "Al Pacino"
+            },
+            "apply_yourself_to_the_field_ministry": [
+                {
+                    "number": 4,
+                    "title": "Iniciando conversas",
+                    "time": 4,
+                    "lesson": "lmd lição 3 ponto 4",
+                    "assigned": "Meryl Streep",
+                    "assistant": "Reese Witherspoon"
+                },
+                {
+                    "number": 5,
+                    "title": "Iniciando conversas",
+                    "time": 3,
+                    "lesson": "lmd lição 1 ponto 5",
+                    "assigned": "Streaming",
+                    "assistant": "Streaming"
+                },
+                {
+                    "number": 6,
+                    "title": "Discurso",
+                    "time": 5,
+                    "lesson": "th lição 1",
+                    "theme": "Qual é a explicação de Jeremias 29:11?",
+                    "assigned": "Leonardo DiCaprio"
+                }
+            ],
+            "middle_song": 3,
+            "living_as_christians": [
+                {
+                    "number": 7,
+                    "title": "Jeová dá esperança a seus servos",
+                    "time": 10,
+                    "speaker": "Will Smith"
+                },
+                {
+                    "number": 8,
+                    "title": "Campanha especial em setembro",
+                    "time": 5,
+                    "speaker": "Denzel Washington"
+                }
+            ],
+            "congregation_bible_study": {
+                "number": 9,
+                "title": "Estudo bíblico de congregação",
+                "time": 30,
+                "conductor": "Matt Damon",
+                "reader": "Johnny Depp"
+            },
+            "closing_song": 156,
+            "closing_prayer": "Robert Downey Jr."
+        }
+    ]
+}
