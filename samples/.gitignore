@@ -1,2 +1,4 @@
 *
 !*.json
+shuffle-map.json
+!shuffle.mjs
