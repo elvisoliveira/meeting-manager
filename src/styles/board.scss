@@ -33,6 +33,14 @@ input, textarea, select {
     .schedule {
         width: 100% !important;
     }
+
+    table.meeting {
+        // Two meetings per printed page: each fills half of it, minus an
+        // allowance for the repeating .schedule header and table spacing.
+        box-sizing: border-box;
+        height: calc(50vh - 40px);
+        page-break-inside: avoid;
+    }
 }
 
 html,
@@ -514,8 +522,6 @@ td {
 }
 
 tbody.message {
-    background-color: #f1f1f1;
-
     td {
         padding: 0 !important;
 
@@ -533,6 +539,7 @@ tbody.message {
             margin: 8px;
             padding: 29px 0px;
             text-align: center;
+            background-color: #f1f1f1;
 
             p {
                 font-size: 50px;
