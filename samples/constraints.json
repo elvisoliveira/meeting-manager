@@ -19,12 +19,12 @@
     "attendant",
     "closing_prayer"
   ],
-  "pair_spacing_weeks": 8,
+  "pair_spacing_weeks": 16,
   "pair_min_factor": 0.05,
   "any_gap_weeks": 4,
   "monthly_rest_decay": 1,
   "monthly_rest_min_factor": 0.15,
-  "chairman_prefers_lac": true,
+  "chairman_prefers_lac": false,
   "chairman_excluded_roles": [
     "closing_prayer",
     "attendant"
@@ -50,5 +50,30 @@
     "cbs_conductor",
     "cbs_reader",
     "closing_prayer"
+  ],
+  "privilege_by_title": {
+    "Necessidades locais": [
+      "elder"
+    ],
+    "O que você diria?": [
+      "elder",
+      "ms"
+    ]
+  },
+  "assistant_family_titles": [
+    "Iniciando conversas",
+    "Explicando suas crenças"
+  ],
+  "student_part_roles": [
+    "fm_assigned",
+    "fm_assistant",
+    "fm_talk"
+  ],
+  "elder_on_student_part_factor": 0.25,
+  "equal_weight_roles": [
+    "bible_reading",
+    "fm_assigned",
+    "fm_assistant",
+    "fm_talk"
   ]
 }

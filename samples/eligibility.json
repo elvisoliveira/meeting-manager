@@ -4,6 +4,7 @@
             "gender": "M",
             "family": "Hanks",
             "tolerance": 3,
+            "privilege": "elder",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -23,6 +24,7 @@
             "gender": "M",
             "family": "Damon",
             "tolerance": 3,
+            "privilege": "elder",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -42,6 +44,7 @@
             "gender": "M",
             "family": "Smith",
             "tolerance": 3,
+            "privilege": "elder",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -61,6 +64,7 @@
             "gender": "M",
             "family": "DiCaprio",
             "tolerance": 3,
+            "privilege": "elder",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -79,6 +83,7 @@
             "gender": "M",
             "family": "Washington",
             "tolerance": 2.75,
+            "privilege": "ms",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -96,6 +101,7 @@
             "gender": "M",
             "family": "Johnson",
             "tolerance": 3,
+            "privilege": "ms",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -113,6 +119,7 @@
             "gender": "M",
             "family": "Damon",
             "tolerance": 3,
+            "privilege": "ms",
             "roles": [
                 "bible_reading",
                 "cbs_reader",
@@ -129,6 +136,7 @@
             "gender": "M",
             "family": "Johnson",
             "tolerance": 3,
+            "privilege": "ms",
             "roles": [
                 "attendant",
                 "bible_reading",
@@ -226,6 +234,22 @@
                 "Halle Berry"
             ]
         },
+        "Kate Winslet": {
+            "gender": "M",
+            "family": "Pratt",
+            "tolerance": 1,
+            "roles": [
+                "bible_reading"
+            ]
+        },
+        "Ryan Gosling": {
+            "gender": "M",
+            "family": "Reeves",
+            "tolerance": 1,
+            "roles": [
+                "bible_reading"
+            ]
+        },
         "Amy Adams": {
             "gender": "F",
             "family": "Downey",
@@ -238,7 +262,7 @@
         "Viola Davis": {
             "gender": "F",
             "family": "Damon",
-            "tolerance": 0.75,
+            "tolerance": 1,
             "roles": [
                 "fm_assigned",
                 "fm_assistant"
@@ -256,7 +280,7 @@
         "Saoirse Ronan": {
             "gender": "F",
             "family": "Hemsworth",
-            "tolerance": 1,
+            "tolerance": 0.75,
             "roles": [
                 "fm_assigned",
                 "fm_assistant"
@@ -265,7 +289,7 @@
         "Daniel Radcliffe": {
             "gender": "M",
             "family": "Radcliffe",
-            "tolerance": 0.5,
+            "tolerance": 1,
             "roles": [
                 "bible_reading",
                 "fm_assistant"
@@ -292,7 +316,7 @@
         "Julianne Moore": {
             "gender": "F",
             "family": "Radcliffe",
-            "tolerance": 1.25,
+            "tolerance": 1,
             "roles": [
                 "fm_assigned",
                 "fm_assistant"
@@ -310,16 +334,7 @@
         "Reese Witherspoon": {
             "gender": "F",
             "family": "Hanks",
-            "tolerance": 1.25,
-            "roles": [
-                "fm_assigned",
-                "fm_assistant"
-            ]
-        },
-        "Anna Kendrick": {
-            "gender": "F",
-            "family": "Kendrick",
-            "tolerance": 0.75,
+            "tolerance": 1,
             "roles": [
                 "fm_assigned",
                 "fm_assistant"
@@ -337,7 +352,7 @@
         "Julia Roberts": {
             "gender": "F",
             "family": "Damon",
-            "tolerance": 0.75,
+            "tolerance": 1,
             "roles": [
                 "fm_assigned",
                 "fm_assistant"
@@ -346,7 +361,7 @@
         "Vera Farmiga": {
             "gender": "F",
             "family": "Farmiga",
-            "tolerance": 0.75,
+            "tolerance": 1,
             "roles": [
                 "fm_assistant"
             ]
@@ -374,6 +389,23 @@
             "roles": [
                 "fm_assistant"
             ]
+        },
+        "Florence Pugh": {
+            "gender": "F",
+            "family": "Radcliffe",
+            "tolerance": 0.5,
+            "roles": [
+                "fm_assistant"
+            ],
+            "only_pair_with": [
+                "Julianne Moore"
+            ]
+        },
+        "Natalie Portman": {
+            "gender": "F",
+            "family": "Pratt",
+            "tolerance": 0.75,
+            "roles": []
         }
     }
 }
