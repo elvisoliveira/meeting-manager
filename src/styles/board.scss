@@ -1,6 +1,7 @@
 $red: #bf2f13;
 $yellow: #9b6d17;
 $grey: #2a6b77;
+$neutral: #dcdcdc;
 
 * {
     margin: 0;
@@ -245,15 +246,24 @@ table.vertical {
 
     table.meeting {
         border-spacing: 0;
-        margin-top: 10px;
+        // The separator row is hidden (tr.disabled), so this margin is the only
+        // break between weeks; wide enough that the time columns do not merge.
+        margin-top: 20px;
+        // Each week is its own table: fixed layout keeps the time column in the
+        // same place on every week regardless of title lengths.
+        table-layout: fixed;
+        width: 100%;
 
         td {
-            vertical-align: top;
+            // Baseline lines up the first line of every cell, so the time sits
+            // level with the text beside it whatever the block heights are.
+            vertical-align: baseline;
             padding: 5px;
 
             i {
                 font-size: 11px;
                 color: #909090;
+                white-space: nowrap;
             }
         }
 
@@ -271,13 +281,11 @@ table.vertical {
                             font-size: 14px;
                         }
 
+                        // Underline on the cell, not the inner div, so it sits on
+                        // the row's bottom edge, level with the end of the icon block.
                         &:nth-child(1),
                         &:nth-child(3) {
-                            div.section {
-                                border-bottom-style: solid;
-                                border-bottom-width: 1px;
-                                padding-bottom: 5px;
-                            }
+                            border-bottom: 1px solid;
                         }
                     }
                 }
@@ -304,7 +312,8 @@ table.vertical {
             tr {
                 td {
                     &:nth-child(2) {
-                        background-color: #f1f1f1;
+                        background-color: $neutral;
+                        color: #333;
                     }
                 }
             }
@@ -317,10 +326,6 @@ table.vertical {
                 }
 
                 td {
-                    div.section {
-                        border-color: $grey;
-                    }
-
                     &:nth-child(2) {
                         background-color: $grey;
                     }
@@ -357,17 +362,19 @@ table.vertical {
         }
 
         tr {
+            // Side columns take no width: the fixed layout splits what is left
+            // after the time column evenly between them.
             td:nth-child(1) {
-                width: 50%;
                 text-align: right;
             }
 
             td:nth-child(2) {
                 width: 40px;
+                white-space: nowrap;
+                text-align: center;
             }
 
             td:nth-child(3) {
-                width: 50%;
                 text-align: left;
             }
         }
