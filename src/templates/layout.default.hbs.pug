@@ -53,7 +53,7 @@ tr
         | {{/with}}
         | {{#with this.bible_reading}}
         tr
-          td.time {{timer time}}
+          td.time {{timer time 1}}
           td(colspan='3') {{title}}
           td.title {{i18n 'STUDENT'}}
           td.assigned {{d reader}}
@@ -65,7 +65,7 @@ tr
           td(colspan='3') {{i18n 'APPLY'}}
         | {{#each this.apply_yourself_to_the_field_ministry}}
         tr
-          td.time {{timer this.time}}
+          td.time {{timer this.time 1}}
           td(colspan='{{#if this.assistant}} 0 {{else}} 3 {{/if}}')
             | {{#if this.theme}}
             |   {{this.theme}}
