@@ -81,8 +81,8 @@ tr
             | {{/if}}
           td.assigned {{d this.assigned}}
           | {{#if this.assistant}}
-          td.title {{i18n 'ASSISTANT'}}
-          td.assigned {{d this.assistant}}
+          td.title {{#if (person this.assistant)}}{{i18n 'ASSISTANT'}}{{/if}}
+          td.assigned {{#if (person this.assistant)}}{{d this.assistant}}{{/if}}
           | {{/if}}
         | {{/each}}
       tbody.living

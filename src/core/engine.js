@@ -1,6 +1,10 @@
 import localStorageDB from 'localstoragedb';
 import { workbook as w } from '../refs/workbook';
 
+// Placeholders the scheduler writes into slots (see reserved_names in
+// samples/constraints.json); they are not people.
+export const RESERVED_NAMES = ['Streaming'];
+
 export default class Engine {
     constructor() {
         const database = {
@@ -193,7 +197,7 @@ export default class Engine {
         if (name)
             String(name).split('|').forEach((publisherName) => {
                 const trimmedName = publisherName.trim();
-                if (trimmedName) {
+                if (trimmedName && !RESERVED_NAMES.includes(trimmedName)) {
                     const publisher = this.lib.insertOrUpdate('publishers', { name: trimmedName }, { name: trimmedName });
                     publishers.push(publisher[publisher.length - 1] || publisher);
                 }

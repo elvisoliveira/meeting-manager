@@ -6,6 +6,7 @@ import localStorageDB from 'localstoragedb';
 
 import i18next from '../config/i18n';
 import { songs } from '../refs/songs';
+import { RESERVED_NAMES } from '../core/engine';
 
 const lib = new localStorageDB('library', localStorage);
 
@@ -45,7 +46,10 @@ Handlebars.registerHelper('timer', (minutes, additionalMinutes) => {
     return TimeManager.updateTime(base + extra);
 });
 
-Handlebars.registerHelper('d', (e) => String(e).split('|').find(Boolean));
+const d = (e) => (e ? String(e).split('|').find(Boolean) : '');
+Handlebars.registerHelper('d', d);
+// A streamed part prints "Streaming" as assigned but no assistant.
+Handlebars.registerHelper('person', (e) => !RESERVED_NAMES.includes(d(e)) && d(e));
 
 Handlebars.registerHelper('song', (number) => {
     if (!number) return '';

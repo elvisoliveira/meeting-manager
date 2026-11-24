@@ -75,15 +75,15 @@ tr
         tr
           td
             | {{#if this.theme}}
-            |   {{this.theme}} <i>({{time}} min)</i>
+            |   {{this.theme}}
             | {{else}}
-            |   {{{this.title}}} <i>({{time}} min)</i>
-            |   {{#if this.notes}} <i>({{this.notes}})</i>{{/if}}
+            |   {{{this.title}}}
             | {{/if}}
+            |  <i>({{time}} min{{#if this.notes}} · {{this.notes}}{{/if}})</i>
           td.time {{timer this.time 1}}
           td.assigned
             | {{d this.assigned}}
-            | {{#if this.assistant}}
+            | {{#if (person this.assistant)}}
             i ({{i18n 'ASSISTANT'}}: {{d this.assistant}})
             | {{/if}}
         | {{/each}}
